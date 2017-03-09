@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//FI">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>2.2 Praatin asentaminen
+Unix- tai Linux-koneeseen</TITLE>
+<META NAME="description" CONTENT="2.2 Praatin asentaminen
+Unix- tai Linux-koneeseen">
+<META NAME="keywords" CONTENT="praat">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="praat.css">
+
+<LINK REL="next" HREF="node10.html">
+<LINK REL="previous" HREF="node8.html">
+<LINK REL="up" HREF="node7.html">
+<LINK REL="next" HREF="node10.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html245"
+  HREF="node10.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html239"
+  HREF="node7.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html233"
+  HREF="node8.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html241"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html243"
+  HREF="node51.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00320000000000000000"></A><A NAME="sub:Praatin-asentaminen-Unix-koneeseen"></A>
+<BR>
+2.2 Praatin asentaminen
+Unix- tai Linux-koneeseen
+</H1>
+
+<P>
+
+<OL>
+<LI>Mene<A NAME="123"></A> Praat-ohjelman kotisivulle
+http://www.praat.org/
+</LI>
+<LI>Jos k&#228;yt&#228;t Linuxia, klikkaa vasemmasta yl&#228;nurkasta kohtaa &#34;<B>Linux</B>&#34;,
+niin p&#228;&#228;set lataussivulle josta saat Praatin uusimman Linux-version.
+Jos taas tarvitset Praatin version Unixiin, selvit&#228; mik&#228; Unix-versio
+sinulla on k&#228;yt&#246;ss&#228; ja klikkaa vastaavaa linkki&#228;. Praatista on <B>SGI</B>-versio
+(Silicon Graphics IRIX: Indigo, Indy, Onyx, O2 jne.), <B>SPARC
+Solaris</B> -versio, ja <B>HPUX</B>-versio (Hewlett Packard Unix).
+</LI>
+<LI>Klikkaa kerran sivun alkupuolella olevaa linkki&#228; (esim. <I>praat4109_linux_dynamic.tar.gz</I>).<A NAME="tex2html2"
+  HREF="#foot743"><SUP>2.1</SUP></A> Koneen pit&#228;isi nyt kysy&#228;, haluatko ladata tiedoston koneellesi. Vastaa
+OK ja sijoita tiedosto johonkin helppoon paikkaan jonka muistat, esim.
+kotihakemistojuureen tms. 
+</LI>
+<LI>Siirry komentorivill&#228; hakemistoon, johon latasit Praat-tiedoston (komento
+<B>cd</B> <I>hakemist</I>o<I>n_nimi</I>). Tarkista komennolla <B>ls</B>
+ett&#228; tiedosto on latautunut. Tiedoston p&#228;&#228;te <I>.tar.gz</I> osoittaa,
+ett&#228; tiedosto on pakattu. Pura paketti komennoilla
+<BR><B>gunzip</B> <I>praat4109_linux_dynamic.tar.gz</I>
+<BR><B>tar -xvf</B> <I>praat4109_linux_dynamic.tar</I>
+<BR>
+Muuta tiedoston nime&#228; sen mukaan, mink&#228; Praat-tiedoston latasit. Paketin
+purkaminen saattaa kest&#228;&#228; hetken.<A NAME="tex2html3"
+  HREF="#foot144"><SUP>2.2</SUP></A>
+</LI>
+<LI>Kirjoita j&#228;lleen <B>ls</B>. Hakemistossa pit&#228;isi nyt n&#228;ky&#228; tiedosto
+<B>praat</B> -- t&#228;m&#228; on toimiva Praat-ohjelma. Kokeile, ett&#228; se
+varmasti toimii kirjoittamalla 
+<BR><B>./praat</B>
+<BR>
+Jos kaikki oli hyvin ja Praat k&#228;ynnistyi, voit siirt&#228;&#228; <B>praat</B>-tiedoston
+haluamaasi paikkaan. Usein k&#228;ytetty hakemisto on esim. kotihakemiston
+alle tehty <B>bin</B>-hakemisto. Jollet n&#228;e bin-hakemistoa kirjoittamalla
+kotihakemistossasi <B>ls</B>, voit luoda sen kotihakemistossa ollessasi
+komennolla 
+<BR><B>mkdir bin</B>
+<BR>
+Ja Praat-ohjelman saat siirretty&#228; bin-hakemistoon komentamalla kotihakemistossa
+<BR><B>mv praat bin/</B>
+</LI>
+<LI>Praat-paketista j&#228;ljelle j&#228;&#228;neen .tar-p&#228;&#228;tteisen tiedoston voit poistaa
+-- sit&#228; ei en&#228;&#228; tarvita:
+<BR><B>rm</B> <I>praat4109_linux_dynamic.tar</I>
+</LI>
+<LI>Voit koska tahansa hakea verkosta Praatin uusimman version ja vaihtaa
+vanhan siihen. Poista ensin vanha Praat-ohjelmatiedosto (komento <B>rm</B>,
+jos sinulla on tiedostoon kirjoitusoikeus ko. laitteistossa) ja pura
+sitten uusi versio samaan paikkaan kuten edell&#228;. Jos haluat s&#228;ilytt&#228;&#228;
+my&#246;s vanhemman Praat-version, muuta Praat-tiedoston nime&#228;.
+</LI>
+</OL>
+
+<P>
+<BR><HR>
+<DL>
+<DT><A NAME="foot743">...praat4109_linux_dynamic.tar.gz).</A><A
+ HREF="node9.html#tex2html2"><SUP>2.1</SUP></A></DT>
+<DD>Linux-version kohdalla riippuu hieman käyttämästäsi Linux-jakelusta
+(distribuutiosta), pitääkö sinun ladata staattinen (<I>static</I>)
+vai dynaaminen (<I>dynamic</I>) Praat-versio. On järkevintä kokeilla
+molempia -- ehkä vain toinen Praat-versio toimii laitteistossasi
+täydellisesti.
+
+</DD>
+<DT><A NAME="foot144">...</A><A
+ HREF="node9.html#tex2html3"><SUP>2.2</SUP></A></DT>
+<DD>Kunhan komennon suoritus on valmis, ilmestyy komentoriville tuttu
+kehote -- odota rauhassa!
+
+</DD>
+</DL><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html245"
+  HREF="node10.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html239"
+  HREF="node7.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html233"
+  HREF="node8.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html241"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html243"
+  HREF="node51.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> :</B> <A NAME="tex2html246"
+  HREF="node10.html">2.3 Laitteistovaatimukset</A>
+<B> :</B> <A NAME="tex2html240"
+  HREF="node7.html">2. Asentaminen</A>
+<B> :</B> <A NAME="tex2html234"
+  HREF="node8.html">2.1 Praatin asentaminen Windows-koneeseen</A>
+ &nbsp <B>  <A NAME="tex2html242"
+  HREF="node1.html">Sis&auml;lt&ouml;</A></B> 
+ &nbsp <B>  <A NAME="tex2html244"
+  HREF="node51.html">Hakemisto</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Mietta Lennes
+2004-09-13
+</ADDRESS>
+</BODY>
+</HTML>

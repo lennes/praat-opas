@@ -1,0 +1,206 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//FI">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>9.6 Valikkokomentojen ja painikkeiden
+luominen skripteille </TITLE>
+<META NAME="description" CONTENT="9.6 Valikkokomentojen ja painikkeiden
+luominen skripteille ">
+<META NAME="keywords" CONTENT="praat">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="praat.css">
+
+<LINK REL="next" HREF="node49.html">
+<LINK REL="previous" HREF="node47.html">
+<LINK REL="up" HREF="node42.html">
+<LINK REL="next" HREF="node49.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html874"
+  HREF="node49.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html868"
+  HREF="node42.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html862"
+  HREF="node47.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html870"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html872"
+  HREF="node51.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Aliluvut</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html876"
+  HREF="node48.html#SECTION001061000000000000000">9.6.1 Valikkokomennon luonti
+skriptille (fixed menu)</A>
+<LI><A NAME="tex2html877"
+  HREF="node48.html#SECTION001062000000000000000">9.6.2 Painikkeen luonti skriptille
+(dynamic menu)</A>
+<LI><A NAME="tex2html878"
+  HREF="node48.html#SECTION001063000000000000000">9.6.3 Valikkokomennon tai painikkeen
+poistaminen</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION001060000000000000000"></A><A NAME="sec:Valikkokomennot-ja-painikkeet"></A>
+<BR>
+9.6 Valikkokomentojen ja painikkeiden
+luominen skripteille 
+</H1>
+
+<P>
+
+<H2><A NAME="SECTION001061000000000000000"></A><A NAME="sub:Valikkokomennon-luonti-skriptille"></A>
+<BR>
+9.6.1 Valikkokomennon luonti
+skriptille (fixed menu)
+</H2>
+
+<P>
+
+<OL>
+<LI>Avaa skripti sellaisen Praatin ikkunan sis&#228;lt&#228;, johon valikkokomennon<A NAME="707"></A>
+tai painikkeen pit&#228;isi liitty&#228;.
+
+<P>
+
+<UL>
+<LI>Jos haluat, ett&#228; komento tulee objektilistan tai Picture-ikkunan johonkin
+valikkoon, valitse objektilistan Control-valikosta Open script...
+Valitse sitten File-valikosta Add to fixed menu...
+</LI>
+<LI>Jos taas haluat komennon esim. TextGrid-editori-ikkunan valikkoon,
+avaa ensin TextGrid-editori mille tahansa TextGrid- ja &#228;&#228;niobjektille
+ja valitse editorin File- valikosta Open script... Valitse sitten
+File-valikosta Add to menu...
+</LI>
+</UL>
+</LI>
+<LI>Kirjoita, mihin valikkoon (Menu) uuden komennon haluat ja mik&#228; komennon
+teksti (Command) on. Jos avasit skriptin jostakin editori-ikkunasta,
+komento tulee n&#228;kyviin valikkoon vasta, kun seuraavan kerran avaat
+uuden editori-ikkunan.
+</LI>
+</OL>
+
+<P>
+
+<H2><A NAME="SECTION001062000000000000000"></A><A NAME="sub:Painikkeen-luonti-skriptille"></A>
+<BR>
+9.6.2 Painikkeen luonti skriptille
+(dynamic menu)
+</H2>
+
+<P>
+Painikkeen<A NAME="712"></A> voit luoda vain objektilistaan.
+
+<P>
+
+<OL>
+<LI>Valitse objektilistan Control-valikosta Open script... Valitse sitten
+skripti-ikkunan File-valikosta Add to dynamic menu... 
+</LI>
+<LI>Kirjoita kohtaan Class 1 se objektityyppi (esim. Sound tai TextGrid),
+jonka on oltava objektilistassa valittuna, jotta painike olisi n&#228;kyviss&#228;. 
+</LI>
+<LI>Kirjoita kohtaan Number 1, montako Class 1-tyyppist&#228; objektia on v&#228;hint&#228;&#228;n
+oltava valittuna, jotta painike n&#228;kyisi. Jos lukum&#228;&#228;r&#228;ll&#228; ei ole v&#228;li&#228;,
+j&#228;t&#228; t&#228;h&#228;n kohtaan 0.
+</LI>
+<LI>Kirjoita kohtaan Command se teksti, jonka haluat n&#228;kyv&#228;n painikkeessa.
+</LI>
+<LI>Tarkista, ett&#228; kohdassa Script file on oikea tiedostopolku skriptiin. 
+</LI>
+<LI>Paina OK.
+</LI>
+</OL>
+
+<P>
+
+<H2><A NAME="SECTION001063000000000000000"></A><A NAME="sub:Valikkokomennon-poistaminen"></A>
+<BR>
+9.6.3 Valikkokomennon tai painikkeen
+poistaminen
+</H2>
+
+<P>
+
+<OL>
+<LI>Valikkokomennon<A NAME="717"></A>
+tai painikkeen voit poistaa objektilistan Control-valikon komennolla
+Preferences... -&gt; Buttons...
+</LI>
+<LI>N&#228;kyviin tulee ikkuna, jossa on luettelot kaikista Praatin valikkokomennoista
+ja painikkeista. Ikkunan yl&#228;reunasta voit valita, n&#228;ytet&#228;&#228;nk&#246; esim.
+objektilistan vai Picture-ikkunan valikot vai esim. kaikki painikkeet
+A:sta M:&#228;&#228;n. 
+</LI>
+<LI>Praatin sis&#228;&#228;nrakennettujen komentojen kohdalla voit valita, onko
+komento n&#228;kyviss&#228; (shown) vain k&#228;ytt&#228;j&#228;lt&#228; piilossa (hidden).
+</LI>
+<LI>Itse lis&#228;&#228;miesi komentojen ja painikkeiden kohdalla lukee ADDED, ja
+kun klikkaat kyseist&#228; kohtaa, teksti muuttuu muotoon REMOVED ja komento
+h&#228;vi&#228;&#228; Praatista. Skripti tietenkin pysyy tallella ja voit uudestaan
+k&#228;ytt&#228;&#228; sit&#228; Praatissa milloin tahansa.
+</LI>
+</OL>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html874"
+  HREF="node49.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html868"
+  HREF="node42.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html862"
+  HREF="node47.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html870"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html872"
+  HREF="node51.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> :</B> <A NAME="tex2html875"
+  HREF="node49.html">9.7 Mitä vaaroja skriptien</A>
+<B> :</B> <A NAME="tex2html869"
+  HREF="node42.html">9. Skriptaus</A>
+<B> :</B> <A NAME="tex2html863"
+  HREF="node47.html">9.5 Skriptin suorittaminen (ajaminen)</A>
+ &nbsp <B>  <A NAME="tex2html871"
+  HREF="node1.html">Sis&auml;lt&ouml;</A></B> 
+ &nbsp <B>  <A NAME="tex2html873"
+  HREF="node51.html">Hakemisto</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Mietta Lennes
+2004-09-13
+</ADDRESS>
+</BODY>
+</HTML>

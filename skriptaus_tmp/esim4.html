@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><html><head>
+                       
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+                       
+  <meta name="author" content="Mietta
+  Lennes"><title>Praat-jatkokurssi 4/4</title></head>
+
+<body>
+         
+<A HREF="../index.html">Kurssin kotisivu</A>
+  
+<center>      
+<h1><a name="alku"></a>    <a
+href="http://www.praat.org/">Praat</a>-jatkokurssi 4/4</h1>
+
+<BR>
+
+<H4><A
+HREF="http://www.helsinki.fi/~lennes/opetus/praatjatko/esim4/">P&auml;iv&auml;n
+skriptit</A></H4>
+
+
+<BR>
+
+</center>
+
+<H2>Praatin erilaiset objektityypit</H2>
+
+<UL>
+<P>Tutustutaan erilaisiin objekteihin, joista l&ouml;ytyy luettelo Praatin
+Helpist&auml;: valitse objektilistan Help-valikosta <B>Types of objects</B>.
+
+</UL>
+<P>
+<H3>Strings: "Taajuussanaston" tekeminen nimikoidusta aineistosta</H3>
+
+<UL>
+
+<H4>Vaihe 1. "Sanojen" tallentaminen TextGridist&auml; erilliseen tiedostoon</H4>
+
+<P>Kokeile skripti&auml; 
+<A
+HREF="save_tier_text_to_file.praat">save_tier_text_to_file.praat</A><BR>
+Skripti tallentaa kunkin nimikoidun intervallin sis&auml;lt&auml;m&auml;n tekstin tekstitiedostoon.
+
+<P>Voit my&ouml;s luoda tekstitiedoston k&auml;sin. Kirjoita tiedostoon vaikkapa
+jotain seuraavaan tapaan, yksi "sana"/rivi:
+
+<PRE>
+  yksi
+  kolme
+  kuusi
+  kuusi
+  viisi
+  kaksi
+  yksi
+  viisi
+  viisi</PRE>
+
+<H4>Vaihe 2. Taajuussanaston luominen tekstitiedoston riveist&auml; ja tallentaminen toiseen tiedostoon</H4>
+
+<P>Kun sinulla on tekstitiedosto valmiina, kokeile skripti&auml; 
+<A
+HREF="make_frequency_dictionary_from_lines_in_text_file.praat">make_frequency_dictionary_from_lines_in_text_file.praat</A><BR>
+
+<P><I>Huom.</I>Jos k&auml;yt&auml;t unixia tai linuxia ja sinulla on jo valmiina
+mik&auml; tahansa tekstitiedosto, siit&auml; voi helposti luoda taajuussanaston
+my&ouml;s pelkill&auml; Unix-komennoilla, eik&auml;
+Praatia tarvita lainkaan (verkosta l&ouml;ytyy ohjeita ja kielitieteen laitoksen
+unix-kursseilla t&auml;m&auml; on perusasiaa). Yll&auml;mainittu Praatin konsti
+toimii kuitenkin kaikissa laitteistoissa, joissa Praat on asennettuna.
+
+</UL>
+
+<H3>Matrix: Histogrammin piirt&auml;minen aineiston perustaajuusjakaumasta</H3>
+
+<UL>
+
+<P>T&auml;m&auml; skripti tekee annetun hakemiston &auml;&auml;nitiedostoista
+Pitch-analyysit, tallentaa kaikki saadut Pitch-arvot tekstitiedostoon,
+lukee tiedoston uudelleen Praatiin Matrix-objektiksi ja piirt&auml;&auml;
+arvoista histogrammin.
+
+<P>Kokeile skripti&auml; 
+<A
+HREF="draw_pitch_histogram_from_sound.praat">draw_pitch_histogram_from_sound.praat</A>
+
+</UL>
+
+<H2>Kuvien piirt&auml;minen: Formanttikartta</H2>
+
+<UL>
+
+<P>T&auml;m&auml; skripti on v&auml;h&auml;n hankalammin hahmotettava, mutta se laskee
+formanttianalyysin ja piirt&auml;&auml; formanttikartan nimikoiduista vokaaleista.
+
+<P>Kokeile skripti&auml; 
+<A
+HREF="draw_formant_chart.praat">draw_formant_chart.praat</A>
+
+</UL>
+
+
+<H2>Skriptien suorittaminen komentorivilt&auml;</H2>
+
+<UL>
+
+<P>Unix- ja Linux-koneissa voit suorittaa Praat-skriptin avaamatta itse
+Praat-ohjelmaa lainkaan! Se s&auml;&auml;st&auml;&auml; koneen muistia, nopeuttaa
+analyyseja, ja voit yleens&auml; mukavasti tehd&auml; samalla muita t&ouml;it&auml;. T&auml;m&auml;
+on k&auml;tev&auml;&auml; varsinkin, jos k&auml;yt&ouml;ss&auml;si on tehokas palvelinkone, jolle
+voit siirt&auml;&auml; analysoitavan aineiston, sill&auml; oman ty&ouml;koneesi muisti ei
+t&auml;ll&ouml;in kuormitu. Edellytyksen&auml; on, ett&auml; Praat-ohjelma on asennettu
+koneeseen (ja aukeaa normaalisti komennolla praat). 
+
+Skriptin
+komentorivilt&auml; ajamisesssa ei ole j&auml;rke&auml;, mik&auml;li skripti ei tallenna
+tuotoksiaan tiedostoihin, sill&auml; et n&auml;e Praatin ikkunoita ollenkaan
+ajon aikana. Skripti voi my&ouml;s tulostaa tietoja Info-ikkunaan
+komennoilla echo, printline tai print, jolloin vastaavat tekstit tulostuvat konsoli-ikkunaan skripti&auml; suoritettaessa.
+
+<P>Skriptin suoritus onnistuu antamalla konsoli-ikkunassa komento
+praat ja sen j&auml;lkeen skriptin nimi, jos skripti on nykyisess&auml; ty&ouml;hakemistossa:
+
+<PRE>
+     praat laskesumma.praat
+</PRE>
+
+tai antamalla praat-komennon per&auml;ss&auml; skriptin koko hakemistopolku:
+
+<PRE>
+     praat /home/lennes/praat-scripts/laskesumma.praat
+</PRE>
+
+<P>Jos skriptiss&auml; on lomakeosio (<B>form...endform</B>), sen eri
+kohtiin tulevat arvot on annettava parametreina:
+
+<PRE>
+     praat laskesumma.praat 6 -3.52
+</PRE>
+
+<P>Kokeile komentorivilt&auml; ajamista skriptill&auml; 
+<A HREF="laskesumma.praat">laskesumma.praat</A>!
+
+<P><I>Vinkki:</I> Windows-koneisiin on olemassa Praatin
+lataussivulla oma ohjelmansa nimelt&auml; <B>Praatcon</B>, joka
+mahdollistaa skriptien ajon taustalla my&ouml;s Windows-ymp&auml;rist&ouml;ss&auml;.
+
+<P>My&ouml;s Praat-skriptin sis&auml;lt&auml; voi kutsua toista
+Praat-skripti&auml;. T&auml;ll&ouml;in k&auml;ytet&auml;&auml;n komentoa <B>execute</B>
+<I>skriptinNimi</I> ja kutsuttavan skriptin lomakeosion parametrit on
+annettava komennon per&auml;ss&auml; kuten komentorivill&auml;kin. Esimerkiksi
+laskesumma.praat-skripti&auml; voit k&auml;ytt&auml;&auml; toisen skriptin keskell&auml;
+kirjoittamalla skriptisi keskelle
+
+<PRE>
+     execute laskesumma.praat 6 -3.52
+</PRE>
+
+tai jos m&auml;&auml;rit&auml;t parametrit skriptiss&auml;si muuttujien avulla:
+
+<PRE>
+     luku1 = 4
+     luku2 = 5
+     execute laskesumma.praat luku1 luku2
+</PRE>
+
+T&auml;ll&ouml;in yhteenlaskun tulos tietenkin n&auml;kyy vain Info-ikkunassa tai
+konsoli-ikkunassa, etk&auml; voi hy&ouml;dynt&auml;&auml; sit&auml; skriptiss&auml;si. Jos kutsuttava
+skripti tallentaisi tuotoksensa johonkin tiedostoon, voisit lukea
+tiedoston "emoskriptin" k&auml;ytt&ouml;&ouml;n, kun kutsutun skriptin suoritus on p&auml;&auml;ttynyt.
+
+
+</UL>
+
+
+ <BR><BR>
+ <BR><BR>
+<hr>
+<center>      
+<h3><a
+href="http://www.helsinki.fi/%7Elennes/opetus/praat/aineistot/mietta/">Harjoitusaineistoa
+</a> | <a href="http://www.helsinki.fi/%7Elennes/praat-scripts/">Muita
+skriptej&auml;</a> <BR><BR>
+<a href="http://www.praat.org/">Praat-ohjelman kotisivu</a> 
+</h3>
+
+</center>
+
+
+</body>
+    <br>
+      <br>
+           
+<div align="right"><a href="#alku">Sivun alkuun</a>    </div>

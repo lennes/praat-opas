@@ -1,0 +1,321 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//FI">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>6.3 Miten Praat-ohjelmalla nimikoidaan puhetta? </TITLE>
+<META NAME="description" CONTENT="6.3 Miten Praat-ohjelmalla nimikoidaan puhetta? ">
+<META NAME="keywords" CONTENT="praat">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="praat.css">
+
+<LINK REL="next" HREF="node28.html">
+<LINK REL="previous" HREF="node26.html">
+<LINK REL="up" HREF="node24.html">
+<LINK REL="next" HREF="node28.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html535"
+  HREF="node28.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html529"
+  HREF="node24.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html523"
+  HREF="node26.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html531"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html533"
+  HREF="node51.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Aliluvut</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html537"
+  HREF="node27.html#SECTION00731000000000000000">6.3.1 Nimikointiobjektin luominen Praatissa</A>
+<LI><A NAME="tex2html538"
+  HREF="node27.html#SECTION00732000000000000000">6.3.2 Nimikointi</A>
+<LI><A NAME="tex2html539"
+  HREF="node27.html#SECTION00733000000000000000">6.3.3 Nimikointikerroksien
+lisääminen ja poistaminen</A>
+<LI><A NAME="tex2html540"
+  HREF="node27.html#SECTION00734000000000000000">6.3.4 IPA-merkit ja erikoismerkit</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION00730000000000000000">
+6.3 Miten Praat-ohjelmalla nimikoidaan puhetta? </A>
+</H1>
+
+<P>
+Ennen kuin aloitat &#228;&#228;nitiedoston nimikoinnin, varmista, ett&#228; &#228;&#228;ni
+on juuri sen mittainen ja editoitu sellaiseksi kuin haluat. Nimikointia
+varten luodaan nimitt&#228;in <I>TextGrid-objekti</I><A NAME="334"></A>,
+jonka on oltava <B>samankestoinen kuin sit&#228; vastaava &#228;&#228;nitiedosto</B>.
+Jos &#228;&#228;nitiedoston kesto my&#246;hemmin muuttuu (esim. p&#228;&#228;t&#228;t poistaa sen
+alusta &#34;turhaa tyhj&#228;&#228;&#34;) ja olet jo aloittanut nimikoinnin,
+joudut vaikeuksiin, koska TextGridiin merkitsem&#228;si segmenttirajat
+eiv&#228;t en&#228;&#228; vastaakaan alkuper&#228;isi&#228; aikapisteit&#228; &#228;&#228;nisignaalissa. Onkin
+sitten hankalampi juttu siirt&#228;&#228; segmenttirajat taas oikeisiin paikkoihin...
+
+<P>
+
+<H2><A NAME="SECTION00731000000000000000">
+6.3.1 Nimikointiobjektin luominen Praatissa</A>
+</H2>
+
+<P>
+
+<OL>
+<LI>Avaa objektilistaan haluamasi &#228;&#228;nitiedosto joko Sound-objektina tai
+LongSound-objektina <A HREF="node20.html#sub:Tiedostojen-avaaminen-Praatissa">4.3.1</A>. K&#228;yt&#228;
+LongSound-objektityyppi&#228; (komento <B>Read: Open long sound file...</B>)
+siin&#228; tapauksessa, ett&#228; &#228;&#228;nitiedosto on erityisen suuri, eik&#228; mahdu
+kerralla tietokoneesi k&#228;ytt&#246;muistiin. Varmista, ett&#228; &#228;&#228;niobjekti on
+valittuna. 
+</LI>
+<LI>Paina objektilistan oikeassa laidassa n&#228;kyv&#228;&#228; painiketta <B>Label
+&amp; segment: To TextGrid...</B> N&#228;kyviin tulee lomake (ks. kuva
+<A HREF="node27.html#fig:textgridin_luonti">6.1</A>). Kirjoita ylemm&#228;lle riville (<I>Tier
+names</I>) v&#228;lily&#246;nneill&#228; erotettuna nimet niille nimikointikerroksille,
+joiden haluat olevan TextGrid-objektissa. Jos kirjoitat vaikkapa &#34;<I>&#228;&#228;nteet
+sanat lauseet</I>&#34;, saat kolme nimikointikerrosta. Voit muuttaa,
+lis&#228;t&#228; ja poistaa nimi&#228;, kerroksien m&#228;&#228;r&#228;&#228; ja kerrostyyppej&#228; my&#246;hemminkin
+(ks. <A HREF="node27.html#sub:Nimikointikerroksien-lis_E4_E4minen-ja">6.3.3</A>).
+</LI>
+<LI>Oletuksena kaikki yl&#228;rivill&#228; mainitut nimikointikerrokset luodaan
+IntervalTier-tyyppisin&#228;. IntervalTier-kerroksiin<A NAME="350"></A>
+voi nimikoida vain segmenttej&#228;<A NAME="351"></A>, eli aikav&#228;lej&#228; joilla
+on alku- ja loppuraja. Jos kuitenkin haluat, ett&#228; jotkut nimikointikerroksista
+ovat tyyppi&#228; PointTier, kirjoita n&#228;iden nimet my&#246;s alemmalle riville
+(Point tiers). PointTier-rivien nimien tulee siis esiinty&#228; molemmissa
+kohdissa. PointTier-kerroksiin<A NAME="352"></A> voi merkit&#228; yksitt&#228;isi&#228;
+aikapisteit&#228;, joille voi antaa nimi&#228;. Joskus t&#228;llaisistakin merkkipaaluista
+voi olla iloa.
+</LI>
+<LI>Paina OK. Objektilistaan ilmestyy uusi TextGrid-objekti, joka n&#228;kyy
+valittuna. Nyt voit aloittaa varsinaisen nimikoinnin.
+<DIV ALIGN="CENTER"><A NAME="fig:textgridin_luonti"></A><A NAME="780"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Kuva 6.1:</STRONG>
+T&#228;ll&#228; lomakkeella voidaan m&#228;&#228;ritt&#228;&#228;
+uuden TextGrid-objektin nimikointikerrosten nimet ja tyypit.</CAPTION>
+<TR><TD><IMG
+ ALIGN="BOTTOM" BORDER="0" SRC="/home/lennes/praat-opas/kuvat/textgridin_luonti.jpg"
+ ALT="Image /home/lennes/praat-opas/kuvat/textgridin_luonti.jpg">
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+</LI>
+</OL>
+
+<P>
+
+<H2><A NAME="SECTION00732000000000000000">
+6.3.2 Nimikointi</A>
+</H2>
+
+<P>
+
+<OL>
+<LI>Valitse objektilistasta samanaikaisesti &#228;&#228;niobjekti (Sound) ja sit&#228;
+vastaava TextGrid-objekti, jonka juuri loit. (Voit valita kaksi objektia
+yht&#228; aikaa pit&#228;m&#228;ll&#228; Shift- eli vaihton&#228;pp&#228;int&#228; tai Control-n&#228;pp&#228;int&#228;
+pohjassa, kun naksautat toista objektia.)
+</LI>
+<LI>Paina oikealla n&#228;kyv&#228;&#228; painiketta Edit. Uusi TextGrid-editori-ikkuna
+avautuu. Ikkunan yl&#228;osaa hallitsee &#228;&#228;nisignaalin kuvaus: Ylimp&#228;n&#228;
+n&#228;kyy &#228;&#228;nen aaltomuoto<A NAME="360"></A> eli oskillogrammi, ja sen
+alapuolella saattaa olla toinen ikkuna, jossa on &#228;&#228;nest&#228; laskettuja
+analyysikuvia (esim. spektrogrammi, ks. <A HREF="node32.html#sub:Spektrogrammi">7.1</A>).
+&#196;&#228;nisignaalikuvien yl&#228;puolella on kapea valkoinen osa, <I>kirjoitustila</I>.
+Ikkunan alareunassa n&#228;kyy valkoisia palkkeja: ne ovat nimikointirivej&#228;
+eli <I>nimikointikerroksia</I><A NAME="365"></A>. Aktiivisena
+oleva nimikointirivi n&#228;kyy keltaisena.
+</LI>
+<LI>TextGrid-editorissa voit kuunnella &#228;&#228;nt&#228; ja sen p&#228;tki&#228; samalla tavalla
+kuin Sound- ja LongSound-editoreissa (ks.<A HREF="node21.html#sec:Aanieditori-_Sound-editor_">5</A>).
+Editori-ikkunan alalaidassa (valkoisten nimikointikerrosten tai -rivien
+alla) n&#228;kyy kaksi tai kolme vaakasuoraa palkkia. Kun painat alinta
+palkkia, kuulet koko &#228;&#228;niobjektin sis&#228;ll&#246;n yht&#228; soittoa. Toiseksi
+alin palkki soittaa koko t&#228;ll&#228; hetkell&#228; n&#228;kyviss&#228; olevan osan &#228;&#228;nest&#228;
+- voit k&#228;ytt&#228;&#228; t&#228;t&#228; toimintoa, kun zoomaat &#228;&#228;nikuvaa sis&#228;&#228;n- tai ulosp&#228;in
+tai vierittelet kuvaa oikealle tai vasemmalle. Kolmesta soittopalkista
+ylimm&#228;inen tulee n&#228;kyviin, kun naksautat hiirell&#228; johonkin kohtaan
+&#228;&#228;niaaltoa tai analyysikuvaa tai kun valitset &#228;&#228;nest&#228; alueen vet&#228;m&#228;ll&#228;
+hiirell&#228; sen yli. Ylimm&#228;ll&#228; soittopalkilla voit kuunnella &#228;&#228;nest&#228;
+mink&#228; tahansa lyhyenkin p&#228;tk&#228;n, kun muutat v&#228;lill&#228; kursorin paikkaa
+tai valitun alueen sijaintia. Kokeile!
+</LI>
+<LI>Kun olet kuuntelemalla ja/tai katselemalla l&#246;yt&#228;nyt kohdan (esim.
+lauseen alku), johon haluat tehd&#228; segmenttirajan, naksauta ensin hiirell&#228;
+kyseiseen kohtaan &#228;&#228;niaaltoa tai analyysikuvaa ikkunan yl&#228;osassa.
+Alaosan valkoisiin nimikointikerroksiin (<I>tiers</I>) ilmestyy pystyviiva,
+jossa on pieni ympyr&#228; jokaisen nimikointikerroksen yl&#228;reunassa. Naksauta
+hiirell&#228; tarkasti ympyr&#228;&#228;n sen nimikointikerroksen kohdalle, johon
+haluat lis&#228;t&#228; segmenttirajan. Uusi raja tulee n&#228;kyviin paksuna pystyviivana. 
+
+<P>
+
+<UL>
+<LI>Valittuna oleva segmenttiraja n&#228;kyy punaisena ja muut rajat sinisin&#228;.
+Tietyn rajan voi valita naksauttamalla hiirell&#228; sen p&#228;&#228;ll&#228;.
+</LI>
+<LI>Segmenttirajaa voi siirt&#228;&#228; oikealle tai vasemmalle tarttumalla siihen
+hiirell&#228; (mutta ei viereisten segmenttirajojen yli). Kahta tai useampaa
+eri nimikointikerroksissa mutta t&#228;sm&#228;lleen samassa aikapisteess&#228; olevaa
+segmenttirajaa voit siirt&#228;&#228; yht&#228; aikaa pit&#228;m&#228;ll&#228; Shift- eli vaihton&#228;pp&#228;int&#228;
+pohjassa ja vet&#228;m&#228;ll&#228; yht&#228; rajoista.
+</LI>
+<LI>Valitun (punaisen) segmenttirajan voi poistaa valitsemalla editori-ikkunan
+Point/Boundary-valikosta Remove.
+</LI>
+<LI>Jos haluat, ett&#228; segmenttirajat ovat varmasti t&#228;sm&#228;lleen samassa aikapisteess&#228;
+useammassa nimikointikerroksessa, tartu yhteen rajaan ja ved&#228; se hiirell&#228;
+toisessa kerroksessa olevan rajan p&#228;&#228;lle. T&#228;ll&#246;in rajat menev&#228;t automaattisesti
+samaan aikapisteeseen. (T&#228;t&#228; mahdollisuutta kannattaa k&#228;ytt&#228;&#228; hyv&#228;ksi,
+sill&#228; silm&#228;m&#228;&#228;r&#228;isesti rajoja on vaikea saada t&#228;sm&#228;lleen samaan kohtaan!)
+</LI>
+</UL>
+</LI>
+<LI>Kun lause, &#228;&#228;nne tms. yksikk&#246; on rajattu ja haluat antaa segmentille
+nimen, naksauta hiirell&#228; haluamallesi nimikointikerrokseen niiden
+rajojen v&#228;liin, johon haluat kirjoittaa. Kirjoita sitten segmentin
+nimi tavalliseen tapaan n&#228;pp&#228;imist&#246;ll&#228;. Teksti tulee samanaikaisesti
+n&#228;kyviin nimikointikerrokseen segmentin kohdalle ja ikkunan yl&#228;reunassa
+olevaan valkeaan <I>kirjoitustilaan</I><A NAME="371"></A>. (Huom.
+Joissakin tapauksissa joudut ensin naksauttamaan ikkunan yl&#228;reunan
+kirjoitustilaa, ennen kuin p&#228;&#228;set kirjoittamaan teksti&#228; segmenttiin.)
+Jo kirjoitettua teksti&#228; voit muokata normaalisti naksauttamalla ensin
+ko. segmentti&#228; nimikointikerroksessa ja sitten haluttua tekstikohtaa
+ikkunan yl&#228;osan kirjoitusrivill&#228;.
+</LI>
+</OL>
+
+<P>
+
+<H2><A NAME="SECTION00733000000000000000"></A><A NAME="sub:Nimikointikerroksien-lis_E4_E4minen-ja"></A>
+<BR>
+6.3.3 Nimikointikerroksien
+lis&#228;&#228;minen ja poistaminen
+</H2>
+
+<P>
+T&#228;t&#228; osiota ei ole viel&#228; kirjoitettu.
+
+<P>
+
+<H2><A NAME="SECTION00734000000000000000"></A><A NAME="sub:IPA-merkit-ja-erikoismerkit"></A>
+<BR>
+6.3.4 IPA-merkit ja erikoismerkit
+</H2>
+
+<P>
+Praatissa on oma tapa, jolla saa erikoismerkkej&#228; n&#228;kyviin TextGridiss&#228;.
+Erikoismerkit tuotetaan n&#228;pp&#228;ilem&#228;ll&#228; per&#228;kk&#228;in &#92;-merkki
+ja jotain muita merkkej&#228;. N&#228;in muodostetut merkit n&#228;kyv&#228;t siis ainoastaan
+Praatin TextGrid-ikkunoissa ja Picture-ikkunassa.
+
+<P>
+Kaikkien Praatissa n&#228;kyvien erikoismerkkien<A NAME="376"></A>
+ja IPA-symbolien<A NAME="377"></A><A NAME="378"></A> koodit
+n&#228;et Praatin sis&#228;isest&#228; manuaalista: Kun olet TextGrid-editori-ikkunassa,
+valitse sen oikeasta yl&#228;nurkasta <B>Help:About&nbsp;special&nbsp;symbols</B>.
+Sivu on hiukan suttuinen, mutta kaikkien merkkikoodien pit&#228;isi l&#246;yty&#228;.
+Voit my&#246;s yritt&#228;&#228; k&#228;ytt&#228;&#228; manuaalin hakua (<B>Search&nbsp;manual</B>)
+ja antaa hakusanaksi &#34;symbols&#34; tms. (ks. manuaalin
+k&#228;ytt&#246;, <A HREF="node14.html#sub:Praatin-sisaanrakennettu-manuaali">3.3</A>).
+
+<P>
+Esimerkiksi nuoli yl&#246;sp&#228;in<A NAME="384"></A> syntyy n&#228;pp&#228;ilem&#228;ll&#228;
+per&#228;kk&#228;in <B>&#92;</B> (loppuun pit&#228;&#228;
+n&#228;pp&#228;ill&#228; v&#228;lily&#246;nti, jotta -merkin saa tuotettua).
+Nuoli alasp&#228;in<A NAME="388"></A> taas tulee n&#228;kyviin n&#228;pp&#228;ilem&#228;ll&#228;
+per&#228;kk&#228;in merkit <B>&#92;_|</B>
+
+<P>
+<A NAME="Alleviivauksien-tuottaminen-Praatissa"></A>Alleviivauksien tuottaminen<A NAME="391"></A>
+lienee Praatin sis&#228;ll&#228; mahdotonta. Korvikkeeksi voi keksi&#228; jonkin
+oman merkint&#228;tavan siihen kohtaan, mist&#228; alleviivaus alkaa, ja siihen,
+miss&#228; se p&#228;&#228;ttyy. Esim.
+
+<P>
+<BLOCKQUOTE>
+n&#228;ist&#228; sanoista &#92;_t&#228;m&#228;&#92;_ on alleviivattu 
+
+</BLOCKQUOTE>
+mik&#228; n&#228;kyy TextGridin intervallissa seuraavasti: 
+
+<P>
+<BLOCKQUOTE>
+n&#228;ist&#228; sanoista _t&#228;m&#228;_ on alleviivattu
+
+</BLOCKQUOTE>
+Huom. Pelkk&#228; _-merkki Praatissa aiheuttaa seuraavan merkin n&#228;kymisen
+alaindeksin&#228;<A NAME="398"></A>, esim. H_2O tuottaa veden kemiallisen
+merkin H<IMG
+ WIDTH="15" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$_{\textrm{2}}$">O. Jos haluaa sen sijaan tuottaa _-merkin,
+eteen on laitettava &#92;-merkki (ks. sis&#228;isen manuaalin
+sivu <B>Text styles</B>; <A HREF="node14.html#sub:Praatin-sisaanrakennettu-manuaali">3.3</A>).
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html535"
+  HREF="node28.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html529"
+  HREF="node24.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html523"
+  HREF="node26.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html531"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html533"
+  HREF="node51.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> :</B> <A NAME="tex2html536"
+  HREF="node28.html">6.4 TextGridin eli nimikointiobjektin</A>
+<B> :</B> <A NAME="tex2html530"
+  HREF="node24.html">6. Nimikointi</A>
+<B> :</B> <A NAME="tex2html524"
+  HREF="node26.html">6.2 Praat-ohjelmalle tyypillisiä nimikointiominaisuuksia</A>
+ &nbsp <B>  <A NAME="tex2html532"
+  HREF="node1.html">Sis&auml;lt&ouml;</A></B> 
+ &nbsp <B>  <A NAME="tex2html534"
+  HREF="node51.html">Hakemisto</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Mietta Lennes
+2004-09-13
+</ADDRESS>
+</BODY>
+</HTML>

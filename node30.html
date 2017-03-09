@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//FI">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>6.6 Toisella ohjelmalla tehdyn transkription tuonti</TITLE>
+<META NAME="description" CONTENT="6.6 Toisella ohjelmalla tehdyn transkription tuonti">
+<META NAME="keywords" CONTENT="praat">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="praat.css">
+
+<LINK REL="previous" HREF="node29.html">
+<LINK REL="up" HREF="node24.html">
+<LINK REL="next" HREF="node31.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html581"
+  HREF="node31.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html575"
+  HREF="node24.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html571"
+  HREF="node29.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html577"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html579"
+  HREF="node51.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00760000000000000000">
+6.6 Toisella ohjelmalla tehdyn transkription tuonti</A>
+</H1>
+
+<P>
+Jos sinulla on &#228;&#228;nitiedostosta tehty erillinen, tekstimuotoinen litteraatio<A NAME="431"></A>
+ja haluaisit nyt yhdist&#228;&#228; Praatilla tekstin &#228;&#228;nitiedostoon, se onnistuu
+kohtuullisen helposti k&#228;ytt&#228;m&#228;ll&#228; Praat-skripti&#228;. Edellytyksen&#228; on,
+ett&#228; sinulla on k&#228;ytett&#228;viss&#228; litteraatiota vastaava &#228;&#228;nitiedosto.
+Tekstitiedoston tulee olla raakatekstimuotoinen (raw text, plain text).
+Yhdess&#228; tekstitiedostossa saa my&#246;s olla vain yhden puhujan vuorosanoja
+kerrallaan -- jos tiedostossasi esiintyy monta puhujaa, tee kullekin
+puhujalle yksi tiedosto, josta poistat muiden puhujien vuorot.
+
+<P>
+
+<OL>
+<LI>Avaa &#228;&#228;nitiedosto Praatilla.
+</LI>
+<LI>Luo &#228;&#228;nitiedostolle TextGrid-objekti (ks. <A HREF="node24.html#sec:Nimikointi">6</A>),
+johon m&#228;&#228;rit&#228;t yhden intervallityyppisen nimikointirivin. Jos tiedostossa
+esiintyy useita puhujia, sinun pit&#228;&#228; tehd&#228; jokaiselle puhujalle oma
+nimikointirivi, jolloin voit helposti kuvata my&#246;s p&#228;&#228;llekk&#228;ispuhuntaa<A NAME="434"></A>.
+</LI>
+<LI>Merkitse sitten TextGridiin rajat kaikille sellaisille kohdille, jotka
+vastaavat rivinvaihtoja tekstitiedostossa. Helpointa t&#228;m&#228; on, jos
+tekstitiedoston rivinvaihdot vastaavat suunnilleen puhujan pit&#228;mi&#228;
+taukoja, jolloin sinun tarvitsee vain rajata &#228;&#228;nitiedostosta hiljaiset
+taukopaikat. (Taukoja voi jopa yritt&#228;&#228; etsi&#228; automaattisesti <I>mark_pauses.praat</I>-nimisen
+skriptin avulla, joka l&#246;ytyy ao. osoitteesta.)
+</LI>
+<LI>Hae koneellesi tekstirivien tuontiskripti nimelt&#228; <I>label_from_text_file.praat</I>.
+Skripti l&#246;ytyy osoitteesta 
+
+<P>
+<BLOCKQUOTE>
+http://www.helsinki.fi/&nbsp;lennes/praat-scripts/
+</BLOCKQUOTE>
+</LI>
+<LI>Valitse Praat-ohjelman objektilistasta TextGrid-objekti, johon merkitsit
+yksik&#246;iden rajat ja johon haluat tuoda teksti&#228;. Avaa ja suorita skripti
+(ks. ohjeet <A HREF="node47.html#sec:Miten-skripti-suoritetaan">9.5</A>).
+</LI>
+</OL>
+Erikoismerkit eiv&#228;t esim. Wordin tuottamasta raakatekstist&#228; siirry
+oikein. K&#228;yt&#228; tarvittaessa jo etuk&#228;teen etsi-korvaa-toimintoa ja muunna
+erikoismerkit Praatin vastaaviksi koodeiksi (ks. <A HREF="node27.html#sub:IPA-merkit-ja-erikoismerkit">6.3.4</A>).
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html581"
+  HREF="node31.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html575"
+  HREF="node24.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html571"
+  HREF="node29.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html577"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html579"
+  HREF="node51.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> :</B> <A NAME="tex2html582"
+  HREF="node31.html">7. Akustinen analyysi</A>
+<B> :</B> <A NAME="tex2html576"
+  HREF="node24.html">6. Nimikointi</A>
+<B> :</B> <A NAME="tex2html572"
+  HREF="node29.html">6.5 Valmiin nimikoinnin hyödyntäminen</A>
+ &nbsp <B>  <A NAME="tex2html578"
+  HREF="node1.html">Sis&auml;lt&ouml;</A></B> 
+ &nbsp <B>  <A NAME="tex2html580"
+  HREF="node51.html">Hakemisto</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Mietta Lennes
+2004-09-13
+</ADDRESS>
+</BODY>
+</HTML>

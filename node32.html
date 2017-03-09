@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//FI">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>7.1 Spektrogrammi</TITLE>
+<META NAME="description" CONTENT="7.1 Spektrogrammi">
+<META NAME="keywords" CONTENT="praat">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="praat.css">
+
+<LINK REL="next" HREF="node33.html">
+<LINK REL="previous" HREF="node31.html">
+<LINK REL="up" HREF="node31.html">
+<LINK REL="next" HREF="node33.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html627"
+  HREF="node33.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html621"
+  HREF="node31.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html615"
+  HREF="node31.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html623"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html625"
+  HREF="node51.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Aliluvut</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html629"
+  HREF="node32.html#SECTION00811000000000000000">7.1.1 Spektrogrammin tuottaminen</A>
+<LI><A NAME="tex2html630"
+  HREF="node32.html#SECTION00812000000000000000">7.1.2 Spektrogrammikuvien piirtäminen</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION00810000000000000000"></A><A NAME="sub:Spektrogrammi"></A>
+<BR>
+7.1 Spektrogrammi
+</H1>
+
+<P>
+Puhe on aina kompleksista &#228;&#228;nt&#228;, josta ns. Fourier-analyysin avulla
+voidaan l&#246;yt&#228;&#228; paljon eritaajuisia <I>komponentteja</I> l. <I>osataajuuksia</I>.
+Spektrogrammi<A NAME="447"></A> on Fourier-analyysiin perustuva
+&#228;&#228;nen aika-taajuusesitys. Sen avulla voidaan havainnollistaa &#228;&#228;nen
+spektrin (ts. taajuusrakenteen) muuttumista ajassa. Spektrogrammista
+saadaan nopeasti kokonaisk&#228;sitys &#228;&#228;nisignaalin osataajuuksien jakautumisesta
+ja voimakkuuksista.
+
+<P>
+Eri tarkoituksiin on perinteisesti laskettu kahdentyyppisi&#228; spektrogrammeja,
+ns. <I>leve&#228;kaistaisia</I> ja <I>kapeakaistaisia</I>. N&#228;iden avulla
+on voitu mukavasti erottaa (mies)&#228;&#228;nen t&#228;rkeimm&#228;t spektraaliset ominaisuudet.
+
+<P>
+<DL>
+<DT><STRONG>Leve&#228;kaistainen&nbsp;spektrogrammi<A NAME="451"></A></STRONG></DT>
+<DD>(analyysi-ikkunan
+pituus n. 4.3 ms) n&#228;ytt&#228;&#228; tarkasti ajassa tapahtuvia muutoksia ja
+esimerkiksi glottisperiodit (&#228;&#228;nihuulten &#34;paukaukset&#34;)
+n&#228;kyv&#228;t selv&#228;sti pystyraitoina. 
+<BR>
+Leve&#228;kaistainen spektrogrammi on k&#228;tev&#228; esimerkiksi nimikoinnissa,
+kun m&#228;&#228;rittelet &#228;&#228;nteiden rajoja. Spektrin ajalliset muutokset n&#228;kyv&#228;t
+tarkasti ja onnistut ehk&#228; l&#246;yt&#228;m&#228;&#228;n nopeammin spektraalisia &#34;k&#228;&#228;nnekohtia&#34;,
+jotka ovat usein hyvi&#228; ehdokkaita segmenttirajoiksi. (Rajakohta on
+tietenkin varmistettava kuuntelemalla.)
+</DD>
+<DT><STRONG>Kapeakaistaisessa&nbsp;spektrogrammissa<A NAME="456"></A></STRONG></DT>
+<DD>(analyysi-ikkunan
+pituus n. 29 ms) sek&#228; formantit (n&#228;kyv&#228;t tummina vaakakaistaleina
+etenkin soinnillisissa &#228;&#228;nteiss&#228;), &#228;&#228;nen osataajuudet (ns. harmoniset,
+harmonics) ett&#228; n&#228;iden ajassa tapahtuvat muutokset erottuvat parhaiten.
+
+<BR>
+Kapeakaistainen spektrogrammi voi olla hy&#246;dyllinen esimerkiksi kun
+haluat tarkistaa F0- eli perustaajuusanalyysin oikeellisuuden. T&#228;ll&#246;in
+editori-ikkunassa kannattaa m&#228;&#228;ritell&#228; n&#228;kyviin vain spektrogrammin
+alimmat taajuudet, niin ett&#228; vain muutama alin osataajuus erottuu
+selv&#228;sti.
+</DD>
+</DL>
+Huomaa, ett&#228; spektrogrammi on ainoastaan tapa visualisoida &#228;&#228;nen taajuusrakennetta
+ajan funktiona. <I>Spektrogrammi ei sin&#228;ns&#228; ole varsinainen tulos
+tai tilastollista aineistoa; se on vain yleiskuva tietyst&#228; &#228;&#228;nisignaalista.</I>
+Tilastolliseen tutkimukseen siis tarvitaan muita numeerisia mittauksia.
+Jos taas teet kvalitatiivista tutkimusta, spektrogrammi sin&#228;ns&#228; ei
+riit&#228;, vaan se vaatii perustellun tulkinnan. Oman kokemukseni mukaan
+spektrogrammi on paras v&#228;line tutkijalle itselleen - sen avulla voi
+kahlata aineistoa l&#228;pi ja etsi&#228; varsinaisia mitattavia tutkimuskohteita.
+Yksitt&#228;isi&#228; aineistosta poimittuja esimerkkej&#228; voi toki tarvittaessa
+havainnollistaa spektrogrammeilla my&#246;s varsinaisissa julkaisuissa.
+
+<P>
+
+<H2><A NAME="SECTION00811000000000000000">
+7.1.1 Spektrogrammin tuottaminen</A>
+</H2>
+
+<P>
+
+<UL>
+<LI>Jos haluat laskea leve&#228;kaistaisen spektrogrammin, analyysi-ikkunan
+pituudeksi tulisi antaa 4.3 ms.
+</LI>
+<LI>Jos haluat laskea kapeakaistaisen spektrogrammin, analyysi-ikkunan
+pituudeksi tulisi antaa 29 ms.
+</LI>
+</UL>
+
+<P>
+
+<H2><A NAME="SECTION00812000000000000000">
+7.1.2 Spektrogrammikuvien piirt&#228;minen</A>
+</H2>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html627"
+  HREF="node33.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html621"
+  HREF="node31.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html615"
+  HREF="node31.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html623"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html625"
+  HREF="node51.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> :</B> <A NAME="tex2html628"
+  HREF="node33.html">7.2 Spektrit</A>
+<B> :</B> <A NAME="tex2html622"
+  HREF="node31.html">7. Akustinen analyysi</A>
+<B> :</B> <A NAME="tex2html616"
+  HREF="node31.html">7. Akustinen analyysi</A>
+ &nbsp <B>  <A NAME="tex2html624"
+  HREF="node1.html">Sis&auml;lt&ouml;</A></B> 
+ &nbsp <B>  <A NAME="tex2html626"
+  HREF="node51.html">Hakemisto</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Mietta Lennes
+2004-09-13
+</ADDRESS>
+</BODY>
+</HTML>

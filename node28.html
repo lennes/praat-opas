@@ -1,0 +1,176 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//FI">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>6.4 TextGridin eli nimikointiobjektin
+tallennus</TITLE>
+<META NAME="description" CONTENT="6.4 TextGridin eli nimikointiobjektin
+tallennus">
+<META NAME="keywords" CONTENT="praat">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="praat.css">
+
+<LINK REL="next" HREF="node29.html">
+<LINK REL="previous" HREF="node27.html">
+<LINK REL="up" HREF="node24.html">
+<LINK REL="next" HREF="node29.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html553"
+  HREF="node29.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html547"
+  HREF="node24.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html541"
+  HREF="node27.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html549"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html551"
+  HREF="node51.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Aliluvut</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html555"
+  HREF="node28.html#SECTION00741000000000000000">6.4.1 Vaihtoehtoiset tiedostomuodot</A>
+<LI><A NAME="tex2html556"
+  HREF="node28.html#SECTION00742000000000000000">6.4.2 Nimikoinnin siirtäminen
+toiseen ohjelmaan</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION00740000000000000000"></A><A NAME="sub:TextGridin-eli-nimikointiobjektin"></A>
+<BR>
+6.4 TextGridin eli nimikointiobjektin
+tallennus
+</H1>
+
+<P>
+
+<UL>
+<LI>Jos olet nimikointi-ikkunassa, voit tallentaa<A NAME="405"></A><A NAME="406"></A><A NAME="407"></A>
+muokattavan TextGrid-objektin <B>File</B>-valikon komennolla <B>Write
+TextGrid to text file...</B>
+</LI>
+<LI>Jos olet objekti-ikkunassa, valitse ensin listasta tallennettava TextGrid-objekti
+ja sitten <B>Write</B>-valikosta <B>Write to text file...</B>
+</LI>
+</UL>
+
+<P>
+
+<H2><A NAME="SECTION00741000000000000000">
+6.4.1 Vaihtoehtoiset tiedostomuodot</A>
+</H2>
+
+<P>
+
+<UL>
+<LI><B>Write</B>-valikon komento <B>Write to short text file...</B>
+tekee nimikointitiedostosta kooltaan hieman pienemm&#228;n ja tiedostoa
+on helpompi editoida tarvittaessa vaikkapa tekstieditorilla, mutta
+tiedosto aukeaa silti Praatilla normaalisti TextGrid-objektina. 
+</LI>
+<LI>Voit my&#246;s k&#228;ytt&#228;&#228; komentoa <B>Write to binary file...</B> T&#228;ll&#228;
+komennolla tiedoston koko on huomattavasti pienempi, mutta et voi
+avata tiedostoa mill&#228;&#228;n muulla ohjelmalla kuin Praatilla. Tiedostomuotoa
+kannattaa ehk&#228; k&#228;ytt&#228;&#228;, jos nimikoit eritt&#228;in pitki&#228; &#228;&#228;nitiedostoja
+ja teet niihin paljon nimikointikerroksia, jolloin tekstitiedoston
+koko saattaa nousta useampaan megatavuun.
+</LI>
+</UL>
+
+<P>
+
+<H2><A NAME="SECTION00742000000000000000"></A><A NAME="sub:nimikoinnit_toiseen_ohjelmaan"></A>
+<BR>
+6.4.2 Nimikoinnin siirt&#228;minen
+toiseen ohjelmaan
+</H2>
+
+<P>
+Jos haluat siirt&#228;&#228; esim. tekem&#228;si litteraation Praatin TextGridist&#228;
+muualle<A NAME="420"></A><A NAME="421"></A>,
+voit tallentaa TextGridist&#228; pelk&#228;n tekstisis&#228;ll&#246;n (ts. nimikkeet)
+tekstitiedostoon esim. skriptill&#228; <I>save_interval_data_to_text_file.praat</I>.
+Kyseinen skripti tallentaa jokaisen intervallin sis&#228;lt&#228;m&#228;n tekstin
+omalle rivilleen, ja rivin alkuun tulee intervallin alun aikapiste
+sekunteina. Skriptin voit hakea omalle tietokoneellesi osoitteesta 
+
+<P>
+<BLOCKQUOTE>
+http://www.helsinki.fi/&nbsp;lennes/praat-scripts/
+</BLOCKQUOTE>
+Skriptin tuottaman tekstitiedoston voit avata mill&#228; tahansa tekstieditorilla
+tai tekstink&#228;sittelyohjelmalla, esim. MS Wordill&#228;. Jos haluat Wordissa
+n&#228;hd&#228; my&#246;s k&#228;ytt&#228;m&#228;si erikoismerkit, t&#228;ytyy Etsi-Korvaa-toiminnolla
+korvata kaikki Praatin &#92;-alkuiset erikoismerkkijonot
+vastaavilla erikoismerkeill&#228;.
+
+<P>
+Jos tallennat TextGrid-tiedoston Praat-muodossa, tuloksena on my&#246;s
+tavallinen raakatekstitiedosto, mutta joukkoon tulee paljon Praatin
+k&#228;ytt&#228;mi&#228; koodeja, joita voi olla hankala k&#228;sitell&#228;. Siksi on suositeltavaa
+k&#228;ytt&#228;&#228; skripti&#228; tekstien erist&#228;miseen. Jos ymm&#228;rr&#228;t hieman skriptien
+toimintaa, voit samalla skriptill&#228; my&#246;s esimerkiksi automaattisesti
+mitata kunkin puhunnoksen keston tai jopa tehd&#228; &#228;&#228;nitiedoston vastaavista
+kohdista haluamasi akustiset analyysit (ks. <A HREF="node42.html#cha:Skriptaus">9</A>).
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html553"
+  HREF="node29.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html547"
+  HREF="node24.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html541"
+  HREF="node27.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html549"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html551"
+  HREF="node51.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> :</B> <A NAME="tex2html554"
+  HREF="node29.html">6.5 Valmiin nimikoinnin hyödyntäminen</A>
+<B> :</B> <A NAME="tex2html548"
+  HREF="node24.html">6. Nimikointi</A>
+<B> :</B> <A NAME="tex2html542"
+  HREF="node27.html">6.3 Miten Praat-ohjelmalla nimikoidaan</A>
+ &nbsp <B>  <A NAME="tex2html550"
+  HREF="node1.html">Sis&auml;lt&ouml;</A></B> 
+ &nbsp <B>  <A NAME="tex2html552"
+  HREF="node51.html">Hakemisto</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Mietta Lennes
+2004-09-13
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,197 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//FI">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>6. Nimikointi </TITLE>
+<META NAME="description" CONTENT="6. Nimikointi ">
+<META NAME="keywords" CONTENT="praat">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="praat.css">
+
+<LINK REL="next" HREF="node31.html">
+<LINK REL="previous" HREF="node21.html">
+<LINK REL="up" HREF="praat.html">
+<LINK REL="next" HREF="node25.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html481"
+  HREF="node25.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html475"
+  HREF="praat.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html469"
+  HREF="node23.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html477"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html479"
+  HREF="node51.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00700000000000000000"></A><A NAME="sec:Nimikointi"></A>
+<BR>
+6. Nimikointi 
+</H1>
+
+<P>
+Nimikoinnilla<A NAME="288"></A> (engl. <I>labeling</I><A NAME="290"></A>)
+tarkoitetaan sit&#228;, ett&#228; (digitaalisesti) tallennettuun puhen&#228;ytteeseen
+liitet&#228;&#228;n systemaattisesti <I>annotaatioita<A NAME="291"></A></I>
+(<I>annotation</I><A NAME="293"></A>) eli jonkinlaisia (symbolisia)
+kuvauksia n&#228;ytteen sis&#228;ll&#246;st&#228;. Nimikointi tehd&#228;&#228;n yleens&#228; jollakin
+t&#228;h&#228;n tarkoitukseen kehitetyll&#228; tietokoneohjelmalla, joista Praat
+on yksi vaihtoehto. &#196;&#228;nin&#228;ytteen on oltava digitaalisessa muodossa
+ts. &#228;&#228;nitiedostona esim. tietokoneen kovalevyll&#228; tai jonkintyyppisill&#228;
+levykkeill&#228;. &#196;&#228;nin&#228;ytett&#228; kuunnellaan ja siit&#228; piirrettyj&#228; kuvia katsellaan
+analyysiohjelmalla. Kuuntelun ja katselun perusteella kirjoitetaan
+&#228;&#228;nin&#228;ytteen pariksi <I>nimikointitiedosto</I><A NAME="295"></A>,
+joka sis&#228;lt&#228;&#228; &#228;&#228;nin&#228;ytteen kuvaukset.
+
+<P>
+Nimikoinnin tarkoituksena on muodostaa &#34;maamerkkej&#228;&#34;,
+joiden perusteella alkuper&#228;isest&#228; puhesignaalista voidaan l&#246;yt&#228;&#228; halutut
+osat ja kohdistaa niihin vaikkapa akustisia analyyseja tai muita toimenpiteit&#228;.
+Nimikointi on v&#228;ltt&#228;m&#228;t&#246;nt&#228;, jos halutaan hallita ja hy&#246;dynt&#228;&#228; suurta
+m&#228;&#228;r&#228;&#228; puheaineistoa.
+
+<P>
+<B>Nimikoinnissa annotaatiot on sidottava &#228;&#228;nin&#228;ytteen aikaulottuvuuteen.</B>
+T&#228;t&#228; varten &#228;&#228;nin&#228;yte yleens&#228; <I>segmentoidaan</I><A NAME="300"></A>:
+siit&#228; rajataan halutulla tarkkuudella <I>segmenttej&#228;<A NAME="301"></A></I>
+(&#228;&#228;nip&#228;tki&#228;, joilla on m&#228;&#228;r&#228;tty alku- ja loppupiste sek&#228; ajallinen
+kesto; engl. <I>segment</I><A NAME="303"></A>). Segmenteille voidaan
+sitten antaa nimi&#228; eli <I>nimikoida</I> ne. My&#246;s &#228;&#228;nin&#228;ytteen tietyille
+yksitt&#228;isille ajanhetkille (aikapisteille) voidaan antaa nimi&#228; (n&#228;in
+syntyy ns. <I>ankkureita</I><A NAME="306"></A>, engl. <I>point</I><A NAME="309"></A>).
+Pelkk&#228; &#228;&#228;nin&#228;ytteen litterointi esimerkiksi tekstitiedostoon ei siis
+ole nimikoimista, koska siin&#228; litteraation eri osia ei kytket&#228; &#228;&#228;nin&#228;ytteen
+vastaaviin ajallisiin kohtiin.
+
+<P>
+Annotaatiotyylej&#228; on erilaisia ja tutkija voi kehitt&#228;&#228; oman annotaatiotavan
+sen mukaan, mink&#228;laisista puheen ilmi&#246;ist&#228; on kiinnostunut. Annotaatio<A NAME="310"></A>
+voi olla esimerkiksi ortografinen ts. oikeinkirjoitusta noudattava
+litteraatio<A NAME="311"></A> (engl. yl.&nbsp;<I>transliteration</I><A NAME="313"></A>,
+<I>transcript</I><A NAME="315"></A>), morfologisten yksik&#246;iden kuvaus,
+prosodisten piirteiden kuvaus tai vaikkapa foneettinen <I>transkriptio</I><A NAME="317"></A><A NAME="318"></A>
+(engl. <I>transcription</I>) puheesta. Ensin mainitussa tapauksessa
+segmenttirajat voivat olla vaikkapa yksitt&#228;isten sanojen tai lauseiden
+v&#228;lill&#228;, kun taas foneettista tutkimusta varten rajataan usein yksitt&#228;isi&#228;
+&#228;&#228;nteit&#228;.
+
+<P>
+Jos erilaisia puheen yksik&#246;it&#228; halutaan k&#228;ytt&#228;&#228; hy&#246;dyksi yhdess&#228;,
+voidaan luoda useita annotaatio- tai nimikointikerroksia<A NAME="320"></A>
+tai -tasoja: yhdelle merkit&#228;&#228;n &#228;&#228;nteiden rajat, toiselle sanojen rajat,
+kolmannelle lauserajat jne.
+
+<P>
+Automaattisia segmentointi<A NAME="321"></A>- ja
+nimikointimenetelmi&#228; yritet&#228;&#228;n jatkuvasti kehitt&#228;&#228; eri puolilla maailmaa.
+Toistaiseksi tarkimman nimikoinnin saa kuitenkin aikaan ihminen, sill&#228;
+puheen nimikointi vaatii monenlaisten kielellisten tulkintojen tekemist&#228;.
+Samasta syyst&#228; voidaan valitettavasti todeta my&#246;s, ett&#228; sek&#228; puheen
+litterointi, transkriptio ett&#228; nimikointi ovat aina jossakin m&#228;&#228;rin
+subjektiivisia tuotoksia: niiden tarkkuus ja johdonmukaisuus riippuvat
+nimikoijan intresseist&#228;, tiedoista, taidoista ja teoreettisesta n&#228;kemyksest&#228;.
+
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Aliluvut</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html483"
+  HREF="node25.html">6.1 Miksi puhetta nimikoidaan eli annotoidaan?</A>
+<LI><A NAME="tex2html484"
+  HREF="node26.html">6.2 Praat-ohjelmalle
+tyypillisiä nimikointiominaisuuksia</A>
+<LI><A NAME="tex2html485"
+  HREF="node27.html">6.3 Miten Praat-ohjelmalla nimikoidaan puhetta? </A>
+<UL>
+<LI><A NAME="tex2html486"
+  HREF="node27.html#SECTION00731000000000000000">6.3.1 Nimikointiobjektin luominen Praatissa</A>
+<LI><A NAME="tex2html487"
+  HREF="node27.html#SECTION00732000000000000000">6.3.2 Nimikointi</A>
+<LI><A NAME="tex2html488"
+  HREF="node27.html#SECTION00733000000000000000">6.3.3 Nimikointikerroksien
+lisääminen ja poistaminen</A>
+<LI><A NAME="tex2html489"
+  HREF="node27.html#SECTION00734000000000000000">6.3.4 IPA-merkit ja erikoismerkit</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html490"
+  HREF="node28.html">6.4 TextGridin eli nimikointiobjektin
+tallennus</A>
+<UL>
+<LI><A NAME="tex2html491"
+  HREF="node28.html#SECTION00741000000000000000">6.4.1 Vaihtoehtoiset tiedostomuodot</A>
+<LI><A NAME="tex2html492"
+  HREF="node28.html#SECTION00742000000000000000">6.4.2 Nimikoinnin siirtäminen
+toiseen ohjelmaan</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html493"
+  HREF="node29.html">6.5 Valmiin nimikoinnin hyödyntäminen</A>
+<LI><A NAME="tex2html494"
+  HREF="node30.html">6.6 Toisella ohjelmalla tehdyn transkription tuonti</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html481"
+  HREF="node25.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html475"
+  HREF="praat.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html469"
+  HREF="node23.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html477"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html479"
+  HREF="node51.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> :</B> <A NAME="tex2html482"
+  HREF="node25.html">6.1 Miksi puhetta nimikoidaan</A>
+<B> :</B> <A NAME="tex2html476"
+  HREF="praat.html">Praat-opas</A>
+<B> :</B> <A NAME="tex2html470"
+  HREF="node23.html">5.2 Äänen muokkaaminen (leikkaa-liimaa-toiminnot)</A>
+ &nbsp <B>  <A NAME="tex2html478"
+  HREF="node1.html">Sis&auml;lt&ouml;</A></B> 
+ &nbsp <B>  <A NAME="tex2html480"
+  HREF="node51.html">Hakemisto</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Mietta Lennes
+2004-09-13
+</ADDRESS>
+</BODY>
+</HTML>

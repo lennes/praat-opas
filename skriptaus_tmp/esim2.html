@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><html><head>
+                       
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+                       
+  <meta name="author" content="Mietta
+  Lennes"><title>Praat-jatkokurssi 2/4</title></head>
+
+<body>
+         
+<A HREF="../index.html">Kurssin kotisivu</A>
+  
+<center>      
+<h1><a name="alku"></a>    <a
+href="http://www.praat.org/">Praat</a>-jatkokurssi 2/4</h1>
+
+<BR>
+
+<H4><A
+HREF="http://www.helsinki.fi/~lennes/opetus/praatjatko/esim2/">P&auml;iv&auml;n
+skriptit</A></H4>
+
+
+<BR>
+
+</center>
+
+<H3>Praat-skriptin syntaksia</H3>
+
+<UL>
+
+<LI>Tyhji&auml; rivej&auml; voi k&auml;ytt&auml;&auml;, samoin
+sisennyksi&auml; rivien alussa. N&auml;ill&auml; voi tehd&auml;
+skriptin helppolukuisemmaksi itselleen ja muille.
+<LI><B>Kommenttirivit</B> alkavat jollakin seuraavista merkeist&auml; <B># !
+;</B><BR>
+K&auml;yt&auml; kommentteja ahkerasti!
+
+</UL>
+Huom. Hiirell&auml; valitun osan Praat-skriptist&auml; voi suorittaa
+Praatin skriptieditorin sis&auml;lt&auml; valitsemalla <B>Run:Run selection</B>.
+
+
+<H3>Kertausta viime kerralta...</H3>
+
+<UL>
+
+<LI>Muuttujat
+
+</UL>
+
+<H3>Tietojen kysely k&auml;ytt&auml;j&auml;lt&auml;: Kaavakkeet (forms)</H3>
+
+Kaavake- tai lomakerakenne <B>form...endform</B> mahdollistaa luku- tai
+merkkijonomuuttujien aloitusarvojen kyselemisen k&auml;ytt&auml;j&auml;lt&auml;.
+
+
+<UL>
+<PRE>
+form Kyselylomake
+   integer Kokonaislukuarvo 1
+   sentence Lause Kirjoita tähän jokin lause.
+   comment Tähän voit antaa jonkin reaaliluvun:
+   real Reaaliluku -17.5
+endform
+
+# Kirjoitetaan Info-ikkunaan se, mitä käyttäjä syötti lomakkeeseen:
+printline Antamasi kokonaislukuarvo = 'kokonaislukuarvo'.
+printline Antamasi lause oli: 'lause$'
+printline Antamasi reaaliluku = 'reaaliluku'.
+
+</UL>
+</PRE>
+
+<B>Huomaa:</B> Praat k&auml;ytt&auml;&auml; desimaalien erottimena pistett&auml;, ei pilkkua!
+
+<H3>Jos x niin y: if...else</H3>
+
+T&auml;t&auml; ehtolausetta voi k&auml;ytt&auml;&auml; valintatilanteessa, jossa tietty
+toimenpide suoritetaan annetun ehdon t&auml;yttyess&auml;, mutta j&auml;tet&auml;&auml;n
+muutoin suorittamatta:
+
+<UL>
+<PRE>
+# Kysytään ensin käyttäjältä:
+form Muuttujan arvo
+   integer Muuttuja 1
+endform
+
+# ja nyt if-lause:
+if muuttuja > 3
+   printline Nyt muuttujan arvo on yli kolme!
+elsif muuttuja = 3
+   printline Nyt muuttujan arvo on tasan kolme.
+else
+   printline Muuttujan arvo on alle kolme.
+endif
+</UL>
+
+</PRE>
+
+Ja merkkijonomuuttujilla testaus onnistuu n&auml;in:
+
+<UL>
+<PRE>
+# Kysytään ensin käyttäjältä:
+form Viikonpäivätesti
+   sentence Viikonpaiva tiistai
+endform
+
+# ja sitten if-lause:
+if viikonpaiva$ = "perjantai"
+   printline Hauskaa viikonloppua!
+elsif viikonpaiva$ = "sunnuntai"
+   printline Ota tästä päivästä kaikki irti, sillä huomenna alkaa uusi työviikko!
+else
+   printline Tänään on 'viikonpaiva$'.
+endif
+</UL>
+
+<BR>
+ 
+<H3>Toistettavat komentosarjat: for-silmukka</H3>
+
+For-silmukalla voi toistaa tietyt toimenpiteet m&auml;&auml;r&auml;tyn m&auml;&auml;r&auml;n
+kertoja. For-silmukassa k&auml;ytet&auml;&auml;n yht&auml; lukumuuttujaa, jonka arvoa
+silmukka automaattisesti kasvattaa yhdell&auml; jokaisen kierroksen alussa.
+
+Esimerkiksi:
+
+<UL>
+<PRE>
+# Kysytään ensin käyttäjältä:
+form Montako kertaa toistetaan?
+   integer Toistojen_maara 6
+endform
+
+# ja sitten for-lause:
+for toistokerta to toistojen_maara
+   printline Nyt on menossa 'toistokerta'. toistokerta.
+endfor
+
+printline Loppu!
+</UL>
+</PRE>
+
+
+ <BR><BR>
+ <BR><BR>
+ 
+<H4>Teht&auml;v&auml;</H4>
+
+Kokeile ylläolevia esimerkkej&auml; Praatilla ja varmista, ett&auml;
+ymm&auml;rr&auml;t niiden toiminnan.
+
+ <BR><BR>
+ <BR><BR>
+<hr>
+<center>      
+<h3><a
+href="http://www.helsinki.fi/%7Elennes/opetus/praat/aineistot/mietta/">Harjoitusaineistoa
+</a> | <a href="http://www.helsinki.fi/%7Elennes/praat-scripts/">Muita
+skriptej&auml;</a> <BR><BR>
+<a href="http://www.praat.org/">Praat-ohjelman kotisivu</a> 
+</h3>
+
+</center>
+
+
+</body>
+    <br>
+      <br>
+           
+<div align="right"><a href="#alku">Sivun alkuun</a>    </div>

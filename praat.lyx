@@ -1,0 +1,8352 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass book
+\begin_preamble
+\usepackage{ae,aecompl}
+\usepackage[plainpages=false,pdfpagelabels]{hyperref}
+\usepackage[pdftex]{graphicx}
+\usepackage{makeidx}
+
+\input{/home/lennes/bin/tex/fihyph}
+\end_preamble
+\options finnish
+\use_default_options false
+\maintain_unincluded_children false
+\language finnish
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics none
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry false
+\use_amsmath 1
+\use_esint 0
+\use_mhchem 0
+\use_mathdots 1
+\cite_engine natbib_authoryear
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\index Hakusana
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language swedish
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\bulletLaTeX 2 "\normalfont\bfseries{--}"
+\bulletLaTeX 3 "\normalfont\bfseries{--}"
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Praat-opas
+\end_layout
+
+\begin_layout Author
+Mietta Lennes
+\end_layout
+
+\begin_layout Date
+Versio 1.0 - 8.
+ lokakuuta 2004
+\begin_inset Newline newline
+\end_inset
+
+PDF-versio koko oppaasta:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.helsinki.fi/puhetieteet/atk/praat/praat.pdf
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Esipuhe
+\end_layout
+
+\begin_layout Standard
+Praat-ohjelmalla 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Boersma"
+
+\end_inset
+
+ on Suomessa paljon sekä todellisia että potentiaalisia käyttäjiä, koska
+ se on ilmainen ja erittäin monipuolinen puheentutkijan työkalu, ja koska
+ se toimii useimmissa laitteistoissa ja käyttöjärjestelmissä.
+ Praat sopii samoista syistä mainiosti myös fonetiikan ja eri kieliaineiden
+ opetukseen.
+\end_layout
+
+\begin_layout Standard
+Praat saattaa kuitenkin olla käyttöliittymältään aluksi hieman hankalasti
+ hahmotettava, jos on tottunut johonkin muuhun puheanalyysiohjelmistoon
+ tai ei ole aikaisemmin käyttänyt mitään analyysiohjelmaa.
+ Käyttökynnys voi tämän vuoksi olla korkea --- varsinkin jos eri painikkeiden
+ ja komentojen rämäpäinen kokeileminen ujostuttaa, eikä halua tai ehdi kahlata
+ läpi englanninkielistä opastekstiä.
+\end_layout
+
+\begin_layout Standard
+Tämän suomenkielisen oppaan tavoitteena on neuvoa vasta-alkajille Praatin
+ peruskäyttöä sekä tarjota toimintaohjeet ja vähän taustatietoa muutaman
+ tärkeimmän akustisen analyysin tekemiseen.
+ Opasta voi käyttää opetuksen tukena tai itseopiskelussa.
+ Toistaiseksi se on vielä kovin keskeneräinen, ja sitä tullaan muokkaamaan
+ jatkuvasti vielä pitkään.
+ Virheitäkin on varmasti paljon, joten luethan opasta pikkuisen läpi sormien\SpecialChar \ldots{}
+
+\end_layout
+
+\begin_layout Standard
+Tarkoitus ei ole tietenkään korvata Praat-ohjelman omaa laajaa manuaalia
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Praatin-sisaanrakennettu-manuaali"
+
+\end_inset
+
+, joka on aina parhaiten ajan tasalla, koska se muuttuu ja täydentyy eri
+ ohjelmaversioiden mukana.
+ Jollei tästä oppaasta ole sinulle apua, katso myös mitä muita tietolähteitä
+ verkosta löytyy puheen analyysin avuksi.
+ 
+\end_layout
+
+\begin_layout Standard
+Pääasiallisena lähteenä tämän suomenkielisen oppaan tekemisessä on käytetty
+ Praat-ohjelman sisäänrakennettua englanninkielistä manuaalia 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Praatin-sisaanrakennettu-manuaali"
+
+\end_inset
+
+, josta eri toimintojen kuvaukset on vapaasti käännetty ja muokattu.
+ Kunnia Praat-ohjelmaan ja eri analyysialgoritmeihin liittyvästä asiatekstistä
+ kuuluukin Paul Boersmalle ja David Weeninkille, joiden käsialaa koko Praat
+ manuaaleineen on.
+ Muut tässä oppaassa käytetyt lähteet mainitaan asianomaisissa kohdissa
+ erikseen.
+\end_layout
+
+\begin_layout Standard
+Olen itse lisännyt oppaan eri kohtiin jonkin verran taustatietoa puheen
+ analyysista, jotta eri toimintojen tarkoitus selkeytyisi myös itseopiskelijalle.
+ Otan vastuun kaikista virheistä.
+\end_layout
+
+\begin_layout Standard
+Tätä opasta koskevat kommentit saa ja kannattaa lähettää suoraan allekirjoittane
+elle:
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Mietta Lennes
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Puhetieteiden laitos
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Helsingin yliopisto
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+mietta.lennes@helsinki.fi
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+http://www.helsinki.fi/people/mietta.lennes/
+\end_layout
+
+\begin_layout Chapter
+Praat-ohjelman esittely
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Mika-on-Praat?"
+
+\end_inset
+
+Mikä on Praat? 
+\end_layout
+
+\begin_layout Standard
+Praat on ilmainen ja erittäin monipuolinen puheanalyysiohjelma, joka toimii
+ useimmissa laitteistoissa ja käyttöjärjestelmissä.
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Mita-Praatilla-voi-tehda"
+
+\end_inset
+
+Mitä Praatilla voi tehdä?
+\end_layout
+
+\begin_layout Standard
+Praatilla voi
+\end_layout
+
+\begin_layout Itemize
+kuunnella pitkiäkin äänitiedostoja ja niiden osia nopeasti
+\end_layout
+
+\begin_layout Itemize
+tarkastella äänitiedoston aaltomuotoa ja sen erilaisia akustisia kuvauksia
+\end_layout
+
+\begin_layout Itemize
+muokata äänitiedostoja
+\end_layout
+
+\begin_layout Itemize
+nimikoida (annotoida) äänitiedostoja (ks.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Nimikointi"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+tehdä puhenäytteistä kestomittauksia (kunhan mitattavat yksiköt on rajattu
+ esim.
+ nimikoimalla, ks.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Nimikointi"
+
+\end_inset
+
+) 
+\end_layout
+
+\begin_layout Itemize
+tehdä puhenäytteistä akustisia analyyseja (esim.
+ perustaajuus 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:F0--eli-perustaajuusanalyysi"
+
+\end_inset
+
+, spektrianalyysit 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Spektrit"
+
+\end_inset
+
+, formantit 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Formanttianalyysi-(esim.-vokaalien"
+
+\end_inset
+
+, jitter, shimmer jne.)
+\end_layout
+
+\begin_layout Itemize
+analysoida erittäin laajoja puheaineistoja puoliautomaattisesti ja laajentaa
+ Praatin käyttömahdollisuuksia helposti opittavan skriptauskielen avulla
+ (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Skriptaus"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+piirtää korkealaatuista grafiikkaa (EPS) julkaisuja varten
+\end_layout
+
+\begin_layout Itemize
+tehdä akustisten analyysien tuloksista erilaisia tilastoanalyyseja
+\end_layout
+
+\begin_layout Itemize
+muokata puhenäytteen perustaajuutta ja kestoja uudelleensynteesimenetelmän
+ avulla (ei toistaiseksi tässä oppaassa; ks.
+ Praatin sisäinen manuaali 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Praatin-sisaanrakennettu-manuaali"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+rakentaa yksinkertaisia kuuntelukokeita
+\end_layout
+
+\begin_layout Itemize
+tehdä artikulaatiopuhesynteesiä tai puhesynteesiä perustaajuuden, formanttien
+ ja intensiteetin perusteella (ei toistaiseksi tässä oppaassa; ks.
+ Praatin sisäinen manuaali 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Praatin-sisaanrakennettu-manuaali"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+käyttää keinotekoisia hermoverkkoja
+\end_layout
+
+\begin_layout Itemize
+äänittää; tosin äänitystoiminto ei ole vielä kovin hienostunut, ja äänitys
+ tai äänitteen digitointi kannattaakin toistaiseksi tehdä jollakin kaupallisella
+ äänenkäsittelyohjelmalla (esim.
+ 
+\emph on
+SoundForge
+\emph default
+, 
+\emph on
+WaveLab
+\emph default
+, 
+\emph on
+CoolEdit
+\emph default
+, 
+\emph on
+SoundEdit
+\emph default
+ tms.)
+\end_layout
+
+\begin_layout Itemize
+ja paljon muuta: Praatin ominaisuudet lisääntyvät lähes jatkuvasti.
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Mita-Praatilla-ei-voi-tehda"
+
+\end_inset
+
+Mitä Praatilla ei voi tehdä?
+\end_layout
+
+\begin_layout Standard
+Praatilla ei voi 
+\end_layout
+
+\begin_layout Itemize
+nimikoida (annotoida) videotiedostoja
+\end_layout
+
+\begin_layout Itemize
+saada akustisista analyyseista kiistattomia tuloksia ymmärtämättä analyysien
+ toimintaa
+\end_layout
+
+\begin_layout Itemize
+tehdä automaattista segmentointia puhenäytteestä\SpecialChar \ldots{}
+
+\end_layout
+
+\begin_layout Itemize
+tunnistaa puhetta\SpecialChar \ldots{}
+
+\end_layout
+
+\begin_layout Itemize
+saada kaikkea heti harjoittelematta yhtään\SpecialChar \ldots{}
+
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Minkalaista-puheaineistoa-voin"
+
+\end_inset
+
+Minkälaista puheaineistoa voin käsitellä Praatilla?
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:aanitiedostoformaatit"
+
+\end_inset
+
+Praatiin voi tällä hetkellä avata käsiteltäväksi äänitiedostoja
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+äänitiedostoformaatit
+\end_layout
+
+\end_inset
+
+, jotka ovat jossakin seuraavista formaateista:
+\end_layout
+
+\begin_layout Itemize
+AIFF
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+AIFF
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+AIFC
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+AIFC
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+WAV
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+WAV
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+NeXT /Sun
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+NeXT/Sun
+\end_layout
+
+\end_inset
+
+ (.au-päätteiset tiedostot)
+\end_layout
+
+\begin_layout Itemize
+NIST
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+NIST
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Jos voit valita äänitiedostojen formaatin, käytä AIFFia tai (tavallista,
+ pakkaamatonta) WAVia.
+\end_layout
+
+\begin_layout Standard
+Esimerkiksi MP3-tiedostoja
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+MP3-tiedostot
+\end_layout
+
+\end_inset
+
+ ei voi Praatilla käyttää, koska MP3 on tekijänoikeussuojattu äänitiedostomuoto
+ --- Praat on pyritty pitämään mahdollisimman ei-kaupallisena alusta loppuun.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Sitäpaitsi MP3 on kompressoitu äänitiedostomuoto, joka on tarkoitettu lähinnä
+ musiikin kuunteluun.
+ Kompressio tarkoittaa, että alkuperäisestä pakkaamattomasta digitaalisesta
+ äänisignaalista jätetään pois niin paljon informaatiota kuin kuulonvaraisen
+ laadun kannalta on mahdollista, jotta äänitiedosto mahtuisi pienempään
+ tilaan.
+ MP3:n käyttöä ei siksi missään tapauksessa suositella akustisten analyysien
+ tekemiseen.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+Huomaa, että myös mm.
+ MiniDisc-laite kompressoi ääntä, mikä rajoittaa MD:llä tehtyjen äänitteiden
+ käyttöä akustisessa tutkimuksessa.
+\end_layout
+
+\end_inset
+
+ Joskus kohdalle voi sattua myös tietynlaisia pakattuja WAV-tiedostoja,
+ joita Praatilla ei pysty avaamaan.
+ Tavalliset WAVit aukeavat ongelmitta.
+ 
+\end_layout
+
+\begin_layout Standard
+Videotiedostoja
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+videotiedostot
+\end_layout
+
+\end_inset
+
+ Praatilla ei voi toistaiseksi käsitellä, joten alkuperäisestä videotiedostosta
+ on erotettava ääniraita omaksi äänitiedostokseen.
+\end_layout
+
+\begin_layout Standard
+Praat sinänsä ei aseta esivaatimuksia äänitteen laadulle.
+ Mitä vaativampia akustisia analyyseja aiot ääniaineistostasi tehdä, sitä
+ tarkempaa huomiota kannattaa kiinnittää äänityksen tekniseen laatuun.
+ Vaikka lopulta tekisit aineistosta vain litteraation (ks.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Nimikointi"
+
+\end_inset
+
+), työ on paljon helpompaa, jos äänite on hyvälaatuinen ja suhteellisen
+ hälytön, eikä samassa äänisignaalissa ole useiden puhujien päällekkäispuhuntaa.
+ Mikäli tutkit äänteellisen tason ilmiöitä ja/tai aiot tehdä esimerkiksi
+ formanttianalyyseja (ks.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Formanttianalyysi-(esim.-vokaalien"
+
+\end_inset
+
+), laatuvaatimukset ovat vieläkin korkeammat.
+ Katso lisää ohjeita äänityksen tekemiseen ja äänen digitointiin Helsingin
+ yliopiston puhetieteiden laitoksen laiteohjeista, 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.helsinki.fi/puhetieteet/atk/
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Chapter
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Mista-Praat-ohjelman-saa?"
+
+\end_inset
+
+Asentaminen
+\end_layout
+
+\begin_layout Standard
+Praatin pystyy yleensä helposti asentamaan miltei mille tahansa koneelle,
+ sillä itse ohjelma sijaitsee vain yhdessä tiedostossa, jonka sijainnilla
+ ei ole väliä.
+ Praat ei siis 
+\begin_inset Quotes sld
+\end_inset
+
+sekaannu
+\begin_inset Quotes srd
+\end_inset
+
+ koneen käyttöjärjestelmään millään tavalla.
+ Praat tuottaa kullakin koneella vain pienen asetustiedoston, joka ei ole
+ välttämätön ohjelman toiminnalle.
+ Praatin asetukset pysyvät kuitenkin tietyllä koneella aina samanlaisina.
+\end_layout
+
+\begin_layout Standard
+Praat-ohjelmatiedosto on myös pienikokoinen: jopa pakkaamaton ts.
+ heti toimintavalmis Praatin Windows-versio mahtuu tavalliselle 1,44 M levykkeel
+le.
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Praatin-asentaminen-Windows-koneeseen"
+
+\end_inset
+
+Praatin asentaminen Windows-koneeseen
+\end_layout
+
+\begin_layout Enumerate
+Mene
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+asentaminen Windowsiin
+\end_layout
+
+\end_inset
+
+ Praat-ohjelman kotisivulle 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.praat.org/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Klikkaa vasemmasta ylänurkasta kohtaa "Windows", niin pääset lataussivulle
+ josta saat Praatin uusimman Windows-version.
+\end_layout
+
+\begin_layout Enumerate
+Klikkaa kerran sivun ensimmäistä linkkiä (esim.
+ 
+\emph on
+praat4112_winsit.exe
+\emph default
+).
+ Koneen pitäisi nyt kysyä, haluatko ladata tiedoston koneellesi.
+ Vastaa OK ja sijoita tiedosto johonkin helppoon paikkaan jonka muistat,
+ esim.
+ työpöydälle tms.
+ Kun tiedosto on latautunut kokonaan, voit sulkea tai piilottaa www-selaimen.
+\end_layout
+
+\begin_layout Enumerate
+Avaa sitten Windows Explorer (tiedostonhallinta) ja etsi lataamasi tiedosto
+ (esim.
+ 
+\emph on
+praat4112_winsit.exe
+\emph default
+), tai etsi se suoraan työpöydältä jos latasit sen sinne.
+ Kaksoisklikkaa tiedoston nimeä.
+ Sen pitäisi automaattisesti alkaa purkaa itseään, ja hetken päästä samaan
+ hakemistoon ilmestyy hassu vaaleanpunainen kuvake 'Praat'.
+ Tämä uusi kuvake on nyt toimiva Praat-ohjelma.
+ Varmista, että ohjelma toimii: kaksoisnäpäytä kuvaketta ja Praatin pitäisi
+ käynnistyä.
+\end_layout
+
+\begin_layout Enumerate
+Voit poistaa alkuperäisen asennustiedoston (esim.
+ 
+\emph on
+praat4112_winsit.exe
+\emph default
+) --- sitä ei enää tarvita.
+\end_layout
+
+\begin_layout Enumerate
+Jos koneellasi oli vanhempi Praat-versio, se kannattaa yleensä poistaa sekaannus
+ten välttämiseksi siinä tapauksessa, että olet koneen ainoa käyttäjä ja
+ tiedät, ettet tarvitse vanhoja ohjelmaversioita.
+ (Vanha versio voi olla tarpeen, jos käytät ahkerasti Praat-skriptejä (ks.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Skriptaus"
+
+\end_inset
+
+), mutta silloinkin hyvin harvoissa tapauksissa.) Poista kuitenkin vanha
+ Praat vasta, kun olet tarkistanut, että uusi Praat-versio varmasti toimii
+ koneessasi.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "Praatin-poistaminen-Win"
+
+\end_inset
+
+Praat poistetaan siirtämällä vanhan Praatin kuvake roskakoriin, tai näpäyttämäll
+ä hiiren oikeaa painiketta vanhan Praat-tiedoston päällä ja valitsemalla
+ 
+\series bold
+Delete
+\series default
+.
+\end_layout
+
+\begin_layout Enumerate
+Nyt voit siirtää uuden Praat-kuvakkeen minne haluat, vaikka suoraan työpöydälle
+ jos se on mielestäsi kätevin paikka.
+ Hyvä valinta on myös esim.
+ 
+\emph on
+C:
+\backslash
+Program Files
+\backslash
+
+\emph default
+ -hakemisto.
+\end_layout
+
+\begin_layout Enumerate
+Praat aukeaa (melkein täsmälleen samannäköisenä kuin Unixissa) kun kaksoisnäpäyt
+ät sen kuvaketta.
+\end_layout
+
+\begin_layout Enumerate
+Voit koska tahansa hakea verkosta Praatin uusimman version ja vaihtaa vanhan
+ siihen.
+ Poista ensin vanha Praat-ohjelmatiedosto ja pura sitten uusi versio samaan
+ paikkaan kuten edellä.
+ Jos haluat säilyttää vanhemman Praat-version, muuta Praat-tiedoston nimeä.
+\end_layout
+
+\begin_layout Enumerate
+Jos tarvitset Praatissa foneettisia merkkejä (IPA-aakkosia), kannattaa Windowsii
+n asentaa vielä ilmaiset 
+\series bold
+SIL IPA-kirjasimet
+\series default
+.
+ Linkki ja asennusohjeet löytyvät Praatin Windows-version lataussivulta.
+ 
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Praatin-asentaminen-Unix-koneeseen"
+
+\end_inset
+
+Praatin asentaminen Unix- tai Linux-koneeseen
+\end_layout
+
+\begin_layout Enumerate
+Mene
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+asentaminen Unixiin/Linuxiin
+\end_layout
+
+\end_inset
+
+ Praat-ohjelman kotisivulle 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.praat.org/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Jos käytät Linuxia, klikkaa vasemmasta ylänurkasta kohtaa "
+\series bold
+Linux
+\series default
+", niin pääset lataussivulle josta saat Praatin uusimman Linux-version.
+ Jos taas tarvitset Praatin version Unixiin, selvitä mikä Unix-versio sinulla
+ on käytössä ja klikkaa vastaavaa linkkiä.
+ Praatista on 
+\series bold
+SGI
+\series default
+-versio (Silicon Graphics IRIX: Indigo, Indy, Onyx, O2 jne.), 
+\series bold
+SPARC Solaris
+\series default
+ -versio, ja 
+\series bold
+HPUX
+\series default
+-versio (Hewlett Packard Unix).
+\end_layout
+
+\begin_layout Enumerate
+Klikkaa kerran sivun alkupuolella olevaa linkkiä (esim.
+ 
+\emph on
+praat4109_linux_dynamic.tar.gz
+\emph default
+).
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Linux-version kohdalla riippuu hieman käyttämästäsi Linux-jakelusta (distribuuti
+osta), pitääkö sinun ladata staattinen (
+\emph on
+static
+\emph default
+) vai dynaaminen (
+\emph on
+dynamic
+\emph default
+) Praat-versio.
+ On järkevintä kokeilla molempia --- ehkä vain toinen Praat-versio toimii
+ laitteistossasi täydellisesti.
+\end_layout
+
+\end_inset
+
+ Koneen pitäisi nyt kysyä, haluatko ladata tiedoston koneellesi.
+ Vastaa OK ja sijoita tiedosto johonkin helppoon paikkaan jonka muistat,
+ esim.
+ kotihakemistojuureen tms.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Siirry komentorivillä hakemistoon, johon latasit Praat-tiedoston (komento
+ 
+\series bold
+cd
+\series default
+ 
+\emph on
+hakemist
+\emph default
+o
+\emph on
+n_nimi
+\emph default
+).
+ Tarkista komennolla 
+\series bold
+ls
+\series default
+ että tiedosto on latautunut.
+ Tiedoston pääte 
+\emph on
+.tar.gz
+\emph default
+ osoittaa, että tiedosto on pakattu.
+ Pura paketti komennoilla
+\begin_inset Newline newline
+\end_inset
+
+
+\series bold
+gunzip
+\series default
+ 
+\emph on
+praat4109_linux_dynamic.tar.gz
+\begin_inset Newline newline
+\end_inset
+
+
+\series bold
+\emph default
+tar -xvf
+\series default
+ 
+\emph on
+praat4109_linux_dynamic.tar
+\begin_inset Newline newline
+\end_inset
+
+
+\emph default
+Muuta tiedoston nimeä sen mukaan, minkä Praat-tiedoston latasit.
+ Paketin purkaminen saattaa kestää hetken.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Kunhan komennon suoritus on valmis, ilmestyy komentoriville tuttu kehote
+ --- odota rauhassa!
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Kirjoita jälleen 
+\series bold
+ls
+\series default
+.
+ Hakemistossa pitäisi nyt näkyä tiedosto 
+\series bold
+praat
+\series default
+ --- tämä on toimiva Praat-ohjelma.
+ Kokeile, että se varmasti toimii kirjoittamalla 
+\series bold
+
+\begin_inset Newline newline
+\end_inset
+
+./praat
+\begin_inset Newline newline
+\end_inset
+
+
+\series default
+Jos kaikki oli hyvin ja Praat käynnistyi, voit siirtää 
+\series bold
+praat
+\series default
+-tiedoston haluamaasi paikkaan.
+ Usein käytetty hakemisto on esim.
+ kotihakemiston alle tehty 
+\series bold
+bin
+\series default
+-hakemisto.
+ Jollet näe bin-hakemistoa kirjoittamalla kotihakemistossasi 
+\series bold
+ls
+\series default
+, voit luoda sen kotihakemistossa ollessasi komennolla 
+\begin_inset Newline newline
+\end_inset
+
+
+\series bold
+mkdir bin
+\begin_inset Newline newline
+\end_inset
+
+
+\series default
+Ja Praat-ohjelman saat siirrettyä bin-hakemistoon komentamalla kotihakemistossa
+\begin_inset Newline newline
+\end_inset
+
+
+\series bold
+mv praat bin/
+\end_layout
+
+\begin_layout Enumerate
+Praat-paketista jäljelle jääneen .tar-päätteisen tiedoston voit poistaa ---
+ sitä ei enää tarvita:
+\begin_inset Newline newline
+\end_inset
+
+
+\series bold
+rm
+\series default
+ 
+\emph on
+praat4109_linux_dynamic.tar
+\end_layout
+
+\begin_layout Enumerate
+Voit koska tahansa hakea verkosta Praatin uusimman version ja vaihtaa vanhan
+ siihen.
+ Poista ensin vanha Praat-ohjelmatiedosto (komento 
+\series bold
+rm
+\series default
+, jos sinulla on tiedostoon kirjoitusoikeus ko.
+ laitteistossa) ja pura sitten uusi versio samaan paikkaan kuten edellä.
+ Jos haluat säilyttää myös vanhemman Praat-version, muuta Praat-tiedoston
+ nimeä.
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:laitevaatimukset"
+
+\end_inset
+
+Laitteistovaatimukset 
+\end_layout
+
+\begin_layout Standard
+Voit käyttää Praatia melkein millä tietokoneella tahansa! Praat-ohjelmasta
+ ylläpidetään versioita (uudempiin) Windows-käyttöjärjestelmiin, Macintoshiin
+ (eri versiot MacOS X:lle ja vanhemmille Maceille), parille kaupalliselle
+ Unixille sekä Linuxille.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Myös Praatin lähdekoodi
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lähdekoodi
+\end_layout
+
+\end_inset
+
+ on avoin: voit halutessasi ladata sen verkosta ja kääntää siitä oman version.
+ Praat on kirjoitettu C-kielellä, jonka osaajat voivat kirjoittaa Praatiin
+ omia laajennuksia.
+ Kannattaa tarjota aikaansaannoksiaan myös julkiseen Praat-versioon, jos
+ on valmis antamaan ne ilmaiseksi vapaaseen jakeluun.
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Jos sinulla on PC-kone, voit kuunnella Praatilla ääntä vain jos koneessasi
+ on toimiva äänikortti.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Huom.
+
+\emph default
+ Mikäli haluat käyttää Praatia äänittämiseen tai äänen digitointiin (siirtoon
+ esim.
+ tavalliselta kasetilta tietokoneeseen), kannattaa tietokoneen äänikortin
+ ominaisuuksiin kiinnittää tarkempaa huomiota.
+ Valmiiden tietokonepakettien mukana tulevat äänikortit eivät useinkaan
+ ole korkeatasoisen puheäänityksen tekemiseen riittäviä.
+ Kun puhe on kerran saatu tietokoneelle ja äänitiedostoiksi, äänikortilla
+ yms.
+ ääniominaisuuksilla ei enää ole suurta merkitystä.
+ 
+\end_layout
+
+\begin_layout Chapter
+\begin_inset CommandInset label
+LatexCommand label
+name "cha:Oppaat-ja-tuki"
+
+\end_inset
+
+Oppaat ja käytön tuki
+\end_layout
+
+\begin_layout Section
+Praat-ohjelman virallinen kotisivu
+\end_layout
+
+\begin_layout Standard
+Tarkista, että sinulla on Praat-ohjelman uusin versio koneessasi! Uusimman
+ Praatin voit hakea osoitteesta
+\end_layout
+
+\begin_layout Quote
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.praat.org/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Katso Praatin asennusohjeet, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Mista-Praat-ohjelman-saa?"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Tämä opas
+\end_layout
+
+\begin_layout Standard
+Tämän Praat-oppaan uusin versio löytyy osoitteesta
+\end_layout
+
+\begin_layout Quote
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.helsinki.fi/puhetieteet/atk/praat/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Praatin-sisaanrakennettu-manuaali"
+
+\end_inset
+
+Praatin sisäänrakennettu manuaali (Help) 
+\end_layout
+
+\begin_layout Standard
+Praat-ohjelman mukana on (A4-sivuina laskettuna) miltei tuhatsivuinen manuaali
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+manuaali
+\end_layout
+
+\end_inset
+
+, jossa on ohjeita eri aiheista ja kuvaukset eri laskenta-algoritmien toiminnast
+a.
+ Manuaalia tuskin kannattaa tulostaa paperille, koska se on niin laaja ja
+ koska se muuttuu uusien ohjelmaversioiden mukana.
+ On järkevää opetella käyttämään manuaalia suoraan ohjelman sisältä, koska
+ sieltä usein löytyy viimeistään pienen hakemisen jälkeen tarvittava tieto.
+\end_layout
+
+\begin_layout Standard
+Jokaisen Praatissa aukeavan ikkunan jossakin kohdassa on valikko tai painike
+ 
+\series bold
+Help
+\series default
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Help
+\end_layout
+
+\end_inset
+
+, jota käyttämällä pääset lukemaan manuaalia.
+ Valikoissa on yleensä ensimmäisenä juuri kyseistä ikkunaa koskeva Help-sivu.
+ Erityyppisille objekteille on myös objektilistassa oma Help-painike.
+\end_layout
+
+\begin_layout Standard
+Objects-ikkunan
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+etsiminen manuaalista
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+haku manuaalista
+\end_layout
+
+\end_inset
+
+ 
+\series bold
+Help
+\series default
+-valikosta voit valita kohdan 
+\series bold
+Search manual\SpecialChar \ldots{}
+
+\series default
+ Sen avulla voit etsiä manuaalisivuista tiettyä hakusanaa.
+ Samaa hakutoimintoa voit käyttää minkä tahansa manuaalisivun yläreunasta,
+ jossa on rivi hakusanalle ja painike 
+\series bold
+Search
+\series default
+, jolla haku aloitetaan.
+ Jos ensi yrityksellä ei löydy mitään, keksi muita vastaavia hakusanoja
+ (joskus sivuja ei ole indeksoitu kovin huolellisesti, joten esim.
+ hakusana "LPC" toimii, mutta "lpc" ei.)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/lennes/praat-opas/kuvat/search_manual.jpg
+	lyxscale 70
+	scale 70
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Praatin sisäisestä manuaalista voi hakea tiettyjä kohtia hakusanalla esimerkiksi
+ näin.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Jos haluaisit opetella kirjoittamaan itse Praat-skriptejä, joilla voit esim.
+ analysoida laajoja aineistoja kerralla, valitse Objects-ikkunan 
+\series bold
+Help
+\series default
+-valikosta kohta 
+\series bold
+Scripting tutorial
+\series default
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Scripting tutorial
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+skriptausmanuaali
+\end_layout
+
+\end_inset
+
+ (lue myös tästä oppaasta 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Skriptaus"
+
+\end_inset
+
+.)
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Keskusteluryhma"
+
+\end_inset
+
+Keskusteluryhmä
+\end_layout
+
+\begin_layout Standard
+Praatin käyttäjien keskusteluryhmä
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+keskusteluryhmä
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+uutisryhmä
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+postituslista
+\end_layout
+
+\end_inset
+
+ verkossa:
+\end_layout
+
+\begin_layout Quote
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://uk.groups.yahoo.com/group/praat-users/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pari ystävällismielistä ohjetta keskusteluryhmän käyttöön:
+\end_layout
+
+\begin_layout Itemize
+Auta muita, niin hekin auttavat sinua.
+\end_layout
+
+\begin_layout Itemize
+Pois turha ujous: ihmiset auttavat yleensä mielellään, ja vastaus saattaa
+ internetin kautta tulla yllättävän nopeasti!
+\end_layout
+
+\begin_layout Itemize
+Älä kuitenkaan lähetä kysymyksiä keskusteluryhmään, jollet ole ensin edes
+ yrittänyt etsiä tarvitsemaasi tietoa Praatin sisäänrakennetusta manuaalista.
+ Jotkut Praatin käyttäjät nimittäin tilaavat keskusteluryhmän viestit suoraan
+ omaan sähköpostiinsa, ja on sen vuoksi epäkohteliasta vaivata kenties satoja
+ ihmisiä kysymyksellä, johon saattaa jo olla olemassa valmis ohje (eli jos
+ kyseessä on FAQ
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+FAQ
+\end_layout
+
+\end_inset
+
+ eli Frequently Asked Question
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Frequently Asked Question
+\end_layout
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Itemize
+Oma-aloitteisuus ja viitseliäisyys yleensä palkitaan - kysy neuvoa vasta
+ kun tiedät joutuneesi umpikujaan.
+ Älä siis lähetä keskusteluryhmään viestiä, jossa suoraan tai epäsuorasti
+ toivot jonkun kirjoittavan sinulle valmiiksi skriptin, joka tekee niin-ja-niin-
+ja-niin.
+ (Etsi mieluummin itse verkosta jonkun kirjoittama skripti, jota ehkä voisit
+ yrittää muutella omiin tarkoituksiisi.
+ Ensi hätään kannattaa lukaista vähän Praatin sisäisen manuaalin kohtaa
+ 
+\series bold
+Scripting tutorial\SpecialChar \ldots{}
+
+\series default
+)
+\end_layout
+
+\begin_layout Itemize
+Muistathan, että Praatia ylläpidetään vapaaehtoisvoimin.
+\end_layout
+
+\begin_layout Section
+Muuta apua puheen analyysiin 
+\end_layout
+
+\begin_layout Standard
+Praat-skriptejä
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+skriptit
+\end_layout
+
+\end_inset
+
+ löytyy osoitteesta 
+\end_layout
+
+\begin_layout Quote
+http://www.helsinki.fi/~lennes/praat-scripts/
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Akustiikkaa"
+
+\end_inset
+
+Akustiikkaa
+\end_layout
+
+\begin_layout Itemize
+TKK:n kurssi 
+\series bold
+Akustiikan perusteet I
+\series default
+ (löytyy myös luentokalvot!): 
+\bar under
+
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.acoustics.hut.fi/teaching/S-89.101/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Audiosignaalinkäsittelyn englanti-suomi-sanasto (koonnut Vesa Välimäki):
+ 
+\bar under
+
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.acoustics.hut.fi/~vpv/ask-sanasto.htm
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Fysiikkaan (ja akustiikkaan) liittyviä Java-appletteja (B.Surendranath Reddy):
+ 
+\bar under
+
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://surendranath.tripod.com/Applets.html
+\end_layout
+
+\end_inset
+
+
+\bar default
+ (ks.
+ erityisesti kohdat Waves ja Oscillations)
+\end_layout
+
+\begin_layout Chapter
+Praatin käyttö
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Praat-ohjelman-kaynnistaminen"
+
+\end_inset
+
+Praat-ohjelman käynnistäminen
+\end_layout
+
+\begin_layout Subsection
+Käynnistäminen Windows- ja Macintosh-koneissa
+\end_layout
+
+\begin_layout Standard
+Etsi Praat-ohjelman kuvake ja kaksoisnäpäytä
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+käynnistäminen (Win/Mac)
+\end_layout
+
+\end_inset
+
+ sitä.
+ Jos et tiedä, onko koneessa Praat ja missä se on, käytä hakutoimintoa (
+\series bold
+Find\SpecialChar \ldots{}
+
+\series default
+), joka löytyy Windowsissa Program Menusta (vasemman alanurkan valikko)
+ ja Maceissa työpöydällä (
+\emph on
+Finder
+\emph default
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Macintosh-tietokoneiden yleisiä käyttöohjeita löydät verkko-oppaasta 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Lennes"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+) ollessasi 
+\series bold
+Edit
+\series default
+-valikosta.
+ 
+\end_layout
+
+\begin_layout Standard
+Jos koneessasi ei ole Praatia, katso Praat-ohjelman asentaminen 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Mista-Praat-ohjelman-saa?"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Käynnistäminen Unix- ja Linux-koneissa
+\end_layout
+
+\begin_layout Standard
+Jos Praat-ohjelma on asennettu paikkaan, joka on määritelty ns.
+ oletuspolullasi (PATH), voit käynnistää
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+käynnistäminen (Unix/Linux)
+\end_layout
+
+\end_inset
+
+ sen kirjoittamalla komentorivillä (konsoli-ikkunassa) yksinkertaisesti
+ 
+\series bold
+praat
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+Jos yllä mainittu tapa ei toimi ja arvelet, että Praat on kuitenkin asennettu
+ jonnekin päin laitteistoa, kirjoita joko 
+\series bold
+whereis praat
+\series default
+ tai 
+\series bold
+locate praat
+\series default
+.
+ Jompikumpi komennoista kertoo sinulle Praat-ohjelman tarkan polun tai polut
+ ko.
+ laitteistossa.
+ Kirjoita tulokseksi saamasi hakemistopolku komentorivillä kokonaisuudessaan,
+ niin Praat käynnistyy; esim.
+ 
+\series bold
+/opt/bin/csl/praat
+\end_layout
+
+\begin_layout Standard
+Jos koneessasi ei näytä olevan Praatia lainkaan, katso Praat-ohjelman asentamine
+n 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Mista-Praat-ohjelman-saa?"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Praat-ohjelman-ulkoasusta"
+
+\end_inset
+
+Praat-ohjelman ulkoasu 
+\end_layout
+
+\begin_layout Standard
+Kun avaat Praatin, näkyviin tulee kaksi ikkunaa: vasemmalla puolella näyttöä
+ on ns.
+ 
+\series bold
+objektilista
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+objektilista
+\end_layout
+
+\end_inset
+
+
+\series default
+ l.
+ 
+\series bold
+objekti-ikkuna
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+objekti-ikkuna
+\end_layout
+
+\end_inset
+
+
+\series default
+ (
+\emph on
+Object window
+\emph default
+) ja oikealla 
+\series bold
+piirtoikkuna
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+piirtoikkuna
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Picture-ikkuna
+\end_layout
+
+\end_inset
+
+
+\series default
+ (
+\emph on
+Picture window
+\emph default
+).
+ Aina kun Praat-ohjelma on käynnissä, objektilistakin on auki
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Praatia voi tosin käyttää myös kutsumalla Praat-skriptejä komentoriviltä
+ tai toisen ohjelman koodista, jolloin Praat-ohjelman graafinen ympäristö
+ ei tule lainkaan näkyviin.
+ Praat-skripteistä kerrotaan lisää tämän oppaan loppupuolella (ks.
+ luku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Skriptaus"
+
+\end_inset
+
+).
+\end_layout
+
+\end_inset
+
+.
+ Piirtoikkunan voit sen sijaan halutessasi sulkeakin välillä --- sitä tarvitset
+ vain piirtäessäsi kuvia siirrettäväksi muihin ohjelmiin, jolloin piirtoikkuna
+ tulee automaattisesti uudelleen esiin.
+\end_layout
+
+\begin_layout Standard
+Praat näyttää suunnilleen samalta riippumatta siitä, missä laitteistossa
+ sitä käytät.
+ Poikkeuksena on, että Macintosheissa objektilistan yläreunassa oleva valikko
+ näkyykin Macin valikkopalkissa aivan näytön yläreunassa eikä itse objekti-ikkun
+an ylälaidassa.
+ Joitakin hyvin pieniä käyttöjärjestelmäkohtaisia eroja on myös valikkojen
+ sisällössä.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/lennes/praat-opas/kuvat/kaynnistyskuva.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:kaynnistys"
+
+\end_inset
+
+Praat-ohjelma käynnistyy.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Praat-ohjelman päivitykset
+\end_layout
+
+\begin_layout Standard
+Praat-ohjelmaan tulee uusia päivityksiä jopa kerran tai kahdesti kuukaudessa.
+ Yleensä päivityksen myötä saadaan käyttöön uusia toimintoja tai korjataan
+ edellisten ohjelmaversioiden vikoja.
+ Joskus harvoin valikkokomennot tai niiden sijainti voivat vähän muuttua
+ ohjelmaversiosta toiseen.
+ Kovin laajoja muutoksia Praatin käyttöön ei tehdä, ja pienempiäkin muutoksia
+ toteutetaan yleensä vain useiden käyttäjien hyvin perustellusta toivomuksesta.
+ Tavallisesti on hyvä päivittää oman koneensa ohjelmaversio säännöllisesti
+ uudempaan (ks.
+ asennusohjeet kohdasta 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Mista-Praat-ohjelman-saa?"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Objektilista"
+
+\end_inset
+
+Objektilista
+\end_layout
+
+\begin_layout Standard
+Kaikki Praat-ohjelmassa käsiteltävä aineisto näkyy objekti-ikkunassa (ks.
+ kuva 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:objektilista"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset CommandInset label
+LatexCommand label
+name "par:Objektien-valitseminen"
+
+\end_inset
+
+Objektien valitseminen
+\end_layout
+
+\begin_layout Standard
+Objekti valitaan
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+objektin valitseminen
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+objektin aktivointi
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+aktivointi
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+valitseminen
+\end_layout
+
+\end_inset
+
+ (
+\emph on
+select
+\emph default
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+select
+\end_layout
+
+\end_inset
+
+) näpäyttämällä sitä kerran hiirellä, jolloin aktivoitu l.
+ valittu objekti tummenee (ks.
+ kuva 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:objektilista"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Useampia, listalla peräkkäisiä objekteja voit valita näpäyttämällä ensin
+ yhtä objektia hiirellä ja pitämällä sitten 
+\emph on
+vaihtonäppäimen
+\emph default
+ (
+\emph on
+Shift
+\emph default
+) pohjassa, kun näpäytät toista objektia.
+\end_layout
+
+\begin_layout Standard
+Jos haluat valita useampia objekteja niin, että peräkkäisten objektien välille
+ jää ei-aktiivisia objekteja, pidä 
+\emph on
+Control
+\emph default
+-näppäin pohjassa ja napsauttele samalla yksittäisiä objekteja.
+ Toistuva näpäyttely Control-näppäimen kanssa kytkee objektin vuorotellen
+ aktiiviseksi ja ei-aktiiviseksi.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/lennes/praat-opas/kuvat/objektit.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:objektilista"
+
+\end_inset
+
+Objektilistassa olevia objekteja voi valita eli aktivoida hiirellä.
+ Objektin kohdalla lukee ensin objektin tyyppi (esim.
+ Sound tai Pitch) ja sen jälkeen objektin nimi, jota käyttäjä voi muuttaa.
+ Objekti-ikkunan oikeassa reunassa olevan dynaamisen valikon sisältö muuttuu
+ sen mukaan, minkä tyyppinen objekti on valittuna.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Objektien hallintapainikkeet
+\end_layout
+
+\begin_layout Standard
+Objektilistan alareunassa on lisäksi muutama painike.
+ 
+\series bold
+Copy\SpecialChar \ldots{}
+
+\series default
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+objektin kopioiminen
+\end_layout
+
+\end_inset
+
+-painikkeella voit tehdä kopion listalta valitusta objektista (komento kysyy
+ nimen uudelle objektille).
+ 
+\series bold
+Info
+\series default
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+objektin tiedot
+\end_layout
+
+\end_inset
+
+-painike näyttää joitakin tietoja aktiivisesta objektista.
+\end_layout
+
+\begin_layout Standard
+Alimpana ja punaisella näkyy 
+\series bold
+Remove
+\series default
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+objektin poistaminen objektilistasta
+\end_layout
+
+\end_inset
+
+-painike, joka 
+\series bold
+\emph on
+poistaa kaikki sillä hetkellä valittuna olevat objektit mitään kyselemättä.
+
+\series default
+\emph default
+ Ole siis varovainen tämän painikkeen kanssa, sillä jos et ole tallentanut
+ poistettavia objekteja, ne häviävät iäksi!
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset CommandInset label
+LatexCommand label
+name "par:Kiintea-valikko-objektilistassa"
+
+\end_inset
+
+Kiinteä valikko (fixed menu)
+\end_layout
+
+\begin_layout Standard
+Objektilistaan liittyvä kiinteä valikko
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+kiinteä valikko objektilistassa
+\end_layout
+
+\end_inset
+
+ näkyy objektilistan yläreunassa (tai Macissa näytön yläreunan valikkopalkissa,
+ ks.
+ Mac-ohjeita esim.
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Lennes"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset CommandInset label
+LatexCommand label
+name "par:Dynaaminen-valikko-(dynamic"
+
+\end_inset
+
+Dynaaminen valikko (dynamic menu)
+\end_layout
+
+\begin_layout Standard
+Dynaamisen valikon
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+dynaaminen valikko
+\end_layout
+
+\end_inset
+
+ sisältö muuttuu sen mukaan, minkä tyyppinen objekti on valittuna (aktiivisena
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+aktiivinen objekti
+\end_layout
+
+\end_inset
+
+, tummennettuna) objektilistassa.
+ Jos listassa ei ole yhtään objektia tai mikään objekteista ei ole valittuna,
+ dynaamisen valikon alue on kokonaan tyhjä.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Piirtoikkuna"
+
+\end_inset
+
+Piirtoikkuna
+\end_layout
+
+\begin_layout Standard
+Piirtoikkunaa
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+piirtoikkuna
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Picture-ikkuna
+\end_layout
+
+\end_inset
+
+ tarvitaan silloin, kun halutaan piirtää Praatilla kuvia siirrettäväksi
+ muihin ohjelmiin.
+ Piirtoikkunaan tehty kuva voidaan tallentaa esimerkiksi korkealaatuisena
+ EPS-grafiikkatiedostona tai se voidaan siirtää piirtoikkunasta leikepöydälle
+ ja 
+\begin_inset Quotes sld
+\end_inset
+
+liimata
+\begin_inset Quotes srd
+\end_inset
+
+ sellaisenaan vaikkapa tekstinkäsittelydokumenttiin.
+ Praatilla voidaan piirtää kuvia erilaisista akustisista analyyseista tai
+ numeerisesta datasta.
+\end_layout
+
+\begin_layout Standard
+Kuvan piirtäminen tapahtuu periaatteessa aina jonkin objektilistaan (ks.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Objektilista"
+
+\end_inset
+
+) luodun objektin pohjalta: valitse objektilistasta objekti, josta kuva
+ piirretään, ja valitse dynaamisesta valikosta (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "par:Dynaaminen-valikko-(dynamic"
+
+\end_inset
+
+) haluamasi Draw- tai Paint-komento.
+ Valitusta objektista riippuen tarjolla voi olla useita erilaisia Draw-komentoja.
+ Komennon tuottama kuva piirtyy ja skaalautuu piirtoikkunasta valittuna
+ olevan piirtoalueen (
+\emph on
+Viewport
+\emph default
+) mukaisesti.
+ Piirtoikkunan sisällä kuvan koostamista voidaan jatkaa lisäämällä esim.
+ tekstiä piirtoalueen eri kohtiin.
+ Lisää kuvin piirtämisestä kerrotaan luvussa 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Kuvien-luominen"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Tiedostojen hallinta
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Tiedostojen-avaaminen-Praatissa"
+
+\end_inset
+
+Tiedostojen avaaminen Praatissa
+\end_layout
+
+\begin_layout Standard
+Kaikki Praat-ohjelman tunnistamat tiedostomuodot avataan periaatteessa samalla
+ tavalla: valitsemalla objekti-ikkunan 
+\series bold
+Read
+\series default
+-valikosta 
+\series bold
+Read from file...
+
+\series default
+ Praatissa ei ole väliä sillä, mikä on avattavan tiedoston nimen pääte,
+ sillä ohjelma tunnistaa automaattisesti objektin tyypin tiedostoa lukiessaan.
+ (Ks.
+ kuitenkin tiedostojen nimeämiskäytänteitä kohdasta 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Tiedostojen-nimeamistavat"
+
+\end_inset
+
+.)
+\end_layout
+
+\begin_layout Standard
+Poikkeuksena normaalista tiedostojen avaamiskäytännöstä ovat hyvin pitkät
+ äänitiedostot, jotka eivät ehkä mahdu tietokoneen muistiin kerralla:
+\end_layout
+
+\begin_layout Subsubsection
+Erittäin pitkät äänitiedostot
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+pitkät äänitiedostot
+\end_layout
+
+\end_inset
+
+ (LongSound
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+LongSound
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:LongSound"
+
+\end_inset
+
+
+\series default
+Erittäin pitkien äänitiedostojen avaamiseen on olemassa erikseen varakomento
+ 
+\series bold
+Open long sound file...
+
+\series default
+ Sitä käytettäessä äänitiedosto aukeaa objektilistaan 
+\series bold
+LongSound
+\series default
+-tyyppisenä.
+ LongSound-objektina voidaan Praatissa käyttää jopa 3 GB:n kokoisia äänitiedosto
+ja.
+ 
+\end_layout
+
+\begin_layout Standard
+LongSound-objekteja voidaan selailla ja kuunnella LongSound-editorilla samaan
+ tapaan kuin Sound-objektejakin (vrt.
+ äänieditori, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Aanieditori-(Sound-editor)"
+
+\end_inset
+
+).
+ LongSound-objektin sisältämää äänisignaalia ei kuitenkaan lueta tietokoneen
+ käyttömuistiin kokonaisuudessaan, vaan muistissa pidetään ainoastaan editorin
+ näytöllä oleva osa.
+ Tämän vuoksi LongSound-objektia ei voida analysoida kokonaisena, eikä sille
+ muutenkaan voida suorittaa aivan samoja toimenpiteitä kuin Sound-objektille.
+ LongSound-objektista voidaan kuitenkin 
+\series bold
+Extract part...
+\series default
+-komennolla eristää pienempiä osia, joita voidaan käsitellä tavallisina
+ Sound-objekteina.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Tiedostojen-tallentaminen-Praatissa"
+
+\end_inset
+
+Tiedostojen tallentaminen Praatissa
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Praatin-kayttamat-tiedostomuodot"
+
+\end_inset
+
+Mikä tahansa Praat-ohjelmassa käsiteltävänä oleva objekti voidaan tallentaa
+ valitsemalla ensin kyseinen objekti objektilistalta ja valitsemalla sen
+ jälkeen sopiva tallennusvaihtoehto objekti-ikkunan 
+\series bold
+Write
+\series default
+-valikosta.
+\end_layout
+
+\begin_layout Standard
+Kaikki Praat-ohjelmassa käsitellyt objektityypit voidaan tallentaa Write-valikon
+ kautta joko tekstitiedostoina (
+\emph on
+text file
+\emph default
+), lyhyinä tekstitiedostoina (
+\emph on
+short text file
+\emph default
+) tai binääritiedostoina (
+\emph on
+binary file
+\emph default
+).
+ Monia analyysiobjekteja (esim.
+ Pitch-objektit) voidaan tallentaa pelkästään näihin kolmeen tiedostomuotoon.
+ Sen sijaan esimerkiksi ääniobjektit (Sound) voidaan lisäksi tallentaa useisiin
+ äänitiedostoformaatteihin (AIFF, WAV jne., ks.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:aanitiedostoformaatit"
+
+\end_inset
+
+) ja jotkut taulukon kaltaiset objektit (esim.
+ TableOfReal) voidaan tallentaa raakatekstitiedostoon, jossa kunkin taulukon
+ rivin sarakkeet on erotettu toisistaan sarkainmerkeillä.
+ Viimeksimainittu muoto on kätevä, jos Praatilla käsiteltyjä taulukoita
+ halutaan siirtää esimerkiksi Exceliin tai muihin taulukko- ja tilastolaskentaoh
+jelmiin.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Tiedostojen-nimeamistavat"
+
+\end_inset
+
+Tiedostojen nimeämiskäytänteitä
+\end_layout
+
+\begin_layout Standard
+Vaikka Praat-ohjelmaa käyttäessä tiedostojen nimillä ei periaatteessa ole
+ väliä, on hyvä noudattaa tiettyä käytäntöä, jotteivät erityyppiset tiedostot
+ menisi sekaisin.
+ Praatissahan voi luoda esimerkiksi ääniobjektista monta analyysiobjektia,
+ jotka ovat oletusarvoisesti samannimisiä kuin ääniobjekti, josta ne tehtiin.
+ Identtinen tiedostonimen alkuosa on hyödyllinen, jos pitää jälkeenpäin
+ tunnistaa, mikä analyysitiedosto vastaa mitäkin äänitiedostoa.
+ Tätä voi hyödyntää etenkin skriptauksessa (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Skriptaus"
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+Tiedostonimille on tapana antaa pisteellä erotettu pääte tiedoston tyypin
+ mukaan.
+ Esimerkiksi äänitiedostojen nimi päättyy .wav, .aif sen mukaan, missä ääniformaat
+issa ne tallennettiin.
+ Äänitiedostosta 
+\emph on
+kukka.aif
+\emph default
+ tehty Pitch-objekti kannattaisi siis tallentaa nimellä 
+\emph on
+kukka.Pitch
+\emph default
+ ja formanttianalyysi nimellä 
+\emph on
+kukka.Formant
+\emph default
+.
+ Praat-skriptitiedostotkin ovat periaatteessa tavallisia tekstitiedostoja,
+ mutta ne kannattaisi tallentaa vastaavilla tunnisteilla, esimerkiksi 
+\emph on
+omaSkripti.praat
+\emph default
+, jolloin jo tiedoston nimestä näkee, ettei kyseessä ole mikä tahansa teksti.
+\end_layout
+
+\begin_layout Chapter
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Aanieditori-(Sound-editor)"
+
+\end_inset
+
+Äänieditori (Sound editor)
+\end_layout
+
+\begin_layout Standard
+Äänieditori on Praatin ikkuna, jossa voidaan selailla tiettyä ääniobjektia,
+ kuunnella siitä eripituisia pätkiä ja katsella samalla äänen aaltomuotoa
+ sekä äänestä laskettuja erilaisia akustisia analyyseja.
+ 
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Aanen-kuuntelu"
+
+\end_inset
+
+Äänen kuuntelu
+\end_layout
+
+\begin_layout Standard
+Objektilistalta valitun ääniobjektin voi kuunnella 
+\end_layout
+
+\begin_layout Itemize
+kokonaisuudessaan painamalla sen viereisestä dynaamisesta valikosta painiketta
+ 
+\series bold
+Play
+\series default
+.
+ Jos ääniobjekti on huikean pitkä ja haluatkin keskeyttää kuuntelun, paina
+ Esc-näppäintä.
+\end_layout
+
+\begin_layout Itemize
+pienemmissä pätkissä avaamalla äänieditori-ikkunan:
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Aanieditorin-kaytto"
+
+\end_inset
+
+Äänieditorin käyttö
+\end_layout
+
+\begin_layout Standard
+Äänieditorin käyttämiseksi äänitiedosto on ensin avattava Praatin objektilistaan
+ (
+\series bold
+Read: Read from file...
+\series default
+).
+ Kun haluttu ääniobjekti on objektilistalla aktiivisena, paina objektilistan
+ oikeassa laidassa näkyvästä dynaamisesta valikosta painiketta 
+\series bold
+Edit
+\series default
+, jolloin äänieditori avautuu.
+ Editori-ikkunoita voi olla samanaikaisesti avoinna useita myös samasta
+ ääniobjektista.
+\end_layout
+
+\begin_layout Standard
+Äänieditorin yläosassa näkyy äänen aaltomuoto mustana käyränä
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Aaltomuodon päällä voi myös näkyä sinisiä pystyviivoja (Pulses), jotka liittyvät
+ perustaajuusanalyysiin.
+ Pulssit voi kytkeä pois päältäkin, sillä yleensä niitä ei tarvita, ja ne
+ vain sekoittavat aaltomuotokuvaajaa.
+ Pulssien näkymistä voi vaihtaa valitsemalla äänieditori-ikkunan 
+\series bold
+Pulses
+\series default
+-valikosta 
+\series bold
+Show pulses
+\series default
+.
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Description
+aaltomuoto
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+aaltomuoto
+\end_layout
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+(waveform
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+waveform
+\end_layout
+
+\end_inset
+
+) Äänen aaltomuodolla tarkoitetaan äänisignaalista piirrettyä kuvaa, jossa
+ alkuperäisestä äänestä mikrofonilla mitatut ilmanpaineen vaihtelut näkyvät
+ aaltomaisena käyränä.
+ Koska mikrofoni on oikeastaan muuntanut ilmanpaineen sähköksi eli jännitemuutok
+siksi ja tämä prosessi riippuu myös mikrofonin ominaisuuksista, alkuperäistä
+ ilmanpainetta ei kuitenkaan voida kuvasta nähdä.
+ Aaltomuotokuvassa aika etenee vasemmalta oikealle.
+ Pystyakseli kuvaa tietyin väliajoin mikrofonin keräämästä sähköisestä signaalis
+ta rekisteröityjä arvoja.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/lennes/praat-opas/kuvat/aanieditori.jpg
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Tältä näyttää Praat-ohjelman äänieditori-ikkuna (Sound Editor), jossa voi
+ kuunnella äänen eri kohtia ja tehdä siitä pieniä mittauksiakin.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Aanen-patkien-kuuntelu-editorissa"
+
+\end_inset
+
+Äänen pätkien kuuntelu
+\end_layout
+
+\begin_layout Standard
+Äänieditorin alalaidassa näkyy 2--3 tummanharmaata 
+\series bold
+soittopalkkia
+\series default
+.
+ Palkkien avulla voidaan kuunnella äänestä eri pätkiä.
+ Kun napsautat hiirellä alinta palkkia, kuulet koko ääniobjektin yhtä soittoa.
+ Toiseksi alimmaisesta palkista voit soittaa äänestä tällä hetkellä näkyvissä
+ olevan alueen.
+ Jos maalaat hiirellä lyhyemmän, laatikkomaisen alueen keskeltä aaltomuoto-
+ tai analyysikuvia, voit käyttää kolmatta, ylimmäistä soittopalkkia, joka
+ 
+\begin_inset Quotes sld
+\end_inset
+
+katkeaa
+\begin_inset Quotes srd
+\end_inset
+
+ valitun alueen rajoilta.
+ Näin voit soittaa kerralla haluamasi pätkän, tai pätkän sitä ennen, tai
+ pätkän heti sen jälkeen.
+ 
+\end_layout
+
+\begin_layout Standard
+Kunkin soittopalkin keskellä lukee kyseisen palkin kuvaaman ajanjakson kesto
+ sekunteina: alimmassa palkissa koko ääniobjektin kesto (
+\emph on
+Total duration
+\emph default
+), keskimmäisessä palkissa näkyvissä olevan alueen kesto (
+\emph on
+Visible part
+\emph default
+), ja ylimmässä lyhyempien pätkien kestot hiirellä valitsemasi alueen mukaisesti.
+ 
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Aanen-muokkaaminen-(leikkaa-liimaa-toiminnot)"
+
+\end_inset
+
+Äänen muokkaaminen (leikkaa-liimaa-toiminnot)
+\end_layout
+
+\begin_layout Standard
+Tätä osiota ei ole vielä kirjoitettu.
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Analyysikuvaajat-editorissa"
+
+\end_inset
+
+Analyysikuvaajat äänieditorissa
+\end_layout
+
+\begin_layout Standard
+Jos äänestä on valittu näkyviin analyyseja, kuten spektrogrammi (Spectrogram;
+ näkyy harmaasävyinä), F0-käyrä (Pitch; sinisellä), intensiteettikäyrä (Intensit
+y; keltaisella) tai formanttianalyysi (Formant; punaiset pisteet), nämä
+ näkyvät äänieditorin alaosassa päällekkäin.
+ Analyysikuvaajat voidaan kytkeä päälle tai pois valitsemalla äänieditori-ikkuna
+n valikoista 
+\series bold
+Spectrum: Show spectrogram
+\series default
+, 
+\series bold
+Pitch:Show pitch
+\series default
+, 
+\series bold
+Intensity:Show intensity
+\series default
+ tai 
+\series bold
+Formant:Show formants
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Esimerkiksi formanttianalyysin pitäminen näkyvissä hidastaa äänieditorin
+ käyttöä, sillä aina ikkunan näkymän muuttuessa kone laskee analyysit uudelleen.
+ Analyysit kannattaa siis kytkeä pois päältä kun niitä ei välttämättä tarvita.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Mittausten-tekeminen-aanieditorissa"
+
+\end_inset
+
+Mittausten tekeminen äänieditorissa
+\end_layout
+
+\begin_layout Standard
+Äänieditorissa näkyvistä analyysikuvista voi tehdä yksittäisiä numeerisia
+ mittauksia hiiren avulla.
+ Laajempi aineisto kannattaa ensin nimikoida (ks.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Nimikointi"
+
+\end_inset
+
+), jotta mitattavat kohdat löytyvät helposti ja mittaukset ovat tarvittaessa
+ toistettavissa.
+ Nimikoidusta aineistosta on myös mahdollista tehdä mittauksia täysin automaatti
+sesti skriptien (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Skriptaus"
+
+\end_inset
+
+) avulla.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Kestot-aanieditorissa"
+
+\end_inset
+
+Kestot
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+kestomittaukset
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Voit tehdä äänieditorissa suurpiirteisiä kestomittauksia valitsemalla äänestä
+ mitattavan pätkän, esimerkiksi tietyn äänteen tai sanan, ja katsomalla
+ valitun alueen keston ylimmästä soittopalkista.
+ Keston saa myös näkyviin valitsemalla 
+\series bold
+Query:Get selection length
+\series default
+, jolloin tarkka arvo ilmestyy ns.
+ Info-ikkunaan ja sen voi vaikkapa kopioida hiirellä toiseen ohjelmaan.
+ Sama mittausmenetelmä toimii myös TextGrid-editorissa.
+ Alueiden valinta yksi kerrallaan käsin on työläs tapa mitata kestoja, ja
+ laajemman aineiston mittauksia varten aineisto kannattaakin nimikoida etukäteen
+ (ks.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Nimikointi"
+
+\end_inset
+
+) ja käyttää mahdollisesti skriptiä nimikoitujen pätkien kestomittauksiin.
+\end_layout
+
+\begin_layout Subsubsection
+Spektrogrammi, perustaajuus, intensiteetti ja formantit
+\end_layout
+
+\begin_layout Standard
+Kun valitset äänieditoriin näkyviin erilaisia analyysikuvia, voit tehdä
+ niistä mittauksia hiiren avulla.
+ Klikkaa haluamaasi kohtaan analyysikuvassa.
+ Näkyviin tulee punainen ristikko eli kursori.
+ Pystyviivan kohdalla oleva mitattava aikapiste näkyy pystyviivan yläpäässä.
+ 
+\end_layout
+
+\begin_layout Standard
+Jos haluat tämän aikapisteen kohdalta tietoa spektrogrammista (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Spektrogrammi"
+
+\end_inset
+
+), näet editorin vasemmassa laidassa punaisen numeron, joka ilmoittaa spektrogra
+mmissa näkyvän taajuuden kursorin 
+\emph on
+vaakaviivan
+\emph default
+ kohdalla.
+ Spektrogrammin pystyakselihan vastaa taajuutta.
+ Samassa kohtaa näkyy myös formanttitaajuus, jos kursorin ristikko on tarkalleen
+ jonkin punaisen formanttipisteen päällä.
+ Mikäli näkyvissä on sininen 
+\emph on
+Pitch
+\emph default
+- eli perustaajuuskäyrä, näkyy punaisen pystykursorin kohdalta mitattu perustaaj
+uus sinisellä oikeassa laidassa (huom.
+ älä sekoita tätä spektrogrammimittaukseen, joka näkyy vasemmalla!).
+ Intensiteetti näkyy myös oikeassa laidassa, mutta analyysikuvan sisäreunassa
+ ja vihreillä numeroilla.
+ Kaikki nämä lukuarvot saat tarvittaessa poimituksi tarkasti Info-ikkunaan
+ valitsemalla ko.
+ analyysin valikosta vastaavan 
+\series bold
+Get
+\series default
+-komennon.
+ Esimerkiksi perustaajuuskäyrän arvon saat 
+\series bold
+Pitch
+\series default
+-valikon komennolla 
+\series bold
+Get pitch
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Lisää akustisista analyyseista kerrotaan luvussa 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Akustinen-analyysi"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Chapter
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Nimikointi"
+
+\end_inset
+
+Nimikointi 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Nimikoinnilla
+\emph default
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+nimikointi
+\end_layout
+
+\end_inset
+
+ (engl.
+ 
+\emph on
+labeling
+\emph default
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+labeling
+\end_layout
+
+\end_inset
+
+) eli 
+\emph on
+annotoinnilla
+\emph default
+ (
+\emph on
+annotation, to annotate
+\emph default
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+annotation
+\end_layout
+
+\end_inset
+
+) tarkoitetaan sitä, että (digitaalisesti) tallennettuun puhenäytteeseen
+ liitetään systemaattisesti 
+\emph on
+annotaatioita
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+annotaatio
+\end_layout
+
+\end_inset
+
+
+\emph default
+ (
+\emph on
+annotation
+\emph default
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+annotation
+\end_layout
+
+\end_inset
+
+) eli jonkinlaisia (symbolisia) kuvauksia näytteen sisällöstä.
+ Nimikointi tehdään yleensä jollakin tähän tarkoitukseen kehitetyllä tietokoneoh
+jelmalla, joista Praat on yksi vaihtoehto.
+ Ääninäytteen on oltava digitaalisessa muodossa ts.
+ äänitiedostona esim.
+ tietokoneen kovalevyllä tai jonkintyyppisillä levykkeillä.
+ Ääninäytettä kuunnellaan ja siitä piirrettyjä kuvia katsellaan analyysiohjelmal
+la.
+ Kuuntelun ja katselun perusteella kirjoitetaan ääninäytteen 
+\begin_inset Quotes sld
+\end_inset
+
+pariksi
+\begin_inset Quotes srd
+\end_inset
+
+ 
+\emph on
+nimikointitiedosto
+\emph default
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+nimikointitiedosto
+\end_layout
+
+\end_inset
+
+, joka sisältää ääninäytteen kuvaukset.
+ Nimikoinnin tarkoituksena on muodostaa "maamerkkejä", joiden perusteella
+ alkuperäisestä puhesignaalista voidaan löytää halutut osat ja kohdistaa
+ niihin vaikkapa akustisia analyyseja tai muita toimenpiteitä.
+ Nimikointi on välttämätöntä, jos halutaan hallita ja hyödyntää suurta määrää
+ puheaineistoa.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Nimikoinnissa annotaatiot on sidottava ääninäytteen aikaulottuvuuteen.
+
+\series default
+ Tätä varten ääninäyte yleensä 
+\emph on
+segmentoidaan
+\emph default
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+segmentoida
+\end_layout
+
+\end_inset
+
+: siitä rajataan halutulla tarkkuudella 
+\emph on
+segmenttejä
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+segmentti
+\end_layout
+
+\end_inset
+
+
+\emph default
+ (äänipätkiä, joilla on määrätty alku- ja loppupiste sekä ajallinen kesto;
+ engl.
+ 
+\emph on
+segment
+\emph default
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+segment
+\end_layout
+
+\end_inset
+
+).
+ Segmenteille voidaan sitten antaa nimiä eli 
+\emph on
+nimikoida
+\emph default
+ ne.
+ Myös ääninäytteen tietyille yksittäisille ajanhetkille (aikapisteille)
+ voidaan antaa nimiä (näin syntyy ns.
+ 
+\emph on
+ankkureita
+\emph default
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+ankkuri
+\end_layout
+
+\end_inset
+
+, engl.
+ 
+\emph on
+point
+\emph default
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+point
+\end_layout
+
+\end_inset
+
+).
+ Pelkkä ääninäytteen litterointi esimerkiksi tekstitiedostoon ei siis ole
+ nimikoimista, koska siinä litteraation eri osia ei kytketä ääninäytteen
+ vastaaviin ajallisiin kohtiin.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Kannattaa huomata, että litteraatio tai mikä tahansa muu transkriptio on
+ aina 
+\emph on
+tulkinta
+\emph default
+ alkuperäisestä aineistosta.
+ Siksi 
+\emph on
+pelkän
+\emph default
+ litteraation avulla ei pitäisi koskaan tutkia 
+\emph on
+puhetta
+\emph default
+ --- vaarana on, että tulee pikemminkin tutkineeksi litteroijan näkemystä,
+ joka on vieläpä kuvattu 
+\emph on
+kirjoitetulla
+\emph default
+ kielellä! Käyttämällä nimikointia aineiston kuvausmenetelmänä varmistetaan
+ mahdollisimman suora yhteys alkuperäiseen puhetallenteeseen, jolloin tutkijalla
+ ja tutkimuksen arvioijalla on mahdollisuus tarkistaa ja korjailla puheesta
+ luotuja kuvauksia.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Annotaatiotyylejä on erilaisia ja tutkija voi kehittää oman annotaatiotavan
+ sen mukaan, minkälaisista puheen ilmiöistä on kiinnostunut.
+ Annotaatio
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+annotaatio
+\end_layout
+
+\end_inset
+
+ voi olla esimerkiksi ortografinen ts.
+ oikeinkirjoitusta noudattava litteraatio
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+litteraatio
+\end_layout
+
+\end_inset
+
+ (engl.
+ yl.
+\begin_inset space ~
+\end_inset
+
+
+\emph on
+transliteration
+\emph default
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+transliteration
+\end_layout
+
+\end_inset
+
+, 
+\emph on
+transcript
+\emph default
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+transcript
+\end_layout
+
+\end_inset
+
+), morfologisten yksiköiden kuvaus, prosodisten piirteiden kuvaus tai vaikkapa
+ foneettinen 
+\emph on
+transkriptio
+\emph default
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+transkriptio
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+foneettinen transkriptio
+\end_layout
+
+\end_inset
+
+ (engl.
+ 
+\emph on
+transcription
+\emph default
+) puheesta.
+ Ensin mainitussa tapauksessa segmenttirajat voivat olla vaikkapa yksittäisten
+ sanojen tai lauseiden välillä, kun taas foneettista tutkimusta varten rajataan
+ usein yksittäisiä äänteitä.
+\end_layout
+
+\begin_layout Standard
+Jos erilaisia puheen yksiköitä halutaan käyttää hyödyksi yhdessä, voidaan
+ luoda useita annotaatio- tai nimikointikerroksia
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+nimikointikerros
+\end_layout
+
+\end_inset
+
+ tai -tasoja: yhdelle merkitään äänteiden rajat, toiselle sanojen rajat,
+ kolmannelle lauserajat jne.
+\end_layout
+
+\begin_layout Standard
+Automaattisia segmentointi
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+automaattinen segmentointi
+\end_layout
+
+\end_inset
+
+- ja nimikointimenetelmiä yritetään jatkuvasti kehittää eri puolilla maailmaa.
+ Toistaiseksi tarkimman nimikoinnin saa kuitenkin aikaan ihminen, sillä
+ puheen nimikointi vaatii monenlaisten kielellisten tulkintojen tekemistä.
+ Samasta syystä voidaan valitettavasti todeta myös, että sekä puheen litterointi
+, transkriptio että nimikointi ovat aina jossakin määrin subjektiivisia
+ tuotoksia: niiden tarkkuus ja johdonmukaisuus riippuvat nimikoijan intresseistä
+, tiedoista, taidoista ja teoreettisesta näkemyksestä.
+\end_layout
+
+\begin_layout Section
+Miksi puhetta nimikoidaan eli annotoidaan?
+\end_layout
+
+\begin_layout Itemize
+Nimikointityökalua käyttämällä puhenäytteestä on helppo nopeasti ja tarkasti
+ etsiä, rajata ja kuunnella eri pituisia osia.
+ Tämä helpottaa, nopeuttaa ja tarkentaa merkittävästi litterointia ja transkript
+iota.
+ Esimerkiksi intonaatiotranskription
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+intonaatiotranskriptio
+\end_layout
+
+\end_inset
+
+ tekeminen helpottuu, kun kuulohavaintoa voidaan heti verrata äänisignaalista
+ laskettuun perustaajuuskäyrään.
+\end_layout
+
+\begin_layout Itemize
+Nimikoidusta äänitiedostosta voidaan mitata tarkasti puheen eri yksiköiden
+ kestoja.
+ Mittauksia voidaan suorittaa jopa täysin automaattisesti (edellyttäen että
+ puhe on nimikoitu mittausten kannalta järkeviin yksiköihin).
+ Akustiset analyysit voidaan kohdistaa vain tarvittaviin osiin näytettä.
+ 
+\end_layout
+
+\begin_layout Itemize
+Nimikoinnin perusteella tehdyt mittaukset voidaan milloin tahansa toistaa
+ täysin identtisinä.
+ Tutkimustuloksiin on siten helppo myöhemmin palata.
+ 
+\end_layout
+
+\begin_layout Itemize
+Alkuperäistä digitoitua ääninäytettä (esim.
+ keskusteluäänite) ei tarvitse välttämättä pilkkoa pienempiin osiin jokaista
+ tutkimusta tai demoa varten, vaan se voidaan säilyttää kokonaisena esimerkiksi
+ CD-ROMilla, eikä tällöin menetetä informaatiota esimerkiksi taukojen kestoista.
+ 
+\end_layout
+
+\begin_layout Itemize
+Digitaalinen ääninäyte säilyy tarvittaessa täysin muuttumattomana pitkiäkin
+ aikoja ja siitä voidaan tehdä identtisiä kopioita.
+ 
+\end_layout
+
+\begin_layout Itemize
+Digitaalisia ääni- ja nimikointitiedostoja on helppo jakaa muidenkin tutkijoiden
+ kanssa.
+ Muut tutkijat voivat nopeasti tutustua nimikoituun puhenäytteeseen ja käyttää
+ sitä.
+ Nimikointiin voidaan tehdä muutoksia ja lisäyksiä oman tarpeen mukaan.
+ 
+\end_layout
+
+\begin_layout Itemize
+Nimikoitu äänitiedosto voidaan lopulta liittää osaksi kaikkien tutkijoiden
+ käyttämää puhetietokantaa , eikä tutkijoiden tarvitse aina itse kerätä
+ ja nimikoida uusia aineistoja.
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Praat-ohjelmalle-tyypillisia-nimikointiominaisuuksia"
+
+\end_inset
+
+Praat-ohjelmalle tyypillisiä nimikointiominaisuuksia
+\end_layout
+
+\begin_layout Itemize
+mahdollisuus tehdä useita nimikointikerroksia (
+\emph on
+tiers
+\emph default
+), ts.
+ voidaan kuvata samanaikaisia mutta eri tyyppisiä tapahtumia useilla eri
+ tasoilla 
+\end_layout
+
+\begin_layout Itemize
+mahdollisuus lisätä segmenttien (
+\emph on
+intervals
+\emph default
+) lisäksi myös nimettyjä aikapisteitä (
+\series bold
+PointTier
+\series default
+-tyyppisille riveille)
+\end_layout
+
+\begin_layout Itemize
+nimikointitiedostojen (TextGrid) ja äänitiedostojen erillisyys, ts.
+ äänitiedostoa ei nimikoitaessa muuteta - vain nimikointitiedosto muuttuu
+\end_layout
+
+\begin_layout Itemize
+mahdollisuus nimikoida erittäin pitkiä äänitiedostoja yhtenäisinä (LongSound-obj
+ekteina voidaan avata jopa useiden tuntien kestoisia ääninäytteitä esim.
+ CD-ROMilta)
+\end_layout
+
+\begin_layout Itemize
+nimikointitiedostojen siirrettävyys laitteistosta ja ympäristöstä toiseen
+ (TextGridit voidaan tallentaa tavallisina tekstitiedostoina)
+\end_layout
+
+\begin_layout Itemize
+mahdollisuus skriptien avulla kohdistaa akustinen yms.
+ analyysi haluttuihin kohtiin nimikoituja ääninäytteitä.
+\end_layout
+
+\begin_layout Section
+Miten Praat-ohjelmalla nimikoidaan puhetta? 
+\end_layout
+
+\begin_layout Standard
+Ennen kuin aloitat äänitiedoston nimikoinnin, varmista, että ääni on juuri
+ sen mittainen ja editoitu sellaiseksi kuin haluat.
+ Nimikointia varten luodaan nimittäin 
+\emph on
+TextGrid-objekti
+\emph default
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+TextGrid-objekti
+\end_layout
+
+\end_inset
+
+, jonka on oltava 
+\series bold
+samankestoinen kuin sitä vastaava äänitiedosto
+\series default
+.
+ Jos äänitiedoston kesto myöhemmin muuttuu (esim.
+ päätät poistaa sen alusta "turhaa tyhjää") ja olet jo aloittanut nimikoinnin,
+ joudut vaikeuksiin, koska TextGridiin merkitsemäsi segmenttirajat eivät
+ enää vastaakaan alkuperäisiä aikapisteitä äänisignaalissa.
+ Onkin sitten hankalampi juttu siirtää segmenttirajat taas oikeisiin paikkoihin\SpecialChar \ldots{}
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Nimikointiobjektin-luominen-Praatissa"
+
+\end_inset
+
+Nimikointiobjektin luominen Praatissa
+\end_layout
+
+\begin_layout Enumerate
+Avaa objektilistaan haluamasi äänitiedosto joko Sound-objektina tai LongSound-ob
+jektina 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Tiedostojen-avaaminen-Praatissa"
+
+\end_inset
+
+.
+ Käytä LongSound-objektityyppiä (komento 
+\series bold
+Read: Open long sound file...
+\series default
+) siinä tapauksessa, että äänitiedosto on erityisen suuri, eikä mahdu kerralla
+ tietokoneesi käyttömuistiin.
+ Varmista, että ääniobjekti on valittuna.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Paina objektilistan oikeassa laidassa näkyvää painiketta 
+\series bold
+Annotate: To TextGrid\SpecialChar \ldots{}
+
+\series default
+ Näkyviin tulee lomake (ks.
+ kuva 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:textgridin_luonti"
+
+\end_inset
+
+).
+ Kirjoita ylemmälle riville (
+\emph on
+Tier names
+\emph default
+) välilyönneillä erotettuna nimet niille nimikointikerroksille, joiden haluat
+ olevan TextGrid-objektissa.
+ Jos kirjoitat vaikkapa "
+\emph on
+äänteet sanat lauseet
+\emph default
+", saat kolme nimikointikerrosta.
+ Voit muuttaa, lisätä ja poistaa nimiä, kerroksien määrää ja kerrostyyppejä
+ myöhemminkin (ks.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Nimikointikerroksien-lisääminen-ja"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Enumerate
+Oletuksena kaikki ylärivillä mainitut nimikointikerrokset luodaan IntervalTier-t
+yyppisinä.
+ IntervalTier-kerroksiin
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+IntervalTier
+\end_layout
+
+\end_inset
+
+ voi nimikoida vain segmenttejä
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+segmentti
+\end_layout
+
+\end_inset
+
+, eli aikavälejä joilla on alku- ja loppuraja.
+ Jos kuitenkin haluat, että jotkut nimikointikerroksista ovat tyyppiä PointTier,
+ kirjoita näiden nimet myös alemmalle riville (Point tiers).
+ PointTier-rivien nimien tulee siis esiintyä molemmissa kohdissa.
+ PointTier-kerroksiin
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+PointTier
+\end_layout
+
+\end_inset
+
+ voi merkitä yksittäisiä aikapisteitä, joille voi antaa nimiä.
+ Joskus tällaisistakin merkkipaaluista voi olla iloa.
+\end_layout
+
+\begin_layout Enumerate
+Paina OK.
+ Objektilistaan ilmestyy uusi TextGrid-objekti, joka näkyy valittuna.
+ Nyt voit aloittaa varsinaisen nimikoinnin.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/lennes/praat-opas/kuvat/textgridin_luonti.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:textgridin_luonti"
+
+\end_inset
+
+Tällä lomakkeella voidaan määrittää uuden TextGrid-objektin nimikointikerrosten
+ nimet ja tyypit.
+ Ylemmälle riville kirjoitetaan kaikkien kerrosten nimet.
+ Jos haluat jonkin kerroksen olevan tyyppiä PointTier (eikä IntervalTier),
+ mainitse kerroksen nimi myös lomakkeen alemmalla rivillä.
+ Kerroksia ja niiden nimiä voi myös muokata jälkeenpäin.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Nimikointi"
+
+\end_inset
+
+Nimikointi
+\end_layout
+
+\begin_layout Enumerate
+Valitse objektilistasta samanaikaisesti ääniobjekti (Sound tai LongSound)
+ ja sitä vastaava TextGrid-objekti, jonka juuri loit.
+ (Voit valita kaksi objektia yhtä aikaa pitämällä Shift- eli vaihtonäppäintä
+ tai Control-näppäintä pohjassa, kun naksautat toista objektia.)
+\end_layout
+
+\begin_layout Enumerate
+Paina oikealla näkyvää painiketta 
+\series bold
+Edit
+\series default
+.
+ Uusi 
+\emph on
+TextGrid-editori
+\emph default
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+TextGrid-editori
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+nimikointi-ikkuna
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+annotaatioeditori
+\end_layout
+
+\end_inset
+
+-ikkuna avautuu.
+ Ikkunan yläosaa hallitsee äänisignaalin kuvaus: Ylimpänä näkyy äänen aaltomuoto
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+aaltomuoto
+\end_layout
+
+\end_inset
+
+ eli oskillogrammi, ja sen alapuolella saattaa olla toinen ikkuna, jossa
+ on äänestä laskettuja analyysikuvia (esim.
+ spektrogrammi, ks.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Spektrogrammi"
+
+\end_inset
+
+).
+ Äänisignaalikuvien yläpuolella on kapea valkoinen osa, 
+\emph on
+kirjoitustila
+\emph default
+.
+ Ikkunan alareunassa näkyy valkoisia palkkeja: ne ovat nimikointirivejä
+ eli 
+\emph on
+nimikointikerroksia
+\emph default
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+nimikointikerros
+\end_layout
+
+\end_inset
+
+ (
+\emph on
+tier
+\emph default
+).
+ Aktiivisena oleva nimikointirivi näkyy keltaisena.
+\end_layout
+
+\begin_layout Enumerate
+TextGrid-editorissa voit kuunnella ääntä ja sen pätkiä samalla tavalla kuin
+ Sound- ja LongSound-editoreissa (ks.
+ luku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Aanieditori-(Sound-editor)"
+
+\end_inset
+
+).
+ Editori-ikkunan alalaidassa (valkoisten nimikointikerrosten tai -rivien
+ alla) näkyy kaksi tai kolme vaakasuoraa palkkia.
+ Kun painat alinta palkkia, kuulet koko ääniobjektin sisällön yhtä soittoa.
+ Toiseksi alin palkki soittaa koko tällä hetkellä näkyvissä olevan osan
+ äänestä - voit käyttää tätä toimintoa, kun zoomaat äänikuvaa sisään- tai
+ ulospäin tai vierittelet kuvaa oikealle tai vasemmalle.
+ Kolmesta soittopalkista ylimmäinen tulee näkyviin, kun naksautat hiirellä
+ johonkin kohtaan ääniaaltoa tai analyysikuvaa tai kun valitset äänestä
+ alueen vetämällä hiirellä sen yli.
+ Ylimmällä soittopalkilla voit kuunnella äänestä minkä tahansa lyhyenkin
+ pätkän, kun muutat välillä kursorin paikkaa tai valitun alueen sijaintia.
+ Kokeile!
+\end_layout
+
+\begin_layout Enumerate
+Kun olet kuuntelemalla ja/tai katselemalla löytänyt kohdan (esim.
+ lauseen alku), johon haluat tehdä segmenttirajan, naksauta ensin hiirellä
+ kyseiseen kohtaan ääniaaltoa tai analyysikuvaa ikkunan yläosassa.
+ Alaosan valkoisiin nimikointikerroksiin (
+\emph on
+tiers
+\emph default
+) ilmestyy pystyviiva, jossa on pieni ympyrä jokaisen nimikointikerroksen
+ yläreunassa.
+ Naksauta hiirellä tarkasti ympyrään sen nimikointikerroksen kohdalle, johon
+ haluat lisätä segmenttirajan.
+ Uusi raja tulee näkyviin paksuna pystyviivana.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/lennes/praat-opas/kuvat/add_boundary.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Kun haluat lisätä johonkin annotaatiokerrokseen uuden rajan, klikkaa ensin
+ hiirellä oikeaa kohtaa aaltomuodosta tai analyysikuvasta, ja klikkaa sitten
+ pientä ympyrää haluamasi nimikointikerroksen yläreunassa.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Valittuna oleva segmenttiraja näkyy punaisena ja muut rajat sinisinä.
+ Tietyn rajan voi valita naksauttamalla hiirellä sen päällä.
+\end_layout
+
+\begin_layout Itemize
+Segmenttirajaa voi siirtää oikealle tai vasemmalle tarttumalla siihen hiirellä
+ (mutta ei viereisten segmenttirajojen yli).
+ Kahta tai useampaa eri nimikointikerroksissa mutta täsmälleen samassa aikapiste
+essä olevaa segmenttirajaa voit siirtää yhtä aikaa pitämällä Shift- eli
+ vaihtonäppäintä pohjassa ja vetämällä yhtä rajoista.
+\end_layout
+
+\begin_layout Itemize
+Valitun (punaisen) segmenttirajan voi poistaa valitsemalla editori-ikkunan
+ 
+\series bold
+Point/Boundary
+\series default
+-valikosta 
+\series bold
+Remove
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+Jos haluat, että segmenttirajat ovat varmasti täsmälleen samassa aikapisteessä
+ useammassa nimikointikerroksessa, tartu yhteen rajaan ja vedä se hiirellä
+ toisessa kerroksessa olevan rajan päälle.
+ Tällöin rajat menevät automaattisesti samaan aikapisteeseen.
+ (Tätä mahdollisuutta kannattaa käyttää hyväksi, sillä silmämääräisesti
+ rajoja on vaikea saada täsmälleen samaan kohtaan!)
+\end_layout
+
+\begin_layout Itemize
+Valittuna olevan nimikointikerroksen nimi näkyy punaisella tekstillä TextGrid-ed
+itorin oikeassa reunassa ja kerroksen numero myös punaisella vasemmassa
+ reunassa.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Kun lause, äänne tms.
+ yksikkö on rajattu ja haluat antaa segmentille nimen, naksauta hiirellä
+ haluamallesi nimikointikerrokseen niiden rajojen väliin, johon haluat kirjoitta
+a.
+ Kirjoita sitten segmentin nimi tavalliseen tapaan näppäimistöllä.
+ Teksti tulee samanaikaisesti näkyviin nimikointikerrokseen segmentin kohdalle
+ ja ikkunan yläreunassa olevaan valkeaan 
+\emph on
+kirjoitustilaan
+\emph default
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+kirjoitustila
+\end_layout
+
+\end_inset
+
+.
+ (Huom.
+ Joissakin tapauksissa joudut ensin naksauttamaan ikkunan yläreunan kirjoitustil
+aa, ennen kuin pääset kirjoittamaan tekstiä segmenttiin.) Jo kirjoitettua
+ tekstiä voit muokata normaalisti naksauttamalla ensin ko.
+ segmenttiä nimikointikerroksessa ja sitten haluttua tekstikohtaa ikkunan
+ yläosan kirjoitusrivillä.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:nimikointivihjeita"
+
+\end_inset
+
+Vihjeitä
+\end_layout
+
+\begin_layout Itemize
+Huomaa, että puheessa sanojen ja äänteiden välissä ei normaalitapauksessa
+ ole taukoja, joten seuraava äänne tai sana alkaa yleensä siitä mihin edellinen
+ loppuu!
+\end_layout
+
+\begin_layout Itemize
+On myös olemassa puheäänteitä, joiden keskellä on luonnostaan lyhyt täysin
+ hiljainen vaihe (esimerkiksi soinnittomat klusiilit [kpt]).
+ Tämä vaihe on osa äännettä (ja sanaa) eikä se ole siis varsinainen tauko.
+ Jos soinniton klusiili on puhunnoksen alussa ja sitä edeltää tauko, et
+ voi yleensä mitenkään päätellä, mistä kohtaa klusiilin sulkeumavaihe on
+ alkanut.
+ Tässä tapauksessa kannattaa rajata ko.
+ äänteeseen mukaan pelkkä laukeamavaihe, josta syntynyt pieni 
+\begin_inset Quotes sld
+\end_inset
+
+pyrskähtävä
+\begin_inset Quotes srd
+\end_inset
+
+ ääni on monesti nähtävissä aaltomuodossa aivan puhunnoksen alussa.
+\end_layout
+
+\begin_layout Itemize
+Puheen aikana ihmisen ääntöelimistö on lähes jatkuvassa liikkeessä.
+ Ei siis ole mikään ihme, että äännerajojen löytäminen vaatii kärsivällisyyttä
+ ja kompromisseja!
+\end_layout
+
+\begin_layout Itemize
+Jos joudut nimikoimaan paljon, kannattaa jo ergonomisista syistä opetella
+ muutama TextGrid-editorin valikkokomentoihin liittyvä näppäinoikotie, jolla
+ voit säästää paljon hiiren liikkeitä ja naksauttelua.
+ Näppäinoikotiet näkyvät Praatin valikoissa kyseisen komennon perässä.
+ Esimerkiksi rivinvaihtonäppäintä painamalla voit lisätä segmenttirajan
+ valittuun kerrokseen kursorin kohdalle (vrt.
+ 
+\series bold
+Boundary
+\series default
+-valikon 
+\series bold
+Add on selected tier
+\series default
+), eikä tarvitse osua hiirellä pieneen rinkulaan.
+ Sarkainnäppäimen (vastakkaiset nuolet näppäimistön vasemmassa yläreunassa)
+ painallus soittaa valitun äänipätkän.
+ Ctrl-näppäin ja nuoli oikealle aiheuttavat puolestaan siirtymisen seuraavaan
+ segmenttiin valitussa nimikointikerroksessa (vrt.
+ 
+\series bold
+View
+\series default
+-valikon komento 
+\series bold
+Select next interval
+\series default
+).
+\end_layout
+
+\begin_layout Itemize
+Valitun annotaatiokerroksen nimikkeistä voi etsiä tekstiä 
+\series bold
+Edit
+\series default
+-valikon 
+\series bold
+Find\SpecialChar \ldots{}
+
+\series default
+-komennolla.
+ Toiminnosta on hyötyä, kun annotoit pitkiä äänitiedostoja.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Nimikointikerroksien-lisääminen-ja"
+
+\end_inset
+
+Nimikointikerroksien lisääminen ja poistaminen
+\end_layout
+
+\begin_layout Standard
+TextGrid-editorin sisällä voit luoda lisää nimikointi- eli annotaatiokerroksia
+ ja kopioida tai poistaa olemassaolevia.
+\end_layout
+
+\begin_layout Itemize
+Jos haluat lisätä editoitavaan TextGridiin uuden IntervalTier-tyyppisen
+ annotaatiokerroksen johon merkitään segmenttejä, valitse 
+\series bold
+Tier
+\series default
+-valikosta 
+\series bold
+Add interval tier\SpecialChar \ldots{}
+
+\series default
+ Jos taas haluat luoda PointTier-tyyppisen kerroksen, johon merkitään yksittäisi
+ä nimettyjä aikapisteitä, valitse 
+\series bold
+Add point tier\SpecialChar \ldots{}
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Näkyviin tulee lomake (ks.
+ kuva 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cap:add_interval_tier"
+
+\end_inset
+
+): Merkitse 
+\emph on
+Position
+\emph default
+-kohtaan, monesko ylhäältä laskettuna uuden kerroksen pitäisi annotaatiokerroste
+n 
+\begin_inset Quotes sld
+\end_inset
+
+pinossa
+\begin_inset Quotes srd
+\end_inset
+
+ olla (oletuksena uusi kerros luodaan alimmaiseksi).
+ Kirjoita luotavalle kerrokselle jokin kuvaava nimi kohtaan 
+\emph on
+Name
+\emph default
+.
+ Paina OK.
+ Uusi kerros tulee heti näkyviin.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/lennes/praat-opas/kuvat/add_interval_tier.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "cap:add_interval_tier"
+
+\end_inset
+
+Anna uudelle annotaatiokerrokselle paikka TextGridin kerrosten joukossa
+ sekä jokin kuvaava nimi.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Jos haluat poistaa TextGrid-objektista jonkin annotaatiokerroksen
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+annotaatiokerroksen poistaminen
+\end_layout
+
+\end_inset
+
+ kaikkine merkintöineen, valitse ensin poistettava kerros klikkaamalla hiirellä
+ johonkin ko.
+ kerroksen kohtaan.
+ Varmista vielä, että oikea kerros on valittuna ja sen numero ja nimi näkyvät
+ punaisina TextGrid-editorin laidoissa.
+ Valitse sitten 
+\series bold
+Tier
+\series default
+-valikosta 
+\series bold
+Remove entire tier
+\series default
+.
+ Ole varovainen: tähän ei kysytä varmistusta, ennen kuin annotaatiokerros
+ katoaa! 
+\series bold
+Edit
+\series default
+-valikon 
+\series bold
+Undo
+\series default
+-komento saattaa tosin pelastaa sinut vahingon sattuessa.
+\end_layout
+
+\begin_layout Itemize
+Jos haluat poistaa TextGridin tietyltä annotaatiokerrokselta kaiken tekstin,
+ toimi samoin kuin edellisessä kohdassa, mutta valitse komento 
+\series bold
+Remove all text from tier
+\series default
+.
+ Tällöin segmenttien rajat tai ankkurit pysyvät paikoillaan, vain niiden
+ nimikkeet hävitetään.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset label
+LatexCommand label
+name "ite:duplicate_tier"
+
+\end_inset
+
+Voit kopioida tietyn annotaatiokerroksen komennolla 
+\series bold
+Tier:Duplicate tier
+\series default
+.
+ Tällöin sinulta kysytään samat tiedot kuin luodessasi kokonaan uutta kerrosta
+ (ks.
+ kuva 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cap:add_interval_tier"
+
+\end_inset
+
+).
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Duplicate-komennolla voit jakaa esimerkiksi saman yksikön kaksi piirrettä
+ eri kerroksiin: annotoi ensin yksi piirrekerros, kopioi se, poista kopiosta
+ kaikki teksti ja nimikoi toinen piirrekerros.
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:IPA-merkit-ja-erikoismerkit"
+
+\end_inset
+
+IPA-merkit ja erikoismerkit
+\end_layout
+
+\begin_layout Standard
+Praatissa on oma tapa, jolla saa erikoismerkkejä näkyviin TextGridissä.
+ Erikoismerkit tuotetaan näppäilemällä peräkkäin 
+\backslash
+-merkki ja jotain muita merkkejä.
+ Näin muodostetut merkit näkyvät siis ainoastaan Praatin TextGrid-ikkunoissa
+ ja piirtoikkunassa.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Jos et saa foneettisia merkkejä näkymään, joudut luultavasti ensin asentamaan
+ koneellesi erikseen ilmaisen 
+\emph on
+SIL Doulos IPA
+\emph default
+-kirjasimen, jonka voit ladata verkosta.
+ Linkki löytyy Praat-ohjelman kotisivulta samasta kohdasta, josta hait myös
+ Praat-ohjelman Windows-version.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Kaikkien Praatissa näkyvien erikoismerkkien
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+erikoismerkit
+\end_layout
+
+\end_inset
+
+ ja IPA-symbolien
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+IPA-symbolit
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+foneettiset merkit
+\end_layout
+
+\end_inset
+
+ koodit näet Praatin sisäisestä manuaalista: Kun olet TextGrid-editori-ikkunassa
+, valitse sen oikeasta ylänurkasta 
+\series bold
+Help:About
+\begin_inset space ~
+\end_inset
+
+special
+\begin_inset space ~
+\end_inset
+
+symbols
+\series default
+.
+ Sivu on hiukan suttuinen, mutta kaikkien merkkikoodien pitäisi löytyä.
+ Voit myös yrittää käyttää manuaalin hakua (
+\series bold
+Search
+\begin_inset space ~
+\end_inset
+
+manual
+\series default
+) ja antaa hakusanaksi "symbols" tms.
+ (ks.
+ manuaalin käyttö, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Praatin-sisaanrakennettu-manuaali"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Esimerkiksi nuoli ylöspäin
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+nuoli ylöspäin
+\end_layout
+
+\end_inset
+
+ syntyy näppäilemällä peräkkäin 
+\series bold
+
+\backslash
+^
+\series default
+ (loppuun pitää näppäillä välilyönti, jotta ^-merkin saa tuotettua).
+ Nuoli alaspäin
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+nuoli alaspäin
+\end_layout
+
+\end_inset
+
+ taas tulee näkyviin näppäilemällä peräkkäin merkit 
+\series bold
+
+\backslash
+_|
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "Alleviivauksien-tuottaminen-Praatissa"
+
+\end_inset
+
+Alleviivauksien tuottaminen
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+alleviivaus Praatin TextGridissä
+\end_layout
+
+\end_inset
+
+ lienee Praatin sisällä mahdotonta.
+ Korvikkeeksi voi keksiä jonkin oman merkintätavan siihen kohtaan, mistä
+ alleviivaus alkaa, ja siihen, missä se päättyy.
+ Esim.
+\end_layout
+
+\begin_layout Quote
+näistä sanoista 
+\backslash
+_tämä
+\backslash
+_ on alleviivattu 
+\end_layout
+
+\begin_layout Standard
+mikä näkyy TextGridin intervallissa seuraavasti: 
+\end_layout
+
+\begin_layout Quote
+näistä sanoista _tämä_ on alleviivattu
+\end_layout
+
+\begin_layout Standard
+Huom.
+ Pelkkä _-merkki Praatissa aiheuttaa seuraavan merkin näkymisen alaindeksinä
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+alaindeksi
+\end_layout
+
+\end_inset
+
+, esim.
+ H_2O tuottaa veden kemiallisen merkin H
+\begin_inset Formula $_{\textrm{2}}$
+\end_inset
+
+O.
+ Jos haluaa sen sijaan tuottaa _-merkin, eteen on laitettava 
+\backslash
+-merkki (ks.
+ sisäisen manuaalin sivu 
+\series bold
+Text styles
+\series default
+; 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Praatin-sisaanrakennettu-manuaali"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:TextGridin-tallennus"
+
+\end_inset
+
+TextGridin eli nimikointiobjektin tallennus
+\end_layout
+
+\begin_layout Itemize
+Jos olet nimikointi-ikkunassa, voit tallentaa
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+TextGrid-tiedostomuodot
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+TextGrid-objektin tallennus
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+nimikoinnin tallennus
+\end_layout
+
+\end_inset
+
+ muokattavan TextGrid-objektin 
+\series bold
+File
+\series default
+-valikon komennolla 
+\series bold
+Write TextGrid to text file...
+\end_layout
+
+\begin_layout Itemize
+Jos olet objekti-ikkunassa, valitse ensin listasta tallennettava TextGrid-objekt
+i ja sitten 
+\series bold
+Write
+\series default
+-valikosta 
+\series bold
+Write to text file...
+\end_layout
+
+\begin_layout Subsection
+Vaihtoehtoiset tiedostomuodot
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Write
+\series default
+-valikon komento 
+\series bold
+Write to short text file...
+
+\series default
+ tekee nimikointitiedostosta kooltaan hieman pienemmän ja tiedostoa on helpompi
+ editoida tarvittaessa vaikkapa tekstieditorilla, mutta tiedosto aukeaa
+ silti Praatilla normaalisti TextGrid-objektina.
+ 
+\end_layout
+
+\begin_layout Itemize
+Voit myös käyttää komentoa 
+\series bold
+Write to binary file...
+
+\series default
+ Tällä komennolla tiedoston koko on huomattavasti pienempi, mutta et voi
+ avata tiedostoa millään muulla ohjelmalla kuin Praatilla.
+ Tiedostomuotoa kannattaa ehkä käyttää, jos nimikoit erittäin pitkiä äänitiedost
+oja ja teet niihin paljon nimikointikerroksia, jolloin tekstitiedoston koko
+ saattaa nousta useampaan megatavuun.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:nimikoinnit_toiseen_ohjelmaan"
+
+\end_inset
+
+Nimikoinnin siirtäminen toiseen ohjelmaan
+\end_layout
+
+\begin_layout Standard
+Jos haluat siirtää esim.
+ tekemäsi litteraation Praatin TextGridistä muualle
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+nimikoinnin siirto toiseen ohjelmaan
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+litteraation siirto toiseen ohjelmaan
+\end_layout
+
+\end_inset
+
+, voit tallentaa TextGridistä pelkän tekstisisällön (ts.
+ nimikkeet) tekstitiedostoon esim.
+ skriptillä 
+\emph on
+save_interval_data_to_text_file.praat
+\emph default
+.
+ Kyseinen skripti tallentaa jokaisen intervallin sisältämän tekstin omalle
+ rivilleen, ja rivin alkuun tulee ko.
+ intervallin alun aikapiste sekunteina.
+ Skriptin voit hakea omalle tietokoneellesi osoitteesta 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+url{
+\end_layout
+
+\end_inset
+
+http://www.helsinki.fi/
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+~{}
+\end_layout
+
+\end_inset
+
+lennes/praat-scripts/
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Skriptin tuottaman tekstitiedoston voit avata millä tahansa tekstieditorilla
+ tai tekstinkäsittelyohjelmalla, esim.
+ MS Wordillä.
+ Jos haluat Wordissa nähdä myös käyttämäsi erikoismerkit, täytyy Etsi-Korvaa-toi
+minnolla korvata kaikki Praatin 
+\backslash
+-alkuiset erikoismerkkijonot vastaavilla erikoismerkeillä.
+\end_layout
+
+\begin_layout Standard
+Jos tallennat TextGrid-tiedoston Praat-muodossa, tuloksena on myös tavallinen
+ raakatekstitiedosto, mutta joukkoon tulee paljon Praatin käyttämiä koodeja,
+ joita voi olla hankala käsitellä.
+ Siksi on suositeltavaa käyttää skriptiä tekstien eristämiseen.
+ Jos ymmärrät hieman skriptien toimintaa, voit samalla skriptillä myös esimerkik
+si automaattisesti mitata kunkin puhunnoksen keston tai jopa tehdä äänitiedoston
+ vastaavista kohdista haluamasi akustiset analyysit (ks.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Skriptaus"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Section
+Valmiin nimikoinnin hyödyntäminen
+\end_layout
+
+\begin_layout Standard
+Praatissa voi esimerkiksi hakea TextGrid-objektista tiettyä merkkijonoa,
+ mutta kovin hienostuneita hakutoimintoja Praat ei suoraan tarjoa.
+ Nimikoinnin tehokas hyödyntäminen Praatilla vaatiikin jonkinasteista skriptaust
+aitoa tai valmiiden skriptien käyttöä (ks.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Skriptaus"
+
+\end_inset
+
+).
+ Praatilla huolellisesti tehty nimikointi sen sijaan mahdollistaa aineiston
+ liittämisen puhetietokantaan, jossa nimikointia voidaan lopulta hyödyntää
+ (ts.
+ kohdistaa siihen hakuja) hyvinkin yksinkertaisen käyttöliittymän avulla.
+\end_layout
+
+\begin_layout Standard
+Praatilla tehtyä nimikointia voi käyttää hyväksi myös muissa analyysiohjelmissa
+ tai -ympäristöissä, mutta tämä edellyttää yleensä TextGrid-tiedoston konvertoin
+tia tarvittavaan muotoon.
+\end_layout
+
+\begin_layout Section
+Toisella ohjelmalla tehdyn transkription tuonti
+\end_layout
+
+\begin_layout Standard
+Jos sinulla on äänitiedostosta tehty erillinen, tekstimuotoinen litteraatio
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+litteraation siirto Praatiin
+\end_layout
+
+\end_inset
+
+ ja haluaisit nyt yhdistää Praatilla tekstin äänitiedostoon, se onnistuu
+ kohtuullisen helposti käyttämällä Praat-skriptiä.
+ Edellytyksenä on, että sinulla on käytettävissä litteraatiota vastaava
+ äänitiedosto.
+ Tekstitiedoston tulee olla raakatekstimuotoinen (raw text, plain text).
+ Yhdessä tekstitiedostossa saa myös olla vain yhden puhujan vuorosanoja
+ kerrallaan --- jos tiedostossasi esiintyy monta puhujaa, tee kullekin puhujalle
+ yksi tiedosto, josta poistat muiden puhujien vuorot.
+\end_layout
+
+\begin_layout Enumerate
+Avaa äänitiedosto Praatilla.
+\end_layout
+
+\begin_layout Enumerate
+Luo äänitiedostolle TextGrid-objekti (ks.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Nimikointi"
+
+\end_inset
+
+), johon määrität yhden intervallityyppisen nimikointirivin.
+ Jos tiedostossa esiintyy useita puhujia, sinun pitää tehdä jokaiselle puhujalle
+ oma nimikointirivi, jolloin voit helposti kuvata myös päällekkäispuhuntaa
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+päällekkäispuhunta
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Merkitse sitten TextGridiin rajat kaikille sellaisille kohdille, jotka vastaavat
+ rivinvaihtoja tekstitiedostossa.
+ Helpointa tämä on, jos tekstitiedoston rivinvaihdot vastaavat suunnilleen
+ puhujan pitämiä taukoja, jolloin sinun tarvitsee vain rajata äänitiedostosta
+ hiljaiset taukopaikat.
+ (Taukoja voi jopa yrittää etsiä automaattisesti 
+\emph on
+mark_pauses.praat
+\emph default
+-nimisen skriptin avulla, joka löytyy ao.
+ osoitteesta.)
+\end_layout
+
+\begin_layout Enumerate
+Hae koneellesi tekstirivien tuontiskripti nimeltä 
+\emph on
+label_from_text_file.praat
+\emph default
+.
+ Skripti löytyy osoitteesta 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+url{
+\end_layout
+
+\end_inset
+
+http://www.helsinki.fi/
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+~{}
+\end_layout
+
+\end_inset
+
+lennes/praat-scripts/
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Valitse Praat-ohjelman objektilistasta TextGrid-objekti, johon merkitsit
+ yksiköiden rajat ja johon haluat tuoda tekstiä.
+ Avaa ja suorita skripti (ks.
+ ohjeet 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Miten-skripti-suoritetaan"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Erikoismerkit eivät esim.
+ Wordin tuottamasta raakatekstistä siirry oikein.
+ Käytä tarvittaessa jo etukäteen etsi-korvaa-toimintoa ja muunna erikoismerkit
+ Praatin vastaaviksi koodeiksi (ks.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:IPA-merkit-ja-erikoismerkit"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Chapter
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Akustinen-analyysi"
+
+\end_inset
+
+Akustinen analyysi
+\end_layout
+
+\begin_layout Standard
+Puheääni voi syntyä vaihtelevasti eri kohdissa ääntöväylää.
+ Soinnillisten äänteiden (esim.
+ vokaalien) aikana suurin osa äänestä syntyy äänihuulten paukahdellessa
+ toisiaan vasten.
+ Tästä syntyy suriseva ääni.
+ Toisaalta esimerkiksi frikatiivikonsonanteissa muodostetaan johonkin kohtaan
+ suuonteloa kielellä ja/tai huulilla kapeikko, josta nipin napin kulkevaan
+ ilmaan muodostuu pyörteitä eli syntyy hälyä: erilaista sihinää tai kohinaa.
+ Klusiileissa tämä häly esiintyy pienen pieninä pyrskähdyksinä, kun puhuja
+ sulkee ääntöväylänsä kokonaan ja päästää sitten sulkeuman äkillisesti aukeamaan.
+\end_layout
+
+\begin_layout Standard
+Eri tavoin muodostuneet lähdeäänet heijastelevat ääntöväylässä edestakaisin
+ ja samalla 
+\emph on
+suodattuvat
+\emph default
+: jotkut äänen osataajuudet vahvistuvat ja toiset heikkenevät.
+ Suodattumiseen vaikuttaa se, minkä muotoinen puhujan ääntöväylä kulloinkin
+ on, joten puhuja voi 
+\begin_inset Quotes sld
+\end_inset
+
+muovailla
+\begin_inset Quotes srd
+\end_inset
+
+ lähdeääntä artikulaatioliikkeillä, esimerkiksi kielellään ja huulillaan.
+ Osa suodatetusta äänienergiasta tulee ulos puhujan suusta ja/tai nenästä
+ muiden kuultaviin.
+\end_layout
+
+\begin_layout Standard
+Puheen akustisen analyysin avulla voidaan pyrkiä esimerkiksi
+\end_layout
+
+\begin_layout Itemize
+kuvaamaan tallennetun puhesignaalin akustisia ominaisuuksia ja päättelemään,
+ miten puhuja on toiminut saadakseen puhesignaalin aikaan (esim.
+ puheen häiriöiden toteaminen tai puheteknologinen kehitystyö)
+\end_layout
+
+\begin_layout Itemize
+saamaan objektiivista lisävahvistusta tietyille puheesta havaituille ominaisuuks
+ille, joilla arvellaan olevan merkitystä tutkimustyön kannalta (esim.
+ puheen intonaation tutkimus).
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Spektrogrammi"
+
+\end_inset
+
+Spektrogrammi
+\end_layout
+
+\begin_layout Standard
+Puhe on aina kompleksista ääntä, josta ns.
+ Fourier-analyysin avulla voidaan löytää paljon eritaajuisia 
+\emph on
+komponentteja
+\emph default
+ l.
+ 
+\emph on
+osataajuuksia
+\emph default
+.
+ Spektrogrammi
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+spektrogrammi
+\end_layout
+
+\end_inset
+
+ on Fourier-analyysiin perustuva äänen aika-taajuusesitys.
+ Sen avulla voidaan havainnollistaa äänen spektrin (ts.
+ taajuusrakenteen) muuttumista ajassa.
+ Spektrogrammista saadaan nopeasti kokonaiskäsitys äänisignaalin osataajuuksien
+ jakautumisesta ja voimakkuuksista.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+Jo ennen henkilökohtaisten tietokoneiden aikaa voitiin vastaavia kuvia piirtää
+ ns.
+ 
+\emph on
+sonagrafilla
+\emph default
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+sonagrafi
+\end_layout
+
+\end_inset
+
+, jossa analyysikuva mikrofoniin äännetystä lyhyestä puhenäytteestä piirtyi
+ pyörivän metallisen sylinterin päälle kiinnitettyyn paperiliuskaan.
+ Tällaisella laitteella tehtyä kuvaa kutsuttiin 
+\emph on
+sonagrammiksi
+\emph default
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+sonagrammi
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Eri tarkoituksiin on perinteisesti laskettu kahdentyyppisiä spektrogrammeja,
+ ns.
+ 
+\emph on
+leveäkaistaisia
+\emph default
+ ja 
+\emph on
+kapeakaistaisia
+\emph default
+.
+ Näiden avulla on voitu mukavasti erottaa (mies)äänen tärkeimmät spektraaliset
+ ominaisuudet.
+\end_layout
+
+\begin_layout Description
+Leveäkaistainen
+\begin_inset space ~
+\end_inset
+
+spektrogrammi
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+leveäkaistainen spektrogrammi
+\end_layout
+
+\end_inset
+
+ (analyysi-ikkunan pituus n.
+ 4.3 ms) näyttää tarkasti ajassa tapahtuvia muutoksia ja esimerkiksi glottisperio
+dit (äänihuulten "paukaukset") näkyvät selvästi pystyraitoina.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Leveäkaistainen spektrogrammi on kätevä esimerkiksi nimikoinnissa, kun määrittel
+et äänteiden rajoja.
+ Spektrin ajalliset muutokset näkyvät tarkasti ja onnistut ehkä löytämään
+ nopeammin spektraalisia "käännekohtia", jotka ovat usein hyviä ehdokkaita
+ segmenttirajoiksi.
+ (Rajakohta on tietenkin varmistettava kuuntelemalla.)
+\end_layout
+
+\begin_layout Description
+Kapeakaistaisessa
+\begin_inset space ~
+\end_inset
+
+spektrogrammissa
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+kapeakaistainen spektrogrammi
+\end_layout
+
+\end_inset
+
+ (analyysi-ikkunan pituus n.
+ 29 ms) sekä formantit (näkyvät tummina vaakakaistaleina etenkin soinnillisissa
+ äänteissä), äänen osataajuudet (ns.
+ harmoniset, harmonics) että näiden ajassa tapahtuvat muutokset erottuvat
+ parhaiten.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Kapeakaistainen spektrogrammi voi olla hyödyllinen esimerkiksi kun haluat
+ tarkistaa F0- eli perustaajuusanalyysin oikeellisuuden.
+ Tällöin editori-ikkunassa kannattaa määritellä näkyviin vain spektrogrammin
+ alimmat taajuudet, niin että vain muutama alin osataajuus erottuu selvästi.
+\end_layout
+
+\begin_layout Standard
+Huomaa, että spektrogrammi on ainoastaan tapa visualisoida äänen taajuusrakennet
+ta ajan funktiona.
+ 
+\emph on
+Spektrogrammi ei sinänsä ole varsinainen tulos tai tilastollista aineistoa;
+ se on vain yleiskuva tietystä äänisignaalista.
+
+\emph default
+ Tilastolliseen tutkimukseen siis tarvitaan muita numeerisia mittauksia.
+ Jos taas teet kvalitatiivista tutkimusta, spektrogrammi sinänsä ei riitä,
+ vaan se vaatii perustellun tulkinnan.
+ Oman kokemukseni mukaan spektrogrammi on paras väline tutkijalle itselleen
+ - sen avulla voi kahlata aineistoa läpi ja etsiä varsinaisia mitattavia
+ tutkimuskohteita.
+ Yksittäisiä aineistosta poimittuja esimerkkejä voi toki tarvittaessa havainnoll
+istaa spektrogrammeilla myös varsinaisissa julkaisuissa.
+\end_layout
+
+\begin_layout Subsection
+Spektrogrammin tuottaminen
+\end_layout
+
+\begin_layout Subsubsection
+Editori-ikkunassa
+\end_layout
+
+\begin_layout Standard
+Spektrogrammi saadaan näkyviin äänieditorissa (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Aanieditori-(Sound-editor)"
+
+\end_inset
+
+) tai TextGrid-editorissa (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Nimikointi"
+
+\end_inset
+
+) valitsemalla 
+\series bold
+Spectrum
+\series default
+-valikosta 
+\series bold
+Show spectrogram
+\series default
+.
+ Tällöin spektrogrammin tärkeimpiä asetuksia voidaan tarvittaessa muuttaa
+ 
+\series bold
+Spectrum
+\series default
+-valikon komennolla 
+\series bold
+Spectrogram settings...
+\end_layout
+
+\begin_layout Itemize
+Jos haluat laskea 
+\emph on
+leveäkaistaisen spektrogrammin
+\emph default
+ (oletus Praatissa), analyysi-ikkunan pituudeksi (
+\emph on
+window length
+\emph default
+) tulisi antaa noin 0.005 s eli 5 ms (tällöin ns.
+ kaistanleveydeksi saadaan 260 Hz).
+\end_layout
+
+\begin_layout Itemize
+Jos haluat laskea 
+\emph on
+kapeakaistaisen spektrogrammin
+\emph default
+, analyysi-ikkunan pituudeksi tulisi antaa noin 0.03 s eli 30 ms (tällöin
+ ns.
+ kaistanleveydeksi saadaan 43 Hz).
+\end_layout
+
+\begin_layout Subsubsection
+Objekti-ikkunassa
+\end_layout
+
+\begin_layout Standard
+Objekti-ikkunassa uusi spektrogrammiobjekti voidaan luoda valitsemalla ensin
+ haluttu ääniobjekti ja painamalla dynaamisen valikon painiketta 
+\series bold
+Spectrum:To Spectrogram...
+
+\series default
+ Kohtaan 
+\emph on
+Window length
+\emph default
+ merkitään analyysi-ikkunan pituus kuten äänieditorin kautta laskettaessa.
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Spektrit"
+
+\end_inset
+
+Spektrit
+\end_layout
+
+\begin_layout Standard
+Tätä osiota ei ole vielä kirjoitettu.
+\end_layout
+
+\begin_layout Standard
+spektri
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+spektri
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Fourier-muunnos
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Fourier-muunnos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+lyhytaikaisspektri
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lyhytaikaisspektri
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+jatkuva Fourier-muunnos
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+jatkuva Fourier-muunnos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:F0--eli-perustaajuusanalyysi"
+
+\end_inset
+
+F0- eli perustaajuusanalyysi 
+\end_layout
+
+\begin_layout Standard
+Puheen laskennallinen perustaajuus on suhteessa puheen havaittuun sävelkorkeutee
+n, minkä vuoksi perustaajuusanalyysia hyödynnetään paljon esimerkiksi puheen
+ intonaation tutkimuksessa.
+\end_layout
+
+\begin_layout Standard
+Soinnillisten äänteiden aikana puhujan äänihuulet paukahtelevat nopeasti
+ toisiaan vasten.
+ Puhuja voi säädellä äänihuulten värähtelytapaa ja niiden paukahtelunopeutta
+ muuttamalla äänihuulten pituutta ja jäykkyyttä, säätämällä niiden asentoa
+ toisiinsa nähden ja muuttamalla keuhkoista ulos virtaavan ilman painetta.
+ Puheesta tehtävää 
+\emph on
+perustaajuusanalyysia
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+perustaajuusanalyysi
+\end_layout
+
+\end_inset
+
+
+\emph default
+ käytetään, kun halutaan saada mahdollisimman tarkasti selville puhujan
+ äänihuulten värähtelytaajuus soinnillisten äänteiden aikana.
+ Perustaajuutta mitataan hertseinä (Hz): yksi hertsi tarkoittaa yhtä värähdystä
+ sekunnissa.
+ Puheen tyypillinen perustaajuus riippuu puhujan fyysisistä ominaisuuksista
+ ja siinä on paljon yksilöllisiä eroja.
+ Miespuhujien perustaajuus liikkuu keskimäärin 100 Hz:n tietämillä, kun
+ taas naispuhujien perustaajuus voi olla keskimäärin 150-200 Hz.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Perustaajuus-vs-savelkorkeus"
+
+\end_inset
+
+Puheen perustaajuus ja sävelkorkeushavainto
+\end_layout
+
+\begin_layout Standard
+Puheen laskennallinen perustaajuus on tietyssä epäsuorassa suhteessa puheen
+ havaittuun sävelkorkeuteen.
+ Yleensä voidaan sanoa, että mitä korkeampi perustaajuus, sitä korkeampana
+ ääni havaitaan.
+ Hertsiasteikko ei kuitenkaan kerro suoraan havaitusta sävelkorkeudesta,
+ vaan tähän tarkoitukseen on kehitetty erilaisia havaintoa kuvaavia sävelkorkeus
+asteikoita, esim.
+ mel- tai puolisävelasteikko.
+ 
+\emph on
+Havaintoon perustuvat sävelkorkeusasteikot ovat aina suhteellisia eivätkä
+ absoluuttisia
+\emph default
+: ei voida esim.
+ ilmoittaa että jokin havaittu sävelkorkeus oli 20 puolisävelaskelta, vaan
+ on mainittava, mihin toiseen ääneen verrattuna havaittava sävelkorkeus
+ on ilmoitettu, esim.
+ 20 puolisävelaskelta 100 Hz:n yläpuolella.
+\end_layout
+
+\begin_layout Subsection
+Perustaajuuskäyrän tuottaminen
+\end_layout
+
+\begin_layout Subsubsection
+Editori-ikkunassa
+\end_layout
+
+\begin_layout Standard
+Äänieditorissa (ks.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Aanieditori-(Sound-editor)"
+
+\end_inset
+
+) tai nimikointi-ikkunassa (TextGrid-editori, ks.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Nimikointi"
+
+\end_inset
+
+) voit kytkeä perustaajuuskäyrän näkyviin tai piilottaa sen 
+\series bold
+Pitch
+\series default
+-valikon komennolla 
+\series bold
+Show pitch
+\series default
+.
+ Perustaajuuskäyrä näkyy editori-ikkunassa sinisenä.
+ Perustaajuusasteikko näkyy editorin 
+\emph on
+oikeassa laidassa sinisillä numeroilla
+\emph default
+.
+ Kun napsautat hiirellä johonkin kohtaan aaltomuoto- tai analyysikuvassa,
+ näet kursorin kohdalla punaisen ristikon.
+ Perustaajuuskäyrän arvo hiirellä valitsemassasi ajankohdassa (punaisen
+ pystyviivan kohdalta mitattuna) näkyy sinisenä lukuarvona vastaavalla kohdalla
+ editori-ikkunan oikeassa laidassa.
+ Mikäli haluat saada tarkan perustaajuusarvon kopioidaksesi sen johonkin
+ toiseen ohjelmaan, valitse editorin 
+\series bold
+Pitch
+\series default
+-valikosta komento 
+\series bold
+Get pitch
+\series default
+.
+ Mittausarvo tulee näkyviin Info-ikkunaan, josta voit kopioida sen hiiren
+ avulla muualle.
+\end_layout
+
+\begin_layout Paragraph
+Perustaajuusanalyysin asetukset
+\end_layout
+
+\begin_layout Standard
+Perustaajuusanalyysi ei välttämättä tuota järkevää tulosta kaikille puhujille.
+ Jos perustaajuuskäyrä ei mielestäsi näytä järkevältä tai odotuksiesi mukaiselta
+, voit tarvittaessa muuttaa analyysin asetuksia 
+\series bold
+Pitch
+\series default
+-valikon kohdasta 
+\series bold
+Pitch settings...
+
+\series default
+ Erityisesti kannattaa tarkistaa kohta 
+\emph on
+Pitch range
+\emph default
+, jossa analyysille asetetaan sellainen taajuuden ala- ja yläraja, joiden
+ välillä kyseisen puhujan perustaajuuden oletetaan pääasiassa liikkuvan.
+ Miespuhujan alaraja voi olla matalaäänisellä miehellä jopa 50-60 Hz tai
+ oletusarvoinen 75 Hz.
+ Naispuhujan alarajaksi voi tarvittaessa määrittää hieman korkeamman lukeman,
+ esim.
+ 100 Hz.
+ Jos puhuja on kimeä-ääninen lapsi, alarajaa kannattaa nostaa tarvittaessa
+ reilustikin ja tarkistaa samalla, että myös yläraja on riittävän korkealla.
+\end_layout
+
+\begin_layout Standard
+Mikäli haluat ainoastaan muuttaa näkyvissä olevan perustaajuuskäyrän asteikkoa,
+ valitse 
+\series bold
+Pitch
+\series default
+-valikosta kohta 
+\series bold
+Advanced pitch settings...
+
+\series default
+ ja lisää kohtaan 
+\emph on
+View range
+\emph default
+ sopivat ala- ja ylärajat.
+\end_layout
+
+\begin_layout Subsubsection
+Objekti-ikkunassa
+\end_layout
+
+\begin_layout Standard
+Objekti-ikkunassa uusi 
+\series bold
+Pitch
+\series default
+-objekti voidaan luoda valitsemalla ensin haluttu ääniobjekti ja painamalla
+ dynaamisen valikon painiketta 
+\series bold
+Periodicity:To Pitch...
+
+\series default
+ Kohtiin 
+\emph on
+Pitch floor
+\emph default
+ ja 
+\emph on
+Pitch ceiling
+\emph default
+ annetaan tarvittaessa puhujakohtaisesti perustaajuusanalyysin odotettavissa
+ olevat ala- ja ylärajat samoin kuin editorin kautta laskettaessa (ks.
+ yllä).
+ Näin syntyvästä uudesta 
+\series bold
+Pitch
+\series default
+-objektista voidaan tehdä mittauksia 
+\series bold
+Query
+\series default
+-painikkeella tai piirtää kuvia piirtoikkunaan 
+\series bold
+Draw
+\series default
+-komennoilla (ks.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Kuvien-luominen"
+
+\end_inset
+
+).
+ Objektin sisältöä voidaan tarkastella 
+\emph on
+Pitch-editorissa
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Pitch-editori
+\end_layout
+
+\end_inset
+
+
+\emph default
+ (valitse 
+\series bold
+Pitch
+\series default
+-objekti ja paina 
+\series bold
+Edit
+\series default
+).
+ Valittuna oleva 
+\series bold
+Pitch
+\series default
+-objekti voidaan myös tallentaa 
+\series bold
+Write
+\series default
+-valikon komennoilla (ks.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Tiedostojen-tallentaminen-Praatissa"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Subsection
+Miksi perustaajuuskäyrässä on joissakin kohdissa aukkoja?
+\end_layout
+
+\begin_layout Standard
+Soinnittomien äänteiden aikana äänihuulet eivät värähtele toisiaan vasten,
+ joten tällaisten äänteiden kohdalla myöskään perustaajuusanalyysi ei 
+\begin_inset Quotes sld
+\end_inset
+
+löydä
+\begin_inset Quotes srd
+\end_inset
+
+ äänestä tarpeeksi periodisuutta.
+ Esimerkiksi soinnittomat klusiilikonsonantit [k p t] sisältävät luonnostaan
+ lähes täysin hiljaisen ns.
+ sulkeumavaiheen, jonka aikana puhuja ei tuota äänihuulillaan sointia ja
+ lisäksi katkaisee ilmavirran ulospääsyreitit sulkemalla nenäportin sekä
+ tukkimalla jonkin kohdan suuontelostaan kielellään tai huulillaan.
+ Perustaajuuskäyrän katkoksen kohdalla voi luonnollisesti olla taukokin.
+ Mikäli puhujan äänenlaatu muuttuu jossakin kohtaa siten, että äänihuuliperiodit
+ ovat epäsäännöllisiä (esim.
+ narinainen ääni), voi perustaajuusanalyysi tuottaa outoja tuloksia tai
+ käyrässä voi näkyä katkos.
+ Tätä ongelmaa ei ehkä saa korjattua edes analyysiasetuksia muuttamalla.
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Intensiteetti-(aanekkyys)"
+
+\end_inset
+
+Intensiteetti (äänekkyys) 
+\end_layout
+
+\begin_layout Standard
+Äänen laskennallinen intensiteetti
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+intensiteetti
+\end_layout
+
+\end_inset
+
+ on tietyssä epäsuorassa suhteessa äänen havaittuun voimakkuuteen
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+äänen voimakkuus
+\end_layout
+
+\end_inset
+
+ eli äänekkyyteen
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+äänekkyys
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Subsection
+Puheen intensiteetti ja voimakkuushavainto
+\end_layout
+
+\begin_layout Standard
+Yleensä voidaan sanoa, että mitä korkeampi intensiteetti, sitä äänekkäämpänä
+ ääni havaitaan.
+ Intensiteettikäyrästä saatava informaatio voidaan periaatteessa nähdä myös
+ aaltomuotokäyrästä tutkimalla sen amplitudia eli pystyakselilla tapahtuvien
+ heilahdusten laajuutta.
+ Praatin 
+\emph on
+intensiteettikäyrässä näkyvä desibeliasteikko on suhteellinen.
+
+\emph default
+ Praatissa mitatut desibeliarvot eivät siis kerro esimerkiksi fysikaalista
+ äänenpainetta alkuperäisessä puhetilanteessa, mikäli äänitettä ei ole jo
+ äänitystilanteessa kalibroitu.
+ 
+\emph on
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Kalibrointi voidaan suorittaa esimerkiksi äänittämällä puheen yhteydessä
+ tietty standardoitu ääni (jonka tuottama äänenpaine on tunnettu) tietyltä
+ etäisyydeltä puhujaan ja mikrofoniin nähden.
+ Jälkeenpäin kalibrointiäänen ja varsinaisen puheen intensiteettiä vertaamalla
+ saadaan selville myös puheen äänenpaine.
+ Jotta kalibrointi on pätevä, mikrofonin on myös pysyttävä puhujaan nähden
+ täysin paikallaan koko äänityksen ajan.
+ Kalibrointi ei myöskään onnistu suuntaavilla mikrofoneilla, joita puheäänitykse
+ssä usein käytetään.
+ Mikäli kalibrointi on välttämätöntä, asiassa kannattaakin kysyä apua akustiikan
+ ammattilaiselta.
+\end_layout
+
+\end_inset
+
+
+\emph default
+ Siitä voidaan tutkia, onko esimerkiksi jokin tavu ollut ympäristöönsä nähden
+ äänekkäämpi.
+ Tämä edellyttää, että mikrofoni on pysynyt tutkittavalla ajanjaksolla puhujaan
+ nähden paikallaan.
+\end_layout
+
+\begin_layout Subsection
+Intensiteettikäyrän tuottaminen
+\end_layout
+
+\begin_layout Subsubsection
+Editori-ikkunassa
+\end_layout
+
+\begin_layout Standard
+Äänieditorissa (ks.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Aanieditori-(Sound-editor)"
+
+\end_inset
+
+) tai nimikointi-ikkunassa (TextGrid-editori, ks.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Nimikointi"
+
+\end_inset
+
+) voit kytkeä intensiteettikäyrän näkyviin tai piilottaa sen 
+\series bold
+Intensity
+\series default
+-valikon komennolla 
+\series bold
+Show intensity
+\series default
+.
+ Intensiteettikäyrä näkyy editori-ikkunassa keltaisena.
+ Intensiteettiasteikko näkyy editorin 
+\emph on
+oikeassa laidassa analyysi-ikkunan sisäpuolella vihreillä numeroilla
+\emph default
+.
+ Kun napsautat hiirellä johonkin kohtaan aaltomuoto- tai analyysikuvassa,
+ näet kursorin kohdalla punaisen ristikon.
+ Intensiteettikäyrän arvo hiirellä valitsemassasi ajankohdassa (punaisen
+ pystyviivan kohdalta mitattuna) näkyy vihreänä lukuarvona vastaavalla kohdalla
+ editori-ikkunan oikeassa laidassa.
+ Mikäli haluat saada tarkan intensiteettiarvon kopioidaksesi sen johonkin
+ toiseen ohjelmaan, valitse editorin 
+\series bold
+Intensity
+\series default
+-valikosta komento 
+\series bold
+Get intensity
+\series default
+.
+ Mittausarvo tulee näkyviin Info-ikkunaan, josta voit kopioida sen hiiren
+ avulla muualle.
+\end_layout
+
+\begin_layout Subsubsection
+Objekti-ikkunassa
+\end_layout
+
+\begin_layout Standard
+Objekti-ikkunassa uusi 
+\series bold
+Intensity
+\series default
+-objekti voidaan luoda valitsemalla ensin haluttu ääniobjekti ja painamalla
+ dynaamisen valikon painiketta 
+\series bold
+To Intensity...
+
+\series default
+ Kohtaan 
+\emph on
+Minimum pitch
+\emph default
+ voidaan tarvittaessa merkitä puhujakohtaisesti odotettavissa oleva perustaajuus
+analyysin alaraja.
+ Näin syntyvästä uudesta 
+\series bold
+Intensity
+\series default
+-objektista voidaan tehdä mittauksia 
+\series bold
+Query
+\series default
+-painikkeella tai piirtää kuvia piirtoikkunaan 
+\series bold
+Draw
+\series default
+-komennoilla (ks.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Kuvien-luominen"
+
+\end_inset
+
+).
+ Valittuna oleva 
+\series bold
+Intensity
+\series default
+-objekti voidaan myös tallentaa 
+\series bold
+Write
+\series default
+-valikon komennoilla (ks.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Tiedostojen-tallentaminen-Praatissa"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Formanttianalyysi-(esim.-vokaalien"
+
+\end_inset
+
+Formanttianalyysi
+\end_layout
+
+\begin_layout Standard
+Puheen formanttianalyysilla on pitkät perinteet etenkin vokaalitutkimuksessa
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+vokaalitutkimus
+\end_layout
+
+\end_inset
+
+.
+ Koska formantit liittyvät ääntöväylän muotoon puheentuoton aikana, voidaan
+ niiden keskitaajuuden muutosten ja keskinäisten suhteiden perusteella tietyin
+ edellytyksin tehdä johtopäätöksiä puhesignaalin tuottamiseen käytetyistä
+ artikulaatioliikkeistä.
+ Varovaisuus tulosten tulkinnassa on kuitenkin tarpeen.
+\end_layout
+
+\begin_layout Subsection
+Mikä on formantti?
+\end_layout
+
+\begin_layout Standard
+Puhe
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+formantti
+\end_layout
+
+\end_inset
+
+ on aina kompleksista ääntä, josta ns.
+ Fourier-analyysin avulla voidaan löytää paljon eritaajuisia komponentteja
+ l.
+ osataajuuksia.
+ Puheääni voi saada alkunsa kurkunpäässä ja/tai muissa kohdissa ääntöväylää
+ äänteestä riippuen.
+ Tämän lähdeäänen
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lähdeääni
+\end_layout
+
+\end_inset
+
+ osataajuudet vahvistuvat tai heikkenevät amplitudeiltaan sen mukaan, minkä
+ muotoisessa ääntöväylässä ääni liikkuu ja heijastuu.
+ Osa näistä ääntöväylässä suodattuneista ääniaalloista säteilee lopulta
+ suun ja/tai nenän kautta ulkomaailmaan.
+\end_layout
+
+\begin_layout Standard
+Ääntöväylää
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+ääntöväylä
+\end_layout
+
+\end_inset
+
+ (kurkunpäästä huuliin asti) voidaan yksinkertaistaen verrata jonoon eripituisia
+ ja -paksuisia putkia.
+ Mikä tahansa putki taas vahvistaa kaikkia sellaisia ääniaaltoja, joiden
+ aallonpituus
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+aallonpituus
+\end_layout
+
+\end_inset
+
+ (joka on kääntäen verrannollinen aallon taajuuteen) on sopivassa suhteessa
+ putken pituuteen.
+ Ihminen kykenee tietyissä rajoissa muuttelemaan ääntöväylänsä muotoa (esim.
+ liikuttamalla kieltään, huuliaan jne.), jolloin ääntöväylän "putkijonon"
+ osien lukumäärä, pituudet (ja paksuudet) muuttuvat.
+ Jokainen putkenpää (myös avonainen pää!) aiheuttaa äänien osittaisen heijastumi
+sen putkessa takaisinpäin.
+ Niinpä ääntöväylässä liikkuu jatkuvasti ääniaaltoja molempiin suuntiin,
+ ja aallot tulevat toisiaan vastaan.
+ 
+\end_layout
+
+\begin_layout Quotation
+Kuvittele, että istut keinussa ja kaverisi antaa sinulle vauhtia.
+ Kun kaverisi seisoo edessäsi tai takanasi ja tyrkkää keinua joka kerran
+ juuri oikeassa vaiheessa, saat parhaat "vauhdit" eli keinusi heilahtelee
+ vähitellen yhä korkeammalle.
+ Olisikin turhaa antaa vauhtia silloin, kun keinu ei ole kohdalla! Ja jos
+ kaverisi siirtyy keskelle keinun rataa seisomaan ja yrittää tyrkätä sinua
+ takaisinpäin kun keinu heilahtaa kovaa vauhtia häntä kohti, hän tuskin
+ onnistuu, vaan keinu todennäköisimmin pysähtyy (ja kaverisi ehkä kaatuu
+ ja satuttaa itsensä).
+ Ajoitus on siis tärkeä.
+\end_layout
+
+\begin_layout Standard
+Jos kaksi ääniaaltoa tulee toisiaan vastaan ja kulkee toistensa läpi sellaisessa
+ kohdassa, jossa molemmat sattuvat olemaan samassa vaiheessa (esim.
+ molempien aaltojen ilmanpainehuiput osuvat toisiinsa samassa pisteessä),
+ kyseisellä kohdalla syntyy hetkellisesti amplitudiltaan suurempi aalto.
+ Toisiinsa törmäävät aallot siis summautuvat.
+ Jos taas aallot ovat kohdatessaan päinvastaisessa vaiheessa toisiinsa nähden,
+ on aaltojen yhteenlaskettu amplitudi kyseisellä kohdalla nolla, ts.
+ ne kumoavat toisensa.
+ Tietyissä olosuhteissa aallot saattavat putken sisällä jatkuvasti törmätä
+ samanvaiheisina samassa kohdassa, jolloin syntyy resonanssi
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+resonanssi
+\end_layout
+
+\end_inset
+
+.
+ Resonanssiin osallistuvilla aalloilla on silloin joko sama taajuus (ja
+ siten myös sama aallonpituus) eli aalto törmää sopivan pituisessa putkessa
+ aina itsensä heijastumiin, tai sitten vähintään kahden eri osataajuuden
+ aallonpituudet ovat tietyissä suhteissa toisiinsa ja putken pituuteen.
+ (Kuvittele, että kaverisi tyrkkäisi keinulle vauhtia vain joka toisella
+ tai kolmannella heilahduksella.) Putken pituus siis määrää, minkätaajuiset
+ aallot putkessa voivat resonoida.
+ (Ks.
+ myös 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Akustiikkaa"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Description
+Formantti vastaa yhtä tai useampaa ääntöväylän resonanssia
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+resonanssi
+\end_layout
+
+\end_inset
+
+ eli sellaista taajuutta, jonka mukaiset ääniaallot vahvistuvat jossakin
+ ääntöväylän kohdassa.
+ Formantit nähdään "harjanteina" tai "huippuina" puhesignaalin pätkästä
+ lasketussa spektrissä.
+ Formanttien sijainnin ja liikkeen on osoitettu vaikuttavan merkittävällä
+ tavalla myös puheäänteestä syntyvään havaintoon.
+ Tämä on aivan luonnollista: ovathan formantit tietyssä monimutkaisessa
+ suhteessa siihen, millä tavalla puhuja on liikutellut ääntöväyläputkistonsa
+ osia.
+ Ääntöväylällä on periaatteessa aina monia (äärettömästi) resonansseja,
+ mutta niistä vain muutama vaikuttaa selvästi esim.
+ vokaalien laadun havaintoon.
+ Yleensä puheäänteen spektristä ei edes yritetä tunnistaa enempää kuin korkeinta
+an viisi alinta formanttia, koska ihmiskorvakaan ei juuri erota formanttien
+ muutoksia näitä korkeammilta taajuuksilta.
+\end_layout
+
+\begin_layout Standard
+Tietyn puhesignaalipätkän spektrin muotoa voidaan approksimoida LPC-menetelmällä
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+LPC-menetelmä
+\end_layout
+
+\end_inset
+
+ ja arvioida siten esimerkiksi formanttien keskitaajuuksia (eli mitä taajuuksia
+ ääntöväylä on kulloinkin parhaiten vahvistanut).
+ Ääntöväylän resonanssit vaikuttavat tietenkin mihin tahansa ääneen, joka
+ ääntöväylän läpi kulkee, mutta formantteja mitataan useimmiten vokaaleista,
+ koska näistä on olemassa paljon tutkimusta (ts.
+ "referenssiarvoja" joihin verrata) ja automaattiset formanttianalyysimenetelmät
+kin yleensä toimivat vokaaleilla parhaiten.
+\end_layout
+
+\begin_layout Standard
+Puhe on kuitenkin käytännössä ääntöväylän jatkuvaa liikettä ja LPC nerokkuudessa
+ankin vain matemaattinen malli, joten pelkällä formanttianalyysilla ei luultavas
+ti saada koskaan täydellistä kuvaa siitä, minkä muotoinen ääntöväylä puhujalla
+ on todellisuudessa ollut tietyllä ajanhetkellä.
+ Millä tahansa ohjelmalla tehty automaattinen formanttianalyysi on pelkkä
+ laskennallinen arvio spektrin hallitsevimmista huipuista, ja formanttianalyysin
+ virhelähteet onkin tunnettava tarkoin, ennen kuin formanttianalyysin tuloksia
+ voi tulkita ja käyttää.
+\end_layout
+
+\begin_layout Subsection
+Formanttianalyysin laskentaperiaatteet
+\end_layout
+
+\begin_layout Standard
+Praat-ohjelmalla tehdyn formanttianalyysin lopputuloksena syntyy Formant-objekti
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Formant-objekti
+\end_layout
+
+\end_inset
+
+, joka edustaa ääniobjektin spektrirakennetta ajan funktiona.
+ Se on siis jono tasaisin välimatkoin laskettuja näytteitä, joissa kussakin
+ on taajuus- ja kaistanleveysinformaatio useasta formantista sekä informaatiota
+ ikkunan maksimi-intensiteetistä.
+ Formant-objekti on siis rakenteeltaan ikään kuin kaavamainen tai karkeistettu
+ versio spektrogrammista.
+ Praat-ohjelman oletusformanttianalyysi
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Burg-formanttianalyysi
+\end_layout
+
+\end_inset
+
+ on Burgin algoritmi, jota käytetään komennolla 
+\series bold
+Sound: To Formant (burg)...
+
+\series default
+ (ks.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Burg-analyysi"
+
+\end_inset
+
+ alla).
+\end_layout
+
+\begin_layout Subsubsection
+Formanttianalyysin toiminta
+\end_layout
+
+\begin_layout Standard
+Aluksi äänisignaali 
+\series bold
+näytteistetään uudelleen
+\series default
+ näytetaajuuteen, joka on kaksi kertaa 
+\emph on
+Maximum
+\begin_inset space ~
+\end_inset
+
+formant
+\emph default
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Maximum formant
+\end_layout
+
+\end_inset
+
+-kohdassa annettu formanttien ylärajataajuus.
+ Sitten signaali 
+\series bold
+esivahvistetaan
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+esivahvistaminen
+\end_layout
+
+\end_inset
+
+
+\series default
+ (pre-emphasis
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+pre-emphasis
+\end_layout
+
+\end_inset
+
+), jotta myös ylemmillä taajuuksilla olevat, luonnostaan vaimeammat huiput
+ saisivat saman painoarvon kuin alemmat formantit.
+ Näin saadusta signaalista lasketaan tietyin välimatkoin 
+\series bold
+lyhytaikaisspektrejä
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lyhytaikaisspektri
+\end_layout
+
+\end_inset
+
+
+\series default
+ (spektrien välimatka ja spektri-ikkunan leveys määritellään kohdissa 
+\emph on
+Time step
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Time step (formanttianalyysi)
+\end_layout
+
+\end_inset
+
+
+\emph default
+ ja 
+\emph on
+Window length
+\emph default
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Window length (formanttianalyysi)
+\end_layout
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Sitten approksimoidaan kussakin analyysi-ikkunassa tai -kehyksessä (frame)
+ saatua spektriä 
+\series bold
+lineaariprediktio-
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lineaariprediktio
+\end_layout
+
+\end_inset
+
+
+\series default
+ eli LP- tai LPC-menetelmällä (Linear Predictive Coding
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Linear Predictive Coding
+\end_layout
+
+\end_inset
+
+, josta käytetään tässä Burgin algoritmia).
+ Lineaariprediktiossa spektrin muotoa pyritään kuvaamaan pienellä määrällä
+ huippuja, joille arvioidaan keskitaajuus ja kaistanleveys.
+ Näiden huippujen voidaan katsoa edustavan ääntöväylän resonansseja l.
+ formantteja.
+ LPC:n tulos on itse asiassa joukko kertoimia, jotka eivät sinänsä ole ihmiselle
+ lainkaan havainnollisia.
+ Siksi formanttianalyysissa vielä jatkojalostetaan kertoimien antamaa informaati
+ota formanttien taajuus- ja kaistanleveysarvoiksi.
+\end_layout
+
+\begin_layout Standard
+Koska algoritmi löytää aluksi formantteja myös hyvin matalilta ja korkeilta
+ taajuuksilta, 
+\series bold
+poistaa Burg-algoritmi lisäksi
+\series default
+ formantit 50 Hz:n alapuolelta sekä formantit jotka ovat korkeammalla kuin
+ Maximum formant - 50 Hz.
+ Jos välttämättä haluat pitää nämäkin taajuuskaistat mukana (jolloin tuskin
+ saat perinteisen näköisiä F1- ja F2-arvoja), kokeile komentoa 
+\series bold
+Sound: To Formant (keep all)\SpecialChar \ldots{}
+
+\series default
+ Jos taas haluat välttämättä saada aina pyytämäsi tietyn määrän formantteja
+ tasaisesti jakautuneina koko antamallesi taajuusalueelle, voit kokeilla
+ muuten epäluotettavaa Split-Levinson-algoritmia
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Split-Levinson-algoritmi
+\end_layout
+
+\end_inset
+
+ komennolla 
+\series bold
+Sound: To Formant (sl)\SpecialChar \ldots{}
+
+\end_layout
+
+\begin_layout Standard
+Huom.
+ Yllä kerrotulla tavalla tuotettu Formant-tyyppinen objekti sisältää vain
+ ne formantit, joita signaalista on kussakin ikkunassa löytynyt, ja taajuusarvot
+ saattavat heittelehtiä paljonkin peräkkäisten ikkunoiden välillä.
+ Peräkkäisten formanttiarvojen "jatkuvuutta" tämä perusanalyysi ei yritä
+ etsiä.
+ Jos haluat tutkia esim.
+ vokaalisegmentin sisällä tapahtuvia formanttiliikkeitä, tee ensin tämä
+ analyysi, mutta katso sitten kohta Tracking (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Tracking"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Burg-analyysi"
+
+\end_inset
+
+Burg-formanttianalyysin tekeminen
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset CommandInset label
+LatexCommand label
+name "par:formantit-editorissa"
+
+\end_inset
+
+Tapa 1: 
+\end_layout
+
+\begin_layout Standard
+Jos haluat vain katsella Praatin laskemia formanttiarvoja esimerkiksi yhdessä
+ äänen aaltomuodon ja spektrogrammin kanssa, tee formanttianalyysi äänieditori-i
+kkunan sisällä.
+\end_layout
+
+\begin_layout Enumerate
+Valitse objektilistasta ääniobjekti (tyyppiä 
+\series bold
+Sound
+\series default
+), jolle haluat suorittaa formanttianalyysin.
+\end_layout
+
+\begin_layout Enumerate
+Paina hiirellä objektilistan oikeassa laidassa näkyvää painiketta Edit,jolloin
+ saat näkyviin äänieditori-ikkunan.
+\end_layout
+
+\begin_layout Enumerate
+Valitse äänieditori-ikkunan 
+\series bold
+View
+\series default
+-valikosta 
+\series bold
+Show formant
+\series default
+ (ja muut analyysit, jotka haluat näkyviin samanaikaisesti).
+ Formanttianalyysi tulee näkyviin ääniaallon alapuolelle punaisina pisteinä.
+\end_layout
+
+\begin_layout Enumerate
+Tarkista analyysin asetukset 
+\series bold
+View
+\series default
+-valikon kohdasta 
+\series bold
+Formant analysis\SpecialChar \ldots{}
+
+\series default
+ Äänieditorissa voi tehdä formanttianalyysin vain burg-algoritmilla.
+ Asetukset ovat muuten samat kuin analyysitavassa 2, mutta formanttien maksimimä
+ärää ei tässä anneta, vaan sen sijaan kohta 
+\emph on
+Number of poles
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Number of poles
+\end_layout
+
+\end_inset
+
+
+\emph default
+ viittaa lineaariprediktiossa käytettävien kertoimien määrään.
+ Jos tämä arvo on 10, algoritmi etsii viittä formanttia.
+\end_layout
+
+\begin_layout Enumerate
+Jos ikkunassa on kerrallaan näkyvissä pitkä pätkä äänisignaalia, formanttianalyy
+si ei ehkä näy koko ikkunan osalta.
+ Jos haluat analyysin laskettavaksi pitemmältä aikaväliltä, muuta haluamasi
+ sekuntimäärä 
+\series bold
+View
+\series default
+-valikon komennolla 
+\series bold
+Analysis resolution
+\series default
+\SpecialChar \ldots{}
+, kohtaan 
+\series bold
+Formant max.
+ duration (s)
+\series default
+.
+ Huomaa kuitenkin että formantit lasketaan uudelleen aina kun vierität tai
+ zoomaat editori-ikkunaa, joten pitkä formanttianalyysi voi hidastaa työskentely
+ä.
+ Formantit kannattaakin editorissa kytkeä pois päältä aina kun niitä ei
+ tarvita.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Halutessasi voit tehdä äänieditorissa mittauksiakin seuraavasti:
+\end_layout
+
+\begin_layout Itemize
+summittaisia mittauksia klikkaamalla hiirellä jonkin punaisen formanttipisteen
+ kohdalle (taajuus hiiren kohdalla näkyy ikkunan vasemmassa reunassa punaisella)
+ tai
+\end_layout
+
+\begin_layout Itemize
+tarkempia mittauksia klikkaamalla hiirellä johonkin kohtaan äänisignaalia
+ tai spektrogrammia ja valitsemalla sitten 
+\series bold
+Query
+\series default
+ -valikosta esim.
+ 
+\series bold
+Get first formant
+\series default
+, jolloin Info-ikkunassa näkyy ajallisesti lähin 1.
+ formantille mitattu arvo kursorin kohdalta.
+ (Nämä 
+\series bold
+Query
+\series default
+-valikon formanttikomennot toimivat vain jos formanttianalyysi on valittuna
+ 
+\series bold
+View
+\series default
+-valikossa.)
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset CommandInset label
+LatexCommand label
+name "par:formantit-objektilistasta"
+
+\end_inset
+
+Tapa 2
+\end_layout
+
+\begin_layout Standard
+Kun haluat analysoida tarkemmin, tehdä tarkkoja mittauksia, piirtää kuvia,
+ tai käyttää formanttianalyysia skriptin sisällä, luo formanttiobjekti
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Burg-formanttianalyysi
+\end_layout
+
+\end_inset
+
+ erikseen objektilistassa.
+\end_layout
+
+\begin_layout Enumerate
+Valitse objektilistasta ääniobjekti (tyyppiä 'Sound'), jolle haluat suorittaa
+ formanttianalyysin.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Paina hiirellä objektilistan oikeassa laidassa näkyvää painiketta 
+\series bold
+Formants & LPC
+\series default
+ ja valitse sen alasvetovalikosta 
+\series bold
+To Formant (burg)\SpecialChar \ldots{}
+
+\end_layout
+
+\begin_layout Enumerate
+Varmista, että formanttianalyysin asetukset ovat oikein: 
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+Time
+\begin_inset space ~
+\end_inset
+
+step
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Time step (formanttianalyysi)
+\end_layout
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+(sekuntia): Aika-askel; aika peräkkäisten analyysikehysten tai -ikkunoiden
+ keskikohtien välillä.
+ Jos analysoitava ääniobjekti on 2 sekunnin pituinen ja aika-askel on 0.01
+ sekuntia, analysoidaan yhteensä noin 200 kehystä.
+ Todellinen lukumäärä on kuitenkin hieman pienempi, koska mittaaminen on
+ hankalampaa ääninäytteen reunoilla.
+ 
+\end_layout
+
+\begin_layout Description
+Max.
+\begin_inset space ~
+\end_inset
+
+number
+\begin_inset space ~
+\end_inset
+
+of
+\begin_inset space ~
+\end_inset
+
+formants
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Max.
+ number of formants
+\end_layout
+
+\end_inset
+
+: Etsittävien formanttien maksimilukumäärä.
+ Ihmispuheen analyyseissa kannattaa yleensä käyttää arvoa 5.
+ Jos 
+\emph on
+Maximum formant
+\emph default
+-parametri on myös asetettu oikein, tämä on ainoa tapa jolla saat järkeviä
+ tuloksia.
+\end_layout
+
+\begin_layout Description
+Maximum
+\begin_inset space ~
+\end_inset
+
+formant
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Maximum formant
+\end_layout
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+(Hz): Etsittävien formanttien taajuuden yläraja.
+ Tämä arvo on ehdottomasti asetettava analysoitavan puhujan mukaan.
+ Oletusarvo 5500 Hz
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+naispuhujan formanttianalyysin asetukset
+\end_layout
+
+\end_inset
+
+ sopii aikuiselle naispuhujalle.
+ Miespuhujalle
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+miespuhujan formanttianalyysin asetukset
+\end_layout
+
+\end_inset
+
+ kannattaa käyttää arvoa 5000 Hz.
+ Liian korkea yläraja
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+formanttien yhteensulautuminen
+\end_layout
+
+\end_inset
+
+ voi nimittäin tuottaa liian vähän formantteja alemmilla taajuuksilla, sillä
+ algoritmi yrittää etsiä edellisessä kohdassa asetetut 5 formanttia niin
+ että ne erottuvat mahdollisimman hyvin toisistaan.
+ Esim.
+ miehen ääntämälle [u]-vokaalille pitäisi periaatteessa löytyä kaksi lähekkäistä
+ formanttia 1000 Hz:n alapuolelta, mutta liian korkea yläraja-asetus voi
+ antaa F1:ksi näiden yhdistelmän ja sysätä loput formantit liian ylös.
+ Pienten lasten puheelle
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lapsen formanttianalyysin asetukset
+\end_layout
+
+\end_inset
+
+ taas pitää käyttää paljon korkeampia arvoja, esim.
+ 8000 Hz.
+ Optimaalinen ylärajataajuus löytyy kokeilemalla analyysia vaikkapa erikseen
+ äännetyillä vokaaleilla.
+\end_layout
+
+\begin_layout Description
+Window
+\begin_inset space ~
+\end_inset
+
+length
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Window length (formanttianalyysi)
+\end_layout
+
+\end_inset
+
+: Analyysi-ikkunan tai -kehyksen efektiivinen kesto.
+ (Todellinen laskentaikkuna on kaksi kertaa näin pitkä, koska Praat käyttää
+ Gauss-muotoista ikkunaa, jonka reunat ovat lähellä nollaa.) Pre-emphasis
+ from (Hz): Spektrin esivahvistuksen alaraja (+3dB:n raja käänteiselle alipäästö
+suodattimelle, jonka kulma on +6dB/oktaavi).
+ Tavallisesti vokaalin spektri vaimenee ylätaajuuksiin päin mentäessä noin
+ 6 dB oktaavia kohti.
+ Formanttianalyysilla halutaan kuitenkin löytää paikallisia huippuja myös
+ ylätaajuuksilta, vaikka ne olisivat suhteessa heikompia kuin spektrin alaosan
+ formantit.
+ Tämän vuoksi spektri suodatetaan ennen formanttianalyysia siten, että ylätaajuu
+det voimistuvat ja spektrin kallistuskulma pienenee.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Paina lopuksi 
+\series bold
+OK
+\series default
+.
+ Objektilistaan ilmestyy uusi formanttiobjekti, joka näkyy valittuna.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/lennes/praat-opas/kuvat/formantti_burg_asetukset.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Formanttianalyysin asetusten määritteleminen.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Tracking"
+
+\end_inset
+
+Tracking 
+\end_layout
+
+\begin_layout Standard
+Jos kaipaat yhtenäisiä ja johdonmukaisen näköisiä formanttikäyriä, laske
+ ensin edellämainitulla tavalla 2 Formant-objekti ja valitse se objektilistasta.
+ Paina sitten objektilistan oikeassa reunassa näkyvää painiketta 
+\series bold
+Track\SpecialChar \ldots{}
+
+\series default
+ Tämä komento pyrkii löytämään jokaisesta analyysi-ikkunasta (
+\emph on
+frame
+\emph default
+) saman määrän formantteja ja esittämään jokaiselle formantille suorimman
+ mahdollisen "polun" peräkkäisten ikkunoiden välillä.
+ Jotta saisit esille esim.
+ 3 formanttipolkua, pitää Formant-objektin jokaisessa analyysi-ikkunassa
+ olla ainakin kolme formanttiehdokasta (ts.
+ kannattaa laskea alkuperäinen formanttiobjekti esim.
+ 5 formantilla ja käyttää sitten 
+\series bold
+Track
+\series default
+-komentoa).
+\end_layout
+
+\begin_layout Subsection
+Lisätietoa formanttianalyysista
+\end_layout
+
+\begin_layout Standard
+Kannattaa lukea Praatin sisäisestä manuaalista esim.
+ tutoriaalisivu 
+\series bold
+Source--filter
+\begin_inset space ~
+\end_inset
+
+synthesis
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Source--filter synthesis
+\end_layout
+
+\end_inset
+
+
+\series default
+ (anna manuaalin hakusanaksi esim.
+ "source-filter"), jossa kuvataan melko helppotajuisesti puheen lähde-suodinteor
+ia ja neuvotaan käytännössä, miten Praatilla voi kokeilla puheen lähdeäänen
+ ja/tai ääntöväylän suodinfunktion laskemista puhenäytteestä.
+ Sivu on hyödyllinen varsinkin jos olet kiinnostunut Praatin puhesynteesiominais
+uuksista.
+\end_layout
+
+\begin_layout Subsection
+Formanttikuvien piirtäminen
+\end_layout
+
+\begin_layout Standard
+Tässä muutamia esimerkkejä Praatilla piirretyistä kuvista.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/lennes/praat-opas/kuvat/formant_speckle.jpg
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Valitse Formant-objekti ja paina 
+\series bold
+Draw: Speckle\SpecialChar \ldots{}
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/lennes/praat-opas/kuvat/formanttikarttaesim.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Valitse Formant-objekti ja paina 
+\series bold
+Draw: Scatter plot\SpecialChar \ldots{}
+
+\series default
+ 
+\begin_inset Newline newline
+\end_inset
+
+Esim.
+ skriptaamalla voi myös lisätä kyseisen vokaalin nimen kunkin ympyrän sisälle.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+F1/F2-formanttikartan piirtäminen
+\end_layout
+
+\begin_layout Standard
+Perinteisen, kirjallisuudessa usein esiintyvän F1/F2-vokaalikartan
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+F1/F2-vokaalikartta
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+formanttikartta
+\end_layout
+
+\end_inset
+
+ saa piirrettyä, kun ensin on laskenut tutkittavasta vokaalista tms.
+ yhtenäisestä äänteestä Formant-objektin objektilistaan esim.
+ Burg-analyysilla (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "par:formantit-objektilistasta"
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Enumerate
+Valitse Formant-objekti ja käytä komentoa 
+\series bold
+Draw --- Scatter
+\begin_inset space ~
+\end_inset
+
+plot (reversed
+\begin_inset space ~
+\end_inset
+
+axes)
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Scatter plot (reversed axes)
+\end_layout
+
+\end_inset
+
+...
+
+\series default
+ 
+\end_layout
+
+\begin_layout Enumerate
+Määritä esiin tulevassa lomakkeessa F1:n arvot sijoitettavaksi pystyakselille
+ (
+\series bold
+Vertical formant number:
+\series default
+ 1)
+\series bold
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Vertical formant number
+\end_layout
+
+\end_inset
+
+
+\series default
+ sekä sopivat F1:n ala- ja ylärajat kohtaan 
+\emph on
+Vertical
+\begin_inset space ~
+\end_inset
+
+minimum
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Vertical minimum
+\end_layout
+
+\end_inset
+
+
+\emph default
+ ja 
+\emph on
+Vertical
+\begin_inset space ~
+\end_inset
+
+maximum
+\series bold
+\emph default
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Vertical maximum
+\end_layout
+
+\end_inset
+
+.
+
+\series default
+ Määritä F2 vastaavasti vaaka-akselille kirjoittamalla numero 2 kohtaan
+ 
+\emph on
+Horizontal formant number
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Horizontal formant number
+\end_layout
+
+\end_inset
+
+
+\emph default
+ sekä antamalla ylä- ja alarajat.
+ F1:n ja F2:n rajat kannattaa valita niin, että ne juuri ja juuri kattavat
+ kaikkien vokaalilaatujen alueen kyseisellä puhujalla, jolloin eri vokaalien
+ pitäisi asettua erilleen ja helposti tulkittaviin kohtiin kartalla.
+ Piirrettävän merkin muodon ja koon voi valita piirtolomakkeen alaosasta
+ (
+\emph on
+Mark
+\begin_inset space ~
+\end_inset
+
+size
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Mark size
+\end_layout
+
+\end_inset
+
+
+\emph default
+ ja 
+\emph on
+Mark
+\begin_inset space ~
+\end_inset
+
+string
+\emph default
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Mark string
+\end_layout
+
+\end_inset
+
+).
+ Piirtoväriä voit vaihtaa vielä ennen lomakkeen hyväksymistä piirtoikkunan
+ 
+\series bold
+Pen
+\series default
+-valikosta.
+ Muista myös valita piirtoikkunasta sopivan kokoinen ja muotoinen alue,
+ johon formanttikartta skaalautuu haluamallasi tavalla (ks.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Kuvien-luominen"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Enumerate
+Paina 
+\series bold
+OK
+\series default
+.
+ Tuloksena pitäisi olla vokaalikartta, jossa kummankin formantin minimi
+ on oikeassa ylänurkassa ts.
+ kuvan pitäisi suunnilleen vastata kirjallisuudessa näkyviä karttoja.
+ Jos Formant-objekti on laskettu niin pitkästä ääninäytteestä, että siihen
+ on mahtunut useita laskentaikkunoita, jokaisesta näistä piirtyy kuvaan
+ yksi formanttipiste tai -pallero.
+ Tästä on iloa, jos piirrät formanttikartan esim.
+ diftongista, jolloin formanttien liike vokaalin aikana näkyy.
+\end_layout
+
+\begin_layout Enumerate
+Voit piirtää samaan kuvaan päällekkäin muitakin Formant-objekteja.
+ Koska eri puhujien 
+\begin_inset Quotes sld
+\end_inset
+
+vokaaliavaruudet
+\begin_inset Quotes srd
+\end_inset
+
+ ovat hieman eri kokoisia jo fysiologisista eroista johtuen, on yleensä
+ järkevää piirtää vain yhden puhujan formantteja samaan kuvaan.
+\end_layout
+
+\begin_layout Enumerate
+Formanttikartan voi tallentaa kuvatiedostoon (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Kuvien-tallentaminen"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Subsection
+Formanttianalyysin virhelähteet 
+\end_layout
+
+\begin_layout Standard
+Formanttianalyysi perustuu teoreettiseen 
+\begin_inset CommandInset label
+LatexCommand label
+name "lähde-suodinteoria"
+
+\end_inset
+
+malliin, jonka mukaan akustinen puhesignaali muodostuu lähdeäänestä
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lähde-suodinteoria
+\end_layout
+
+\end_inset
+
+ (esimerkiksi kurkunpään tuottama "surina") ja ääntöväylän suodinominaisuuksista
+ (esimerkiksi formantit).
+ Jos mitattavaan puheääneen on päässyt vaikuttamaan jokin muu tekijä (esim.
+ huonetila, muut puhujat tai jokin äänitystekninen häiriö), saatat saada
+ vääristyneitä mittaustuloksia.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "Formanttianalyysin-tulkinta"
+
+\end_inset
+
+Formanttianalyysi vaatii aina jonkin verran tulkintaa
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+formanttianalyysin tulkinta
+\end_layout
+
+\end_inset
+
+: tutkija olettaa formanttien löytyvän "sieltä mistä niiden pitäisi löytyä".
+ Tutkijoiden käyttämät referenssiarvot perustuvat lukuisiin tutkimuksiin,
+ joissa yleensä selkeästi äännettyjen vokaalien formantteja on mitattu tietyillä
+ parametreilla kontrolloiduista aineistoista, tai kaavamaiseen malliin "keskimää
+räisen" ääntöväylän rakenteesta.
+ Formanttilaskennan tuloksia ei saa pitää yksinomaan objektiivisina lukuina,
+ vaan ne on suhteutettava kyseiseen puhujaan, äänneympäristöön, analyysiparametr
+eihin ja äänitteen laatuun.
+ Monet kontekstuaaliset tekijät saattavat muuttaa formanttien taajuuksia
+ ja kaistanleveyksiä, ja jotkut puheen piirteet (esim.
+ nasaalisuus) saattavat vaikeuttaa formanttien tulkintaa.
+ Puhujat ovat myös aina yksilöitä, eikä formanttiarvojen pidäkään osua kaikilla
+ samoille taajuuksille.
+\end_layout
+
+\begin_layout Standard
+Formantteja kannattaa luonnollisesti mitata vain kohdista, joissa ei ole
+ usean puhujan päällekkäispuhuntaa.
+ Näin varmistat, ettei toisten puhujien ääni sekoita analyysia, sillä formanttia
+nalyysi ei pysty erottamaan eri äänilähteitä toisistaan.
+ Myös muu taustahäly tai äänitystilan voimakas jälkikaiku voivat periaatteessa
+ aiheuttaa virheellisiä tuloksia.
+\end_layout
+
+\begin_layout Standard
+Tavanomaiset formanttianalyysin asetukset sopivat parhaiten soinnillisiin
+ äänteisiin, etenkin vokaaleihin.
+ Formantteja sinänsä on tietenkin kaikissa äänteissä, mutta automaattisen
+ formanttianalyysin parametrien antaminen ja tulosten tulkinta on soinnittomilla
+ äänteillä vaikeampaa, joskus järjetöntäkin.
+ Ei myöskään kannata käyttää 
+\series bold
+Track\SpecialChar \ldots{}
+
+\series default
+-komentoa kohdissa, joissa on esim.
+ konsonantin ja vokaalin välinen siirtymä, koska niissä löydettyjen formanttien
+ lukumäärä saattaa äkisti muuttua, jolloin järkevien "formanttipolkujen"
+ löytäminen on mahdotonta.
+\end_layout
+
+\begin_layout Standard
+Kun formantit esiintyvät lähekkäin, kuten esim.
+ F2 ja F3 [y]-vokaalissa tai F1 ja F2 [u]:ssa tai [o]:ssa, on vaarana, että
+ formanttianalyysi tulkitsee vierekkäiset formantit samaksi yhtenäiseksi
+ huipuksi.
+ Näin käy usein, jos tavanomaista viittä formanttia etsitään liian suurelta
+ taajuuskaistalta, esimerkiksi jos olet antanut matalaääniselle miespuhujalle
+ liian suuren yläraja-arvon kohdassa 
+\emph on
+Maximum formant
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+Laskennallisesti tavallinen syy 
+\begin_inset CommandInset label
+LatexCommand label
+name "formanttien-yhteensulautuminen"
+
+\end_inset
+
+formanttien
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+formanttien yhteensulautuminen
+\end_layout
+
+\end_inset
+
+ "yhtymiselle" tai "heittelehtimiselle" on, ettei LPC-analyysissa ole käytetty
+ riittävää määrää spektrikertoimia (tämä lukuhan on suhteessa etsittävien
+ formanttihuippujen määrään).
+ Riittävä määrä on vähintään signaalin näytteenottotaajuus hertseinä jaettuna
+ tuhannella (esim.
+ 16 kHz signaalille 16).
+ Praatin Burg-formanttianalyysi näytteistää signaalin automaattisesti ensin
+ näytetaajuuteen, joka on kaksi kertaa 
+\emph on
+Maximum formant
+\emph default
+, ja jos (2 * Max.
+ number of formants) on tähän taajuuteen sopivassa suhteessa, kertoimia
+ lasketaan automaattisesti riittävä määrä ja analyysin pitäisi onnistua
+ kohtalaisesti.
+ Sinun on kuitenkin otettava vielä tarkemmin huomioon oikea kerrointen määrä,
+ mikäli et käytä Praatin formanttianalyysia suoraan vaan teet erikseen LPC-analy
+ysin Sound-objektista.
+ Silloin sinun on joko itse näytteistettävä signaali uudestaan sopivaan
+ näytetaajuuteen ennen LPC-analyysia, tai annettava LPC:lle riittävä kertaluku
+ (prediction order), esim.
+ 16 kHz ääninäytteelle 16.
+ 
+\end_layout
+
+\begin_layout Chapter
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Kuvien-luominen"
+
+\end_inset
+
+Kuvien luominen
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Picture-ikkuna
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+piirtoikkuna
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+piirtäminen
+\end_layout
+
+\end_inset
+
+Praat-ohjelmalla voi tarkastella ja tuottaa äänestä akustisia kuvauksia
+ kahdella tavalla.
+ Siinä vaiheessa, kun aineistoon tutustutaan tai sitä nimikoidaan (ks.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Nimikointi"
+
+\end_inset
+
+), akustisia kuvantamismenetelmiä käytetään tavallisesti editori-ikkunoiden,
+ esimerkiksi äänieditorin (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Aanieditori-(Sound-editor)"
+
+\end_inset
+
+) tai nimikointi-ikkunan (TextGrid-editorin, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:TextGridin-tallennus"
+
+\end_inset
+
+) kautta.
+ Editori-ikkunoissa voi tehdä myös alustavia mittauksia erilaisista analyysikuvi
+sta.
+ Mikäli sen sijaan halutaan piirtää analyyseista laadukkaita kuvia, jotka
+ voidaan siirtää esimerkiksi tekstinkäsittelydokumenttiin, on kyseinen analyysi
+ ensin erikseen laskettava objektilistaan (ks.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Akustinen-analyysi"
+
+\end_inset
+
+).
+ Piirtäminen Praat-ohjelman piirtoikkunaan tapahtuu nimittäin aina jonkin
+ objektilistassa olevan objektin pohjalta.
+\end_layout
+
+\begin_layout Section
+Kuvan piirtäminen
+\end_layout
+
+\begin_layout Enumerate
+Valitse objekti-ikkunasta se objekti/objektit, josta haluat piirtää kuvan.
+ Jos haluat piirtää analyysikuvan, jota vastaavaa objektia ei vielä listassa
+ ole, valitse ensin ääniobjekti ja laske siitä haluamasi analyysiobjekti
+ (ks.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Akustinen-analyysi"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Enumerate
+Valitse hiirellä 
+\emph on
+piirtoikkunasta
+\emph default
+ (
+\emph on
+Picture
+\emph default
+) haluamasi kokoinen ja muotoinen suorakaide (
+\emph on
+Viewport
+\emph default
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Viewport
+\end_layout
+
+\end_inset
+
+), johon kuva piirretään.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Muuta tarvittaessa piirrettävän kuvan piirtoväriä (piirtoikkunan valikosta
+ 
+\series bold
+Pen
+\series default
+) ja/tai tekstin kirjasintyyppiä ja -kokoa (piirtoikkunan valikosta 
+\series bold
+Font
+\series default
+).
+ Tämä valinta vaikuttaa vasta seuraavan kuvan ominaisuuksiin, ei piirtoikkunan
+ aikaisempaan sisältöön.
+\end_layout
+
+\begin_layout Enumerate
+Valitse objekti-ikkunasta se objekti, josta haluat piirtää kuvan.
+ Valitse sitten dynaamisesta valikosta joko 
+\series bold
+Draw
+\series default
+- tai 
+\series bold
+Paint
+\series default
+-painikkeen alta sopiva piirtokomento (Paint-komento näkyy Draw-komennon
+ sijaan esimerkiksi spektrogrammiobjektin ollessa valittuna).
+ Näkyviin tulee lomake, jossa kysytään joitakin piirrettävään kuvaan liittyviä
+ tietoja.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+Garnish
+\emph default
+-kohdassa oleva rasti tarkoittaa, että kuvan ympärille piirretään automaattisest
+i laatikko ja merkitään vaaka- ja pystyakseleille oletusarvoiset nimet ja
+ asteikot.
+ Jos jostakin syystä haluat esimerkiksi piirtää päällekkäin kuvia eri objekteist
+a tai haluat määritellä akseleiden otsikot ja numerot itse, ota 
+\emph on
+Garnish
+\emph default
+-ruksi pois.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Paina 
+\series bold
+OK
+\series default
+, jolloin kuva piirtyy piirtoikkunasta valitun alueen sisään.
+ Kuva skaalautuu automaattisesti alueen muotoiseksi.
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Kuvien-tallentaminen"
+
+\end_inset
+
+Kuvien tallentaminen
+\end_layout
+
+\begin_layout Standard
+Ennen kuin tallennat tai siirrät kuvaa Praatin piirtoikkunasta, valitse
+ varmuuden vuoksi se osa piirtoalueesta, jonka haluat tallentaa tai siirtää.
+ 
+\end_layout
+
+\begin_layout Standard
+Praat-ohjelman piirtoikkunaan piirretyn kuvan voi joko
+\end_layout
+
+\begin_layout Enumerate
+
+\emph on
+kopioida leikepöydälle
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+kuvan siirto leikepöydälle
+\end_layout
+
+\end_inset
+
+
+\emph default
+ komennolla 
+\series bold
+Copy to clipboard
+\series default
+ (toimii Praatin Windows- ja Macintosh-versioissa) ja sen jälkeen liittää
+ vaikkapa tekstinkäsittelydokumenttiin ko.
+ ohjelman 
+\series bold
+Edit
+\series default
+- valikon 
+\series bold
+Paste
+\series default
+-komennolla.
+ Huom.
+ kuva ei tallennu minnekään ennen kuin tallennat toisessa ohjelmassa käsittelemä
+si dokumentin!
+\end_layout
+
+\begin_layout Enumerate
+
+\emph on
+tallentaa
+\emph default
+ Praat-kuvana
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Praat-kuvatiedosto
+\end_layout
+
+\end_inset
+
+, jota ei voi avata millään muulla ohjelmalla, käyttämällä komentoa 
+\series bold
+File: Write to praat picture file...
+
+\series default
+ Praat-kuvatiedostoja kannattaa käyttää, jos haluat jatkossa yhdistää tiettyyn
+ kuvaan uusia kuvia tai jatkaa sen piirtämistä Praatilla.
+ Praat-kuvatiedostojen oletusarvoinen tiedostopääte on 
+\emph on
+.prapic
+\end_layout
+
+\begin_layout Enumerate
+
+\emph on
+tallentaa
+\emph default
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "enu:EPS-grafiikka"
+
+\end_inset
+
+EPS-muotoisena kuvatiedostona komennolla 
+\series bold
+File: Write to EPS file...
+
+\series default
+ EPS-kuvatiedostojen nimissä kannattaa käyttää tiedostopäätettä 
+\emph on
+.eps
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+EPS
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+EPS
+\end_layout
+
+\end_inset
+
+
+\emph default
+ eli 
+\emph on
+Encapsulated Postscript
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Encapsulated Postscript
+\end_layout
+
+\end_inset
+
+
+\emph default
+ on kuvaformaatti, jota kannattaa aina käyttää painatettavaksi tarkoitetussa
+ materiaalissa.
+ EPS on nimittäin skaalautuvaa vektorigrafiikkaa toisin kuin esimerkiksi
+ piirtoikkunasta copy-paste-menetelmällä siirretyt bittikarttakuvat, jotka
+ ovat laadultaan heikompia ja muuttuvat jälkeenpäin venytettäessä rakeisiksi.
+ PostScript on oikeastaan yleinen grafiikan ja tekstin kuvauskieli, jota
+ suunnilleen kaikki nykyiset lasertulostimet käyttävät tulostettavan materiaalin
+ käsittelyyn.
+ EPS-grafiikka takaa siis myös, että aineisto tulostuu hyvälaatuisena.
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Kuvatiedostojen-avaaminen-Praatin"
+
+\end_inset
+
+Kuvatiedostojen avaaminen Praatin piirtoikkunaan
+\end_layout
+
+\begin_layout Standard
+Praat-ohjelmalla tallennetuista tai muualle siirretyistä kuvista voidaan
+ Praatilla avata ainoastaan 
+\emph on
+praat picture
+\emph default
+-tiedostot.
+ Valitse piirtoikkunassa komento 
+\series bold
+File: Read from praat picture file...
+
+\series default
+ 
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Kuvatiedostojen-avaaminen-muilla"
+
+\end_inset
+
+Kuvatiedostojen avaaminen muilla ohjelmilla
+\end_layout
+
+\begin_layout Standard
+Praat-ohjelmalla tallennettuihin EPS-kuvatiedostoihin ei valitettavasti
+ erikseen tallennu ns.
+ esikatselukuvaa.
+ Tämä tarkoittaa, että kun liität Praatilla tekemäsi EPS-tiedoston esimerkiksi
+ Word-dokumenttiin, kuvan kohdalla näkyy vain laatikko, jonka päällä on
+ ruksi.
+ Kun tulostat Word-dokumentin paperille, kuva kuitenkin näkyy vastaavassa
+ kohdassa.
+ 
+\end_layout
+
+\begin_layout Standard
+Erityisillä grafiikkaohjelmilla EPS-kuviinkin voi luoda esikatselukuvan,
+ jos sellaista tarvitsee.
+ Kaikki kuvankäsittelyohjelmat eivät välttämättä tue EPS-grafiikkaa, mutta
+ sellaiset ammattikäyttöön tarkoitetut piirto-ohjelmat kuin Adobe Illustrator
+ tai Macromedia Freehand kylläkin.
+ 
+\end_layout
+
+\begin_layout Standard
+Varmin tapa saada EPS-kuvatiedosto auki on käyttää erityistä ohjelmaa, joka
+ on tarkoitettu PostScript-dokumenttien käsittelyyn ja näyttämiseen.
+ Tällainen ilmainen ohjelmistopaketti on 
+\emph on
+Ghostscript
+\emph default
+ ja sen pariksi tarkoitettu PS-dokumenttien katseluohjelma nimeltä 
+\emph on
+Ghostview
+\emph default
+ (tai 
+\emph on
+GSview
+\emph default
+), jotka voi ladata ilmaiseksi verkosta, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+url{
+\end_layout
+
+\end_inset
+
+http://www.cs.wisc.edu/
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+~{}
+\end_layout
+
+\end_inset
+
+ghost/
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ Nämä ohjelmat kannattaa Windows-käyttäjän asentaa koneelleen, sillä niillä
+ on Praatilla tehtyjen kuvien katselun ja muuntamisen lisäksi muutakin käyttöä.
+ Unix- ja Linux-käyttäjien ei yleensä tarvitse olla huolissaan PostScript-dokume
+nttien avaamisesta, sillä unix-tyyppisissä käyttöjärjestelmissä on yleensä
+ valmiina postscript-tuki.
+\end_layout
+
+\begin_layout Chapter
+\begin_inset CommandInset label
+LatexCommand label
+name "cha:Skriptaus"
+
+\end_inset
+
+Skriptaus
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Mika-on-skripti?"
+
+\end_inset
+
+Mikä on skripti?
+\end_layout
+
+\begin_layout Standard
+Skripti
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+skripti
+\end_layout
+
+\end_inset
+
+ on eräänlainen tietokoneohjelma, jonka on tarkoitus olla helposti omaksuttaviss
+a ja suhteellisen helppolukuinen.
+\end_layout
+
+\begin_layout Standard
+Skriptikielen komennot on yleensä suunniteltu johonkin erityiseen tarkoitukseen
+ ja toimivat vain tietyssä rajatussa ympäristössä.
+ Esimerkiksi Praat-skriptillä ei tee mitään, jollei koneeseen ole asennettu
+ Praat-ohjelmaa, jolla skriptin voisi suorittaa.
+\end_layout
+
+\begin_layout Standard
+Itse 
+\series bold
+skripti on tavallinen tekstitiedosto
+\series default
+, jossa on yksi tai useampia rivejä.
+ Kullakin rivillä on yksi komentolause.
+\end_layout
+
+\begin_layout Standard
+Monet Praat-skriptien komennoista ovat aivan samannäköisiä kuin Praatissa
+ näkyvät valikkokomennotkin (ks.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Historiatoiminto"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Skriptin voit siis kirjoittaa ja avata uudelleen muokattavaksi millä tahansa
+ tekstieditorilla
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+tekstieditori
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Unix/Linux-koneissa vaihtoehtoja riittää: esim.
+ 
+\emph on
+emacs
+\emph default
+ tai 
+\emph on
+pico
+\emph default
+.
+ Vanhemmissa Macintosheissa hyvä valinta on esim.
+ 
+\emph on
+BBEdit
+\emph default
+ (josta pitäisi löytyä ilmaisia versioita).
+ Windows-koneissa voit käyttää esimerkiksi 
+\emph on
+WordPad
+\emph default
+ia tai jotakin ilmaista verkosta löytyvää tekstieditoria (itse kokeilin
+ esim.
+ 
+\emph on
+NoteTab Light
+\emph default
+ -nimistä ohjelmaa).
+ 
+\end_layout
+
+\end_inset
+
+ (tai tekstinkäsittelyohjelmalla, jos tallennat työn tuloksen tavallisena
+ tekstitiedostona).
+ Praatissa ei ole merkitystä sillä, mikä on skriptitiedoston tiedostopääte.
+\end_layout
+
+\begin_layout Standard
+Myös Praatissa on sisäänrakennettuna oma yksinkertainen tekstieditori
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+tekstieditori
+\end_layout
+
+\end_inset
+
+, jolla voit luoda ja muokata skriptejä, mutta siinä ei ole juuri mitään
+ kirjoitustyötä helpottavia hienouksia (edes rivinumerointia), mikä saattaa
+ ärsyttää pitemmälle ehtinyttä skriptaajaa.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+Edistyneemmille käyttäjille vinkkinä: Praatin skriptikielellä voi tehdä
+ paljon kaikenlaista.
+ Mitä monimutkaisempia toimintoja huomaa skripteihin kirjoittavansa, sitä
+ tarkemmin pitäisi kuitenkin miettiä, löytyisikö tarkoitukseen paremmin
+ sopivia skriptaus- tai ohjelmointikieliä.
+ (Oppaan kirjoitushetkellä kirjoittaja tekee melkein kaiken Praatilla, koska
+ ei osaa muutakaan...
+ ;-D)
+\end_layout
+
+\begin_layout Plain Layout
+Eri kielillä tehtyjä palikoita voi myös yhdistellä kekseliäästi.
+ Esim.
+ Perl -skriptit saattavat olla joihinkin tarkoituksiin kätevämpiä, jollei
+ Praatin signaalinkäsittelytoimintoja tarvita - ja jos osaa Perliä.
+ Ehkä kannattaa kokeilla PraatJavaa , jos Java-ohjelmointi on lähellä sydäntä.
+ Praat sinänsä on kirjoitettu C:llä, joten C:n taitaja voi kehitellä Praatin
+ lähdekoodiin lisätoimintoja ja kääntää vaikka itselleen oman Praat-version.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Mita-hyotya-skriptaamisesta"
+
+\end_inset
+
+Miksi skriptejä käytetään? 
+\end_layout
+
+\begin_layout Standard
+Skripteillä voi selviytyä nopeammin, johdonmukaisemmin ja vähemmin virhein
+ toistuvista tehtävistä, jotka "käsin" tehtynä olisivat aikaavieviä, tylsiä
+ ja virhealttiita.
+ Yksinkertainenkin skripti saattaa helpottaa elämää huomattavasti.
+ Lisäksi skripteillä voi usein korvata toimintoja, jotka Praatista (toistaiseksi
+) sattuvat puuttumaan.
+ Skriptien kirjoittamiseen kannattaa siis uhrata hieman aikaa - varsinkin
+ jos tietää, että edessä on oikea "liukuhihnaprojekti"!
+\end_layout
+
+\begin_layout Section
+Praat-skriptin luominen ja muokkaus
+\end_layout
+
+\begin_layout Itemize
+Jos haluat luoda uuden skriptin
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+skriptin luominen
+\end_layout
+
+\end_inset
+
+ Praatilla, valitse objektilistan 
+\series bold
+Control
+\series default
+-valikosta (tai jonkin editori-ikkunan 
+\series bold
+File
+\series default
+-valikosta) 
+\series bold
+New
+\begin_inset space ~
+\end_inset
+
+script
+\series default
+.
+ Skriptieditori
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+skriptieditori
+\end_layout
+
+\end_inset
+
+ aukeaa.
+ Kirjoita skriptirivit tavalliseen tapaan ja tallenna
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+skriptin tallentaminen
+\end_layout
+
+\end_inset
+
+ skripti 
+\series bold
+File
+\series default
+-valikosta komennolla 
+\series bold
+Save
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+Kun haluat avata
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+skriptin avaaminen
+\end_layout
+
+\end_inset
+
+ jo aikaisemmin tallennetun skriptin Praatissa, valitse 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+objektilistan 
+\series bold
+Control
+\series default
+-valikosta 
+\series bold
+Open
+\begin_inset space ~
+\end_inset
+
+script\SpecialChar \ldots{}
+ 
+\end_layout
+
+\begin_layout Itemize
+tai jonkin editori-ikkunan 
+\series bold
+File
+\series default
+-valikosta 
+\series bold
+Open
+\begin_inset space ~
+\end_inset
+
+editor
+\begin_inset space ~
+\end_inset
+
+script\SpecialChar \ldots{}
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Tässä vaiheessa on huomioitava, kumpaa kautta skripti on tarkoitettu avattavaksi
+: editoriskriptit eivät välttämättä toimi, jos ne avataan objektilistan
+ valikosta ja päinvastoin.
+\end_layout
+
+\end_deeper
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Historiatoiminto"
+
+\end_inset
+
+Skriptauksen opettelu historiatoiminnon avulla
+\end_layout
+
+\begin_layout Standard
+Historiatoiminto
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+historiatoiminto
+\end_layout
+
+\end_inset
+
+ on helpoin tapa aloittaa skriptaus Praatissa.
+ Historiaominaisuus muistuttaa hieman esimerkiksi Microsoft Wordin makroja,
+ joihin voi ensin tallettaa erilaisia toimenpidesarjoja ja toistaa niitä
+ sitten yhä uudelleen.
+\end_layout
+
+\begin_layout Itemize
+Avaa skripti tai luo uusi Praatin omaan tekstieditoriin (ks.
+ edellinen kohta).
+ 
+\end_layout
+
+\begin_layout Itemize
+Kokeile skripti-ikkunan 
+\series bold
+Edit
+\series default
+-valikon komentoa 
+\series bold
+Paste
+\begin_inset space ~
+\end_inset
+
+history
+\series default
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Paste history
+\end_layout
+
+\end_inset
+
+.
+ Praat kirjoittaa skriptikielellä kaikki ne toiminnot, joita olet suorittanut
+ siitä saakka kun Praatin avasit.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Edit
+\series default
+-valikon komento 
+\series bold
+Clear
+\begin_inset space ~
+\end_inset
+
+history
+\series default
+ tyhjentää historian ja aloittaa sen keräämisen alusta, jolloin voit tallettaa
+ skriptiin vain muutaman viimeisimmän komennon.
+ Historian avulla on helppo "luntata", miten jokin asia Praatin skriptikielessä
+ tehdään.
+\end_layout
+
+\begin_layout Standard
+Huom.
+ Kaikki Praatissa näkyvät valikkokomennot ja painikkeet ovat samalla skriptikiel
+en komentoja! Voit siis myös "luntata" komentoja katsomalla niiden tarkan
+ sanamuodon suoraan valikoista.
+ Jos esimerkiksi analyysin tekemiseen kysytään käyttäjältä tietoja: esim.
+ Pitch-analyysissa '
+\emph on
+time step
+\emph default
+', '
+\emph on
+minimum pitch
+\emph default
+' ja '
+\emph on
+maximum pitch
+\emph default
+', nämä tiedot pitää skriptatessa antaa samassa järjestyksessä varsinaisen
+ 
+\series bold
+To
+\begin_inset space ~
+\end_inset
+
+Pitch...
+\series default
+-komennon perään välilyönneillä erotettuna.
+ Esimerkiksi komento
+\end_layout
+
+\begin_layout Standard
+
+\family sans
+To
+\begin_inset space ~
+\end_inset
+
+Pitch...
+\begin_inset space ~
+\end_inset
+
+0.01
+\begin_inset space ~
+\end_inset
+
+75
+\begin_inset space ~
+\end_inset
+
+400
+\end_layout
+
+\begin_layout Standard
+laskee Pitch-objektin parametreillä 0.01 sekuntia, 75 Hz ja 400 Hz.
+\end_layout
+
+\begin_layout Standard
+Historiatoiminto on kätevä, mutta se ei anna käyttöösi kaikkia skriptikielen
+ "ohjelmointiteknisiä" mahdollisuuksia.
+ Et esimerkiksi voi tuottaa historiatoiminnolla muuttujia, käsitellä merkkijonoj
+a tai tehdä silmukkaa l.
+ toistaa samaa komentosarjaa vaihtelevilla parametreilla ilman, että tekisit
+ kaiken ensin kohta kohdalta käsin.
+ Historia auttaa siis alkuun ja antaa vinkkejä skriptin eri osia varten.
+ Mitä monimutkaisempi toimintosarja, sitä enemmän joudut luultavasti itse
+ miettimään.
+ 
+\end_layout
+
+\begin_layout Standard
+Katso siis lisäohjeita Praatin sisäisestä manuaalista , kohdasta Scripting
+ tutorial! 
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Miten-skripti-suoritetaan"
+
+\end_inset
+
+Skriptin suorittaminen (ajaminen) 
+\end_layout
+
+\begin_layout Standard
+Jos olet löytänyt skriptin verkosta, lataa se ensin omalle koneellesi ja
+ tallenna sopivaan paikkaan.
+\end_layout
+
+\begin_layout Enumerate
+Jotta voit suorittaa (ajaa) skriptin, sinun on avattava se Praatin omaan
+ skriptieditoriin
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+skriptieditori
+\end_layout
+
+\end_inset
+
+ vähintään kerran.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Skripti avataan objektilistasta käsin valitsemalla 
+\series bold
+Control
+\series default
+-valikosta 
+\series bold
+Open script...
+ 
+\end_layout
+
+\begin_layout Itemize
+Erilaisista editori-ikkunoistakin voit skriptin avata.
+ Tällöin 
+\series bold
+Open script...
+\series default
+-komento löytyy kyseisen editorin 
+\series bold
+File
+\series default
+-valikosta.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Kun skripti-ikkuna on näkyvissä, voit suorittaa skriptin valitsemalla 
+\series bold
+Run\SpecialChar \ldots{}
+
+\begin_inset space ~
+\end_inset
+
+->
+\begin_inset space ~
+\end_inset
+
+Run
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+Huom.
+ Jos luot usein käyttämällesi Praat-skriptille oman valikkokomennon tai
+ painikkeen (ks.
+ alla), sinun ei tarvitse myöhemmin enää avata skriptiä Praatissa kyseisellä
+ koneella, kunhan säilytät skriptitiedoston samannimisenä samassa paikassa.
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Valikkokomennot-ja-painikkeet"
+
+\end_inset
+
+Valikkokomentojen ja painikkeiden luominen skripteille 
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Valikkokomennon-luonti-skriptille"
+
+\end_inset
+
+Valikkokomennon luonti skriptille (fixed menu)
+\end_layout
+
+\begin_layout Enumerate
+Avaa skripti sellaisen Praatin ikkunan sisältä, johon valikkokomennon
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+valikkokomennon luominen
+\end_layout
+
+\end_inset
+
+ tai painikkeen pitäisi liittyä.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Jos haluat, että komento tulee objektilistan tai piirtoikkunan johonkin
+ valikkoon, valitse objektilistan 
+\series bold
+Control
+\series default
+-valikosta 
+\series bold
+Open script...
+
+\series default
+ Valitse sitten 
+\series bold
+File
+\series default
+-valikosta 
+\series bold
+Add to fixed menu...
+\end_layout
+
+\begin_layout Itemize
+Jos taas haluat komennon esim.
+ TextGrid-editori-ikkunan valikkoon, avaa ensin TextGrid-editori mille tahansa
+ TextGrid- ja ääniobjektille ja valitse editorin 
+\series bold
+File
+\series default
+- valikosta 
+\series bold
+Open script...
+
+\series default
+ Valitse sitten 
+\series bold
+File
+\series default
+-valikosta 
+\series bold
+Add to menu...
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Kirjoita, mihin valikkoon (
+\emph on
+Menu
+\emph default
+) uuden komennon haluat ja mikä komennon teksti (
+\emph on
+Command
+\emph default
+) on.
+ Jos avasit skriptin jostakin editori-ikkunasta, komento tulee näkyviin
+ valikkoon vasta, kun seuraavan kerran avaat uuden editori-ikkunan.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Painikkeen-luonti-skriptille"
+
+\end_inset
+
+Painikkeen luonti skriptille (dynamic menu)
+\end_layout
+
+\begin_layout Standard
+Painikkeen
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+painikkeen luominen
+\end_layout
+
+\end_inset
+
+ voit luoda vain objektilistaan.
+\end_layout
+
+\begin_layout Enumerate
+Valitse objektilistan 
+\series bold
+Control
+\series default
+-valikosta 
+\series bold
+Open script...
+
+\series default
+ Valitse sitten skripti-ikkunan File-valikosta Add to dynamic menu...
+ 
+\end_layout
+
+\begin_layout Enumerate
+Kirjoita kohtaan 
+\emph on
+Class 1
+\emph default
+ se objektityyppi (esim.
+ Sound tai TextGrid), jonka on oltava objektilistassa valittuna, jotta painike
+ olisi näkyvissä.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Kirjoita kohtaan 
+\emph on
+Number 1
+\emph default
+, montako 
+\emph on
+Class 1
+\emph default
+-tyyppistä objektia on vähintään oltava valittuna, jotta painike näkyisi.
+ Jos lukumäärällä ei ole väliä, jätä tähän kohtaan 0.
+\end_layout
+
+\begin_layout Enumerate
+Kirjoita kohtaan 
+\emph on
+Command
+\emph default
+ se teksti, jonka haluat näkyvän painikkeessa.
+\end_layout
+
+\begin_layout Enumerate
+Tarkista, että kohdassa 
+\emph on
+Script file
+\emph default
+ on oikea tiedostopolku skriptiin.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Paina 
+\emph on
+OK
+\emph default
+.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Valikkokomennon-poistaminen"
+
+\end_inset
+
+Valikkokomennon tai painikkeen poistaminen
+\end_layout
+
+\begin_layout Enumerate
+Valikkokomennon
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Valikkokomennon poistaminen tai kätkeminen
+\end_layout
+
+\end_inset
+
+ tai painikkeen voit poistaa objektilistan 
+\series bold
+Control
+\series default
+-valikon komennolla 
+\series bold
+Preferences...:
+\series default
+ 
+\series bold
+Buttons...
+\end_layout
+
+\begin_layout Enumerate
+Näkyviin tulee ikkuna, jossa on luettelot kaikista Praatin valikkokomennoista
+ ja painikkeista.
+ Ikkunan yläreunasta voit valita, näytetäänkö esim.
+ objektilistan vai piirtoikkunan valikot vai esim.
+ kaikki painikkeet A:sta M:ään.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Praatin sisäänrakennettujen komentojen kohdalla voit valita, onko komento
+ näkyvissä (
+\emph on
+shown
+\emph default
+) vain käyttäjältä piilossa (
+\emph on
+hidden
+\emph default
+).
+\end_layout
+
+\begin_layout Enumerate
+Itse lisäämiesi komentojen ja painikkeiden kohdalla lukee 
+\emph on
+ADDED
+\emph default
+, ja kun klikkaat kyseistä kohtaa, teksti muuttuu muotoon 
+\emph on
+REMOVED
+\emph default
+ ja komento häviää Praatista.
+ Skripti tietenkin pysyy tallella ja voit uudestaan käyttää sitä Praatissa
+ milloin tahansa.
+\end_layout
+
+\begin_layout Section
+Mitä vaaroja skriptien käyttämisessä voi olla?
+\end_layout
+
+\begin_layout Itemize
+Praat-skriptikin
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+skriptauksen huonot puolet
+\end_layout
+
+\end_inset
+
+ voi olla mahdollinen tietoturvariski.
+ Käytä vain skriptejä, jotka saat luotettavasta lähteestä ja joiden toiminnan
+ varmasti tunnet.
+ Älä myöskään itse kirjoita skriptejä, jotka esim.
+ poistavat tiedostoja käyttäjältä kysymättä.
+\end_layout
+
+\begin_layout Itemize
+Esimerkiksi erilaisia akustisia analyyseja on hyvin helppo automatisoida
+ skriptaamalla.
+ Jollet kuitenkaan tunne analyysien käyttöaluetta ja analyysiparametrien
+ toimintaa, saatat tietämättäsi tuottaa järjettömiä tuloksia.
+ Praat ei tarkista, miten fiksuja tai luotettavia mittauksesi ovat, kunhan
+ skriptin syntaksi on korrekti!
+\end_layout
+
+\begin_layout Itemize
+Testaa aina skriptiäsi ensin pienellä aineistolla ja tutki käsin, ovatko
+ skriptin tuottamat mittaustulokset oikeita.
+ Kokeneellekin voi sattua pikku kirjoitusvirheitä\SpecialChar \ldots{}
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList figure
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset index_print
+LatexCommand printindex
+type "idx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "/home/lennes/bib/ref"
+options "bibtotoc,plain"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

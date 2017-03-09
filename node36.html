@@ -1,0 +1,650 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//FI">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>7.5 Formanttianalyysi</TITLE>
+<META NAME="description" CONTENT="7.5 Formanttianalyysi">
+<META NAME="keywords" CONTENT="praat">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="praat.css">
+
+<LINK REL="previous" HREF="node35.html">
+<LINK REL="up" HREF="node31.html">
+<LINK REL="next" HREF="node37.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html683"
+  HREF="node37.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html677"
+  HREF="node31.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html673"
+  HREF="node35.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html679"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html681"
+  HREF="node51.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Aliluvut</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html685"
+  HREF="node36.html#SECTION00851000000000000000">7.5.1 Mikä on formantti?</A>
+<LI><A NAME="tex2html686"
+  HREF="node36.html#SECTION00852000000000000000">7.5.2 Formanttianalyysin laskentaperiaatteet</A>
+<UL>
+<LI><A NAME="tex2html687"
+  HREF="node36.html#SECTION00852100000000000000">7.5.2.1 Formanttianalyysin toiminta</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html688"
+  HREF="node36.html#SECTION00853000000000000000">7.5.3 Burg-formanttianalyysin tekeminen</A>
+<UL>
+<LI><A NAME="tex2html689"
+  HREF="node36.html#SECTION00853010000000000000">7.5.3.0.1 Tapa 1: </A>
+<LI><A NAME="tex2html690"
+  HREF="node36.html#SECTION00853020000000000000">7.5.3.0.2 Tapa 2</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html691"
+  HREF="node36.html#SECTION00854000000000000000">7.5.4 Tracking </A>
+<LI><A NAME="tex2html692"
+  HREF="node36.html#SECTION00855000000000000000">7.5.5 Lisätietoa formanttianalyysista</A>
+<LI><A NAME="tex2html693"
+  HREF="node36.html#SECTION00856000000000000000">7.5.6 Formanttikuvien piirtäminen</A>
+<LI><A NAME="tex2html694"
+  HREF="node36.html#SECTION00857000000000000000">7.5.7 F1/F2-formanttikartan piirtäminen</A>
+<LI><A NAME="tex2html695"
+  HREF="node36.html#SECTION00858000000000000000">7.5.8 Formanttianalyysin virhelähteet </A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION00850000000000000000"></A><A NAME="sub:Formanttianalyysi-_esim.-vokaalien"></A>
+<BR>
+7.5 Formanttianalyysi
+</H1>
+
+<P>
+Puheen formanttianalyysilla on pitk&#228;t perinteet etenkin vokaalitutkimuksessa<A NAME="476"></A>.
+Koska formantit liittyv&#228;t &#228;&#228;nt&#246;v&#228;yl&#228;n muotoon puheentuoton aikana,
+voidaan niiden keskitaajuuden muutosten ja keskin&#228;isten suhteiden
+perusteella tietyin edellytyksin tehd&#228; johtop&#228;&#228;t&#246;ksi&#228; puhesignaalin
+tuottamiseen k&#228;ytetyist&#228; artikulaatioliikkeist&#228;. Varovaisuus tulosten
+tulkinnassa on kuitenkin tarpeen.
+
+<P>
+
+<H2><A NAME="SECTION00851000000000000000">
+7.5.1 Mik&#228; on formantti?</A>
+</H2>
+
+<P>
+Puhe<A NAME="478"></A> on aina kompleksista &#228;&#228;nt&#228;, josta ns. Fourier-analyysin
+avulla voidaan l&#246;yt&#228;&#228; paljon eritaajuisia komponentteja l. osataajuuksia.
+Puhe&#228;&#228;ni voi saada alkunsa kurkunp&#228;&#228;ss&#228; ja/tai muissa kohdissa &#228;&#228;nt&#246;v&#228;yl&#228;&#228;
+&#228;&#228;nteest&#228; riippuen. T&#228;m&#228;n l&#228;hde&#228;&#228;nen<A NAME="479"></A> osataajuudet
+vahvistuvat tai heikkenev&#228;t amplitudeiltaan sen mukaan, mink&#228; muotoisessa
+&#228;&#228;nt&#246;v&#228;yl&#228;ss&#228; &#228;&#228;ni liikkuu ja heijastuu. Osa n&#228;ist&#228; &#228;&#228;nt&#246;v&#228;yl&#228;ss&#228;
+suodattuneista &#228;&#228;niaalloista s&#228;teilee lopulta suun ja/tai nen&#228;n kautta
+ulkomaailmaan.
+
+<P>
+&#196;&#228;nt&#246;v&#228;yl&#228;&#228;<A NAME="480"></A> (kurkunp&#228;&#228;st&#228; huuliin asti)
+voidaan yksinkertaistaen verrata jonoon eripituisia ja -paksuisia
+putkia. Mik&#228; tahansa putki taas vahvistaa kaikkia sellaisia &#228;&#228;niaaltoja,
+joiden aallonpituus<A NAME="481"></A> (joka on k&#228;&#228;nt&#228;en verrannollinen
+aallon taajuuteen) on sopivassa suhteessa putken pituuteen. Ihminen
+kykenee tietyiss&#228; rajoissa muuttelemaan &#228;&#228;nt&#246;v&#228;yl&#228;ns&#228; muotoa (esim.
+liikuttamalla kielt&#228;&#228;n, huuliaan jne.), jolloin &#228;&#228;nt&#246;v&#228;yl&#228;n &#34;putkijonon&#34;
+osien lukum&#228;&#228;r&#228;, pituudet (ja paksuudet) muuttuvat. Jokainen putkenp&#228;&#228;
+(my&#246;s avonainen p&#228;&#228;!) aiheuttaa &#228;&#228;nien osittaisen heijastumisen putkessa
+takaisinp&#228;in. Niinp&#228; &#228;&#228;nt&#246;v&#228;yl&#228;ss&#228; liikkuu jatkuvasti &#228;&#228;niaaltoja
+molempiin suuntiin, ja aallot tulevat toisiaan vastaan. 
+
+<P>
+<BLOCKQUOTE>
+Kuvittele, ett&#228; istut keinussa ja kaverisi antaa sinulle vauhtia.
+Kun kaverisi seisoo edess&#228;si tai takanasi ja tyrkk&#228;&#228; keinua joka kerran
+juuri oikeassa vaiheessa, saat parhaat &#34;vauhdit&#34;
+eli keinusi heilahtelee v&#228;hitellen yh&#228; korkeammalle. Olisikin turhaa
+antaa vauhtia silloin, kun keinu ei ole kohdalla! Ja jos kaverisi
+siirtyy keskelle keinun rataa seisomaan ja yritt&#228;&#228; tyrk&#228;t&#228; sinua takaisinp&#228;in
+kun keinu heilahtaa kovaa vauhtia h&#228;nt&#228; kohti, h&#228;n tuskin onnistuu,
+vaan keinu todenn&#228;k&#246;isimmin pys&#228;htyy (ja kaverisi ehk&#228; kaatuu ja satuttaa
+itsens&#228;). Ajoitus on siis t&#228;rke&#228;.
+
+</BLOCKQUOTE>
+Jos kaksi &#228;&#228;niaaltoa tulee toisiaan vastaan ja kulkee toistensa l&#228;pi
+sellaisessa kohdassa, jossa molemmat sattuvat olemaan samassa vaiheessa
+(esim. molempien aaltojen ilmanpainehuiput osuvat toisiinsa samassa
+pisteess&#228;), kyseisell&#228; kohdalla syntyy hetkellisesti amplitudiltaan
+suurempi aalto. Toisiinsa t&#246;rm&#228;&#228;v&#228;t aallot siis summautuvat. Jos taas
+aallot ovat kohdatessaan p&#228;invastaisessa vaiheessa toisiinsa n&#228;hden,
+on aaltojen yhteenlaskettu amplitudi kyseisell&#228; kohdalla nolla, ts.
+ne kumoavat toisensa. Tietyiss&#228; olosuhteissa aallot saattavat putken
+sis&#228;ll&#228; jatkuvasti t&#246;rm&#228;t&#228; samanvaiheisina samassa kohdassa, jolloin
+syntyy resonanssi<A NAME="488"></A>. Resonanssiin osallistuvilla
+aalloilla on silloin joko sama taajuus (ja siten my&#246;s sama aallonpituus)
+eli aalto t&#246;rm&#228;&#228; sopivan pituisessa putkessa aina itsens&#228; heijastumiin,
+tai sitten v&#228;hint&#228;&#228;n kahden eri osataajuuden aallonpituudet ovat tietyiss&#228;
+suhteissa toisiinsa ja putken pituuteen. (Kuvittele, ett&#228; kaverisi
+tyrkk&#228;isi keinulle vauhtia vain joka toisella tai kolmannella heilahduksella.)
+Putken pituus siis m&#228;&#228;r&#228;&#228;, mink&#228;taajuiset aallot putkessa voivat resonoida.
+(Ks. my&#246;s <A HREF="node16.html#sub:Akustiikkaa">3.5.1</A>)
+
+<P>
+<DL>
+<DT><STRONG>Formantti</STRONG></DT>
+<DD>vastaa yht&#228; tai useampaa &#228;&#228;nt&#246;v&#228;yl&#228;n resonanssia<A NAME="491"></A>
+eli sellaista taajuutta, jonka mukaiset &#228;&#228;niaallot vahvistuvat jossakin
+&#228;&#228;nt&#246;v&#228;yl&#228;n kohdassa. Formantit n&#228;hd&#228;&#228;n &#34;harjanteina&#34;
+tai &#34;huippuina&#34; puhesignaalin p&#228;tk&#228;st&#228; lasketussa
+spektriss&#228;. Formanttien sijainnin ja liikkeen on osoitettu vaikuttavan
+merkitt&#228;v&#228;ll&#228; tavalla my&#246;s puhe&#228;&#228;nteest&#228; syntyv&#228;&#228;n havaintoon. T&#228;m&#228;
+on aivan luonnollista: ovathan formantit tietyss&#228; monimutkaisessa
+suhteessa siihen, mill&#228; tavalla puhuja on liikutellut &#228;&#228;nt&#246;v&#228;yl&#228;putkistonsa
+osia. &#196;&#228;nt&#246;v&#228;yl&#228;ll&#228; on periaatteessa aina monia (&#228;&#228;rett&#246;m&#228;sti) resonansseja,
+mutta niist&#228; vain muutama vaikuttaa selv&#228;sti esim. vokaalien laadun
+havaintoon. Yleens&#228; puhe&#228;&#228;nteen spektrist&#228; ei edes yritet&#228; tunnistaa
+enemp&#228;&#228; kuin korkeintaan viisi alinta formanttia, koska ihmiskorvakaan
+ei juuri erota formanttien muutoksia n&#228;it&#228; korkeammilta taajuuksilta.
+</DD>
+</DL>
+Tietyn puhesignaalip&#228;tk&#228;n spektrin muotoa voidaan approksimoida LPC-menetelm&#228;ll&#228;<A NAME="497"></A>
+ja arvioida siten esimerkiksi formanttien keskitaajuuksia (eli mit&#228;
+taajuuksia &#228;&#228;nt&#246;v&#228;yl&#228; on kulloinkin parhaiten vahvistanut). &#196;&#228;nt&#246;v&#228;yl&#228;n
+resonanssit vaikuttavat tietenkin mihin tahansa &#228;&#228;neen, joka &#228;&#228;nt&#246;v&#228;yl&#228;n
+l&#228;pi kulkee, mutta formantteja mitataan useimmiten vokaaleista, koska
+n&#228;ist&#228; on olemassa paljon tutkimusta (ts. &#34;referenssiarvoja&#34;
+joihin verrata) ja automaattiset formanttianalyysimenetelm&#228;tkin yleens&#228;
+toimivat vokaaleilla parhaiten.
+
+<P>
+Puhe on kuitenkin k&#228;yt&#228;nn&#246;ss&#228; &#228;&#228;nt&#246;v&#228;yl&#228;n jatkuvaa liikett&#228; ja LPC
+nerokkuudessaankin vain matemaattinen malli, joten pelk&#228;ll&#228; formanttianalyysilla
+ei luultavasti saada koskaan t&#228;ydellist&#228; kuvaa siit&#228;, mink&#228; muotoinen
+&#228;&#228;nt&#246;v&#228;yl&#228; puhujalla on todellisuudessa ollut tietyll&#228; ajanhetkell&#228;.
+Mill&#228; tahansa ohjelmalla tehty automaattinen formanttianalyysi on
+pelkk&#228; laskennallinen arvio spektrin hallitsevimmista huipuista, ja
+formanttianalyysin virhel&#228;hteet onkin tunnettava tarkoin, ennen kuin
+formanttianalyysin tuloksia voi tulkita ja k&#228;ytt&#228;&#228;.
+
+<P>
+
+<H2><A NAME="SECTION00852000000000000000">
+7.5.2 Formanttianalyysin laskentaperiaatteet</A>
+</H2>
+
+<P>
+Praat-ohjelmalla tehdyn formanttianalyysin lopputuloksena syntyy Formant-objekti<A NAME="501"></A>,
+joka edustaa &#228;&#228;niobjektin spektrirakennetta ajan funktiona. Se on
+siis jono tasaisin v&#228;limatkoin laskettuja n&#228;ytteit&#228;, joissa kussakin
+on taajuus- ja kaistanleveysinformaatio useasta formantista sek&#228; informaatiota
+ikkunan maksimi-intensiteetist&#228;. Formant-objekti on siis rakenteeltaan
+ik&#228;&#228;n kuin kaavamainen tai karkeistettu versio spektrogrammista. Praat-ohjelman
+oletusformanttianalyysi<A NAME="502"></A> on Burgin algoritmi,
+jota k&#228;ytet&#228;&#228;n komennolla <B>Sound: To Formant (burg)...</B> (ks.
+<A HREF="node36.html#sub:Burg-analyysi">7.5.3</A> alla).
+
+<P>
+
+<H3><A NAME="SECTION00852100000000000000">
+7.5.2.1 Formanttianalyysin toiminta</A>
+</H3>
+
+<P>
+Aluksi &#228;&#228;nisignaali <B>n&#228;ytteistet&#228;&#228;n uudelleen</B> n&#228;ytetaajuuteen,
+joka on kaksi kertaa <I>Maximum&nbsp;formant</I><A NAME="508"></A>-kohdassa
+annettu formanttien yl&#228;rajataajuus. Sitten signaali <B>esivahvistetaan<A NAME="509"></A></B>
+(pre-emphasis<A NAME="510"></A>), jotta my&#246;s ylemmill&#228; taajuuksilla
+olevat, luonnostaan vaimeammat huiput saisivat saman painoarvon kuin
+alemmat formantit. N&#228;in saadusta signaalista lasketaan tietyin v&#228;limatkoin
+<B>lyhytaikaisspektrej&#228;<A NAME="511"></A></B> (spektrien
+v&#228;limatka ja spektri-ikkunan leveys m&#228;&#228;ritell&#228;&#228;n kohdissa <I>Time
+step<A NAME="512"></A></I> ja <I>Window length</I><A NAME="514"></A>).
+
+<P>
+Sitten approksimoidaan kussakin analyysi-ikkunassa tai -kehyksess&#228;
+(frame) saatua spektri&#228; <B>lineaariprediktio-<A NAME="515"></A></B>
+eli LP- tai LPC-menetelm&#228;ll&#228; (Linear Predictive Coding<A NAME="516"></A>,
+josta k&#228;ytet&#228;&#228;n t&#228;ss&#228; Burgin algoritmia). Lineaariprediktiossa spektrin
+muotoa pyrit&#228;&#228;n kuvaamaan pienell&#228; m&#228;&#228;r&#228;ll&#228; huippuja, joille arvioidaan
+keskitaajuus ja kaistanleveys. N&#228;iden huippujen voidaan katsoa edustavan
+&#228;&#228;nt&#246;v&#228;yl&#228;n resonansseja l. formantteja. LPC:n tulos on itse asiassa
+joukko kertoimia, jotka eiv&#228;t sin&#228;ns&#228; ole ihmiselle lainkaan havainnollisia.
+Siksi formanttianalyysissa viel&#228; jatkojalostetaan kertoimien antamaa
+informaatiota formanttien taajuus- ja kaistanleveysarvoiksi.
+
+<P>
+Koska algoritmi l&#246;yt&#228;&#228; aluksi formantteja my&#246;s hyvin matalilta ja
+korkeilta taajuuksilta, <B>poistaa Burg-algoritmi lis&#228;ksi</B> formantit
+50 Hz:n alapuolelta sek&#228; formantit jotka ovat korkeammalla kuin Maximum
+formant - 50 Hz. Jos v&#228;ltt&#228;m&#228;tt&#228; haluat pit&#228;&#228; n&#228;m&#228;kin taajuuskaistat
+mukana (jolloin tuskin saat perinteisen n&#228;k&#246;isi&#228; F1- ja F2-arvoja),
+kokeile komentoa <B>Sound: To Formant (keep all)...</B> Jos
+taas haluat v&#228;ltt&#228;m&#228;tt&#228; saada aina pyyt&#228;m&#228;si tietyn m&#228;&#228;r&#228;n formantteja
+tasaisesti jakautuneina koko antamallesi taajuusalueelle, voit kokeilla
+muuten ep&#228;luotettavaa Split-Levinson-algoritmia<A NAME="519"></A>
+komennolla <B>Sound: To Formant (sl)...</B>
+
+<P>
+Huom. Yll&#228; kerrotulla tavalla tuotettu Formant-tyyppinen objekti sis&#228;lt&#228;&#228;
+vain ne formantit, joita signaalista on kussakin ikkunassa l&#246;ytynyt,
+ja taajuusarvot saattavat heittelehti&#228; paljonkin per&#228;kk&#228;isten ikkunoiden
+v&#228;lill&#228;. Per&#228;kk&#228;isten formanttiarvojen &#34;jatkuvuutta&#34;
+t&#228;m&#228; perusanalyysi ei yrit&#228; etsi&#228;. Jos haluat tutkia esim. vokaalisegmentin
+sis&#228;ll&#228; tapahtuvia formanttiliikkeit&#228;, tee ensin t&#228;m&#228; analyysi, mutta
+katso sitten kohta Tracking (<A HREF="node36.html#sub:Tracking">7.5.4</A>).
+
+<P>
+
+<H2><A NAME="SECTION00853000000000000000"></A><A NAME="sub:Burg-analyysi"></A>
+<BR>
+7.5.3 Burg-formanttianalyysin tekeminen
+</H2>
+
+<P>
+
+<H4><A NAME="SECTION00853010000000000000"></A><A NAME="par:formantit-editorissa"></A>
+<BR>
+7.5.3.0.1 Tapa 1: 
+</H4>
+
+<P>
+Jos haluat vain katsella Praatin laskemia formanttiarvoja esimerkiksi
+yhdess&#228; &#228;&#228;nen aaltomuodon ja spektrogrammin kanssa, tee formanttianalyysi
+&#228;&#228;nieditori-ikkunan sis&#228;ll&#228;.
+
+<P>
+
+<OL>
+<LI>Valitse objektilistasta &#228;&#228;niobjekti (tyyppi&#228; <B>Sound</B>), jolle
+haluat suorittaa formanttianalyysin.
+</LI>
+<LI>Paina hiirell&#228; objektilistan oikeassa laidassa n&#228;kyv&#228;&#228; painiketta
+Edit,jolloin saat n&#228;kyviin &#228;&#228;nieditori-ikkunan.
+</LI>
+<LI>Valitse &#228;&#228;nieditori-ikkunan <B>View</B>-valikosta <B>Show formant</B>
+(ja muut analyysit, jotka haluat n&#228;kyviin samanaikaisesti). Formanttianalyysi
+tulee n&#228;kyviin &#228;&#228;niaallon alapuolelle punaisina pistein&#228;.
+</LI>
+<LI>Tarkista analyysin asetukset <B>View</B>-valikon kohdasta <B>Formant
+analysis...</B> &#196;&#228;nieditorissa voi tehd&#228; formanttianalyysin vain
+burg-algoritmilla. Asetukset ovat muuten samat kuin analyysitavassa
+2, mutta formanttien maksimim&#228;&#228;r&#228;&#228; ei t&#228;ss&#228; anneta, vaan sen sijaan
+kohta <I>Number of poles<A NAME="532"></A></I> viittaa lineaariprediktiossa
+k&#228;ytett&#228;vien kertoimien m&#228;&#228;r&#228;&#228;n. Jos t&#228;m&#228; arvo on 10, algoritmi etsii
+viitt&#228; formanttia.
+</LI>
+<LI>Jos ikkunassa on kerrallaan n&#228;kyviss&#228; pitk&#228; p&#228;tk&#228; &#228;&#228;nisignaalia, formanttianalyysi
+ei ehk&#228; n&#228;y koko ikkunan osalta. Jos haluat analyysin laskettavaksi
+pitemm&#228;lt&#228; aikav&#228;lilt&#228;, muuta haluamasi sekuntim&#228;&#228;r&#228; <B>View</B>-valikon
+komennolla <B>Analysis resolution</B>..., kohtaan <B>Formant
+max. duration (s)</B>. Huomaa kuitenkin ett&#228; formantit lasketaan uudelleen
+aina kun vierit&#228;t tai zoomaat editori-ikkunaa, joten pitk&#228; formanttianalyysi
+voi hidastaa ty&#246;skentely&#228;. Formantit kannattaakin editorissa kytke&#228;
+pois p&#228;&#228;lt&#228; aina kun niit&#228; ei tarvita. 
+</LI>
+<LI>Halutessasi voit tehd&#228; &#228;&#228;nieditorissa mittauksiakin seuraavasti:
+</LI>
+</OL>
+
+<UL>
+<LI>summittaisia mittauksia klikkaamalla hiirell&#228; jonkin punaisen formanttipisteen
+kohdalle (taajuus hiiren kohdalla n&#228;kyy ikkunan vasemmassa reunassa
+punaisella) tai
+</LI>
+<LI>tarkempia mittauksia klikkaamalla hiirell&#228; johonkin kohtaan &#228;&#228;nisignaalia
+tai spektrogrammia ja valitsemalla sitten <B>Query</B> -valikosta
+esim. <B>Get first formant</B>, jolloin Info-ikkunassa n&#228;kyy ajallisesti
+l&#228;hin 1. formantille mitattu arvo kursorin kohdalta. (N&#228;m&#228; <B>Query</B>-valikon
+formanttikomennot toimivat vain jos formanttianalyysi on valittuna
+<B>View</B>-valikossa.)
+</LI>
+</UL>
+
+<P>
+
+<H4><A NAME="SECTION00853020000000000000"></A><A NAME="par:formantit-objektilistasta"></A>
+<BR>
+7.5.3.0.2 Tapa 2
+</H4>
+
+<P>
+Kun haluat analysoida tarkemmin, tehd&#228; tarkkoja mittauksia, piirt&#228;&#228;
+kuvia, tai k&#228;ytt&#228;&#228; formanttianalyysia skriptin sis&#228;ll&#228;, luo formanttiobjekti<A NAME="545"></A>
+erikseen objektilistassa.
+
+<P>
+
+<OL>
+<LI>Valitse objektilistasta &#228;&#228;niobjekti (tyyppi&#228; 'Sound'), jolle haluat
+suorittaa formanttianalyysin. 
+</LI>
+<LI>Paina hiirell&#228; objektilistan oikeassa laidassa n&#228;kyv&#228;&#228; painiketta
+<B>Formants &amp; LPC</B> ja valitse sen alasvetovalikosta <B>To
+Formant (burg)...</B>
+</LI>
+<LI>Varmista, ett&#228; formanttianalyysin asetukset ovat oikein: 
+
+<P>
+<DL>
+<DT><STRONG>Time&nbsp;step<A NAME="550"></A>&nbsp;(sekuntia):</STRONG></DT>
+<DD>Aika-askel;
+aika per&#228;kk&#228;isten analyysikehysten tai -ikkunoiden keskikohtien v&#228;lill&#228;.
+Jos analysoitava &#228;&#228;niobjekti on 2 sekunnin pituinen ja aika-askel
+on 0.01 sekuntia, analysoidaan yhteens&#228; noin 200 kehyst&#228;. Todellinen
+lukum&#228;&#228;r&#228; on kuitenkin hieman pienempi, koska mittaaminen on hankalampaa
+&#228;&#228;nin&#228;ytteen reunoilla. 
+</DD>
+<DT><STRONG>Max.&nbsp;number&nbsp;of&nbsp;formants<A NAME="551"></A>:</STRONG></DT>
+<DD>Etsitt&#228;vien
+formanttien maksimilukum&#228;&#228;r&#228;. Ihmispuheen analyyseissa kannattaa yleens&#228;
+k&#228;ytt&#228;&#228; arvoa 5. Jos <I>Maximum formant</I>-parametri on my&#246;s asetettu
+oikein, t&#228;m&#228; on ainoa tapa jolla saat j&#228;rkevi&#228; tuloksia.
+</DD>
+<DT><STRONG>Maximum&nbsp;formant<A NAME="553"></A>&nbsp;(Hz):</STRONG></DT>
+<DD>Etsitt&#228;vien formanttien
+taajuuden yl&#228;raja. T&#228;m&#228; arvo on ehdottomasti asetettava analysoitavan
+puhujan mukaan. Oletusarvo 5500 Hz<A NAME="554"></A>
+sopii aikuiselle naispuhujalle. Miespuhujalle<A NAME="555"></A>
+kannattaa k&#228;ytt&#228;&#228; arvoa 5000 Hz. Liian korkea yl&#228;raja<A NAME="556"></A>
+voi nimitt&#228;in tuottaa liian v&#228;h&#228;n formantteja alemmilla taajuuksilla,
+sill&#228; algoritmi yritt&#228;&#228; etsi&#228; edellisess&#228; kohdassa asetetut 5 formanttia
+niin ett&#228; ne erottuvat mahdollisimman hyvin toisistaan. Esim. miehen
+&#228;&#228;nt&#228;m&#228;lle [u]-vokaalille pit&#228;isi periaatteessa l&#246;yty&#228; kaksi l&#228;hekk&#228;ist&#228;
+formanttia 1000 Hz:n alapuolelta, mutta liian korkea yl&#228;raja-asetus
+voi antaa F1:ksi n&#228;iden yhdistelm&#228;n ja sys&#228;t&#228; loput formantit liian
+yl&#246;s. Pienten lasten puheelle<A NAME="559"></A>
+taas pit&#228;&#228; k&#228;ytt&#228;&#228; paljon korkeampia arvoja, esim. 8000 Hz. Optimaalinen
+yl&#228;rajataajuus l&#246;ytyy kokeilemalla analyysia vaikkapa erikseen &#228;&#228;nnetyill&#228;
+vokaaleilla.
+</DD>
+<DT><STRONG>Window&nbsp;length<A NAME="560"></A>:</STRONG></DT>
+<DD>Analyysi-ikkunan
+tai -kehyksen efektiivinen kesto. (Todellinen laskentaikkuna on kaksi
+kertaa n&#228;in pitk&#228;, koska Praat k&#228;ytt&#228;&#228; Gauss-muotoista ikkunaa, jonka
+reunat ovat l&#228;hell&#228; nollaa.) Pre-emphasis from (Hz): Spektrin esivahvistuksen
+alaraja (+3dB:n raja k&#228;&#228;nteiselle alip&#228;&#228;st&#246;suodattimelle, jonka kulma
+on +6dB/oktaavi). Tavallisesti vokaalin spektri vaimenee yl&#228;taajuuksiin
+p&#228;in ment&#228;ess&#228; noin 6 dB oktaavia kohti. Formanttianalyysilla halutaan
+kuitenkin l&#246;yt&#228;&#228; paikallisia huippuja my&#246;s yl&#228;taajuuksilta, vaikka
+ne olisivat suhteessa heikompia kuin spektrin alaosan formantit. T&#228;m&#228;n
+vuoksi spektri suodatetaan ennen formanttianalyysia siten, ett&#228; yl&#228;taajuudet
+voimistuvat ja spektrin kallistuskulma pienenee.
+</DD>
+</DL>
+</LI>
+<LI>Paina lopuksi <B>OK</B>. Objektilistaan ilmestyy uusi formanttiobjekti,
+joka n&#228;kyy valittuna.
+</LI>
+</OL>
+
+<DIV ALIGN="CENTER"><A NAME="566"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Kuva 7.1:</STRONG>
+Formanttianalyysin asetusten m&#228;&#228;ritteleminen.</CAPTION>
+<TR><TD><IMG
+ ALIGN="BOTTOM" BORDER="0" SRC="/home/lennes/praat-opas/kuvat/formantti_burg_asetukset.jpg"
+ ALT="Image /home/lennes/praat-opas/kuvat/formantti_burg_asetukset.jpg">
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<H2><A NAME="SECTION00854000000000000000"></A><A NAME="sub:Tracking"></A>
+<BR>
+7.5.4 Tracking 
+</H2>
+
+<P>
+Jos kaipaat yhten&#228;isi&#228; ja johdonmukaisen n&#228;k&#246;isi&#228; formanttik&#228;yri&#228;,
+laske ensin edell&#228;mainitulla tavalla 2 Formant-objekti ja valitse
+se objektilistasta. Paina sitten objektilistan oikeassa reunassa n&#228;kyv&#228;&#228;
+painiketta <B>Track...</B> T&#228;m&#228; komento pyrkii l&#246;yt&#228;m&#228;&#228;n jokaisesta
+analyysi-ikkunasta (<I>frame</I>) saman m&#228;&#228;r&#228;n formantteja ja esitt&#228;m&#228;&#228;n
+jokaiselle formantille suorimman mahdollisen &#34;polun&#34;
+per&#228;kk&#228;isten ikkunoiden v&#228;lill&#228;. Jotta saisit esille esim. 3 formanttipolkua,
+pit&#228;&#228; Formant-objektin jokaisessa analyysi-ikkunassa olla ainakin
+kolme formanttiehdokasta (ts. kannattaa laskea alkuper&#228;inen formanttiobjekti
+esim. 5 formantilla ja k&#228;ytt&#228;&#228; sitten <B>Track</B>-komentoa).
+
+<P>
+
+<H2><A NAME="SECTION00855000000000000000">
+7.5.5 Lis&#228;tietoa formanttianalyysista</A>
+</H2>
+
+<P>
+Kannattaa lukea Praatin sis&#228;isest&#228; manuaalista esim. tutoriaalisivu
+<B>Source-filter&nbsp;synthesis<A NAME="575"></A></B>
+(anna manuaalin hakusanaksi esim. &#34;source-filter&#34;),
+jossa kuvataan melko helppotajuisesti puheen l&#228;hde-suodinteoria ja
+neuvotaan k&#228;yt&#228;nn&#246;ss&#228;, miten Praatilla voi kokeilla puheen l&#228;hde&#228;&#228;nen
+ja/tai &#228;&#228;nt&#246;v&#228;yl&#228;n suodinfunktion laskemista puhen&#228;ytteest&#228;. Sivu
+on hy&#246;dyllinen varsinkin jos olet kiinnostunut Praatin puhesynteesiominaisuuksista.
+
+<P>
+
+<H2><A NAME="SECTION00856000000000000000">
+7.5.6 Formanttikuvien piirt&#228;minen</A>
+</H2>
+
+<P>
+T&#228;ss&#228; muutamia esimerkkej&#228; Praatilla piirretyist&#228; kuvista.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="836"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Kuva 7.2:</STRONG>
+Valitse Formant-objekti ja paina <B>Draw: Speckle...</B></CAPTION>
+<TR><TD><IMG
+ ALIGN="BOTTOM" BORDER="0" SRC="/home/lennes/praat-opas/kuvat/formant_speckle.jpg"
+ ALT="Image /home/lennes/praat-opas/kuvat/formant_speckle.jpg">
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+<DIV ALIGN="CENTER"><A NAME="837"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Kuva 7.3:</STRONG>
+Valitse Formant-objekti ja paina <B>Draw: Scatter plot...</B>
+<BR>
+Esim. skriptaamalla voi my&#246;s lis&#228;t&#228; kyseisen vokaalin nimen kunkin
+ympyr&#228;n sis&#228;lle.</CAPTION>
+<TR><TD><IMG
+ ALIGN="BOTTOM" BORDER="0" SRC="/home/lennes/praat-opas/kuvat/formanttikarttaesim.jpg"
+ ALT="Image /home/lennes/praat-opas/kuvat/formanttikarttaesim.jpg">
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<H2><A NAME="SECTION00857000000000000000">
+7.5.7 F1/F2-formanttikartan piirt&#228;minen</A>
+</H2>
+
+<P>
+Perinteisen, kirjallisuudessa usein esiintyv&#228;n F1/F2-vokaalikartan<A NAME="589"></A><A NAME="590"></A>
+saa piirretty&#228;, kun ensin on laskenut tutkittavasta vokaalista tms.
+yhten&#228;isest&#228; &#228;&#228;nteest&#228; Formant-objektin objektilistaan esim. Burg-analyysilla
+(<A HREF="node36.html#par:formantit-objektilistasta">7.5.3</A>). 
+
+<P>
+
+<OL>
+<LI>Valitse Formant-objekti ja k&#228;yt&#228; komentoa <B>Draw -- Scatter&nbsp;plot
+(reversed&nbsp;axes)<A NAME="593"></A>...</B> 
+</LI>
+<LI>M&#228;&#228;rit&#228; esiin tulevassa lomakkeessa F1:n arvot sijoitettavaksi pystyakselille
+(<B>Vertical formant number:</B> 1)<B><A NAME="595"></A></B>
+sek&#228; sopivat F1:n ala- ja yl&#228;rajat kohtaan <I>Vertical&nbsp;minimum<A NAME="596"></A></I>
+ja <I>Vertical&nbsp;maximum</I><B><A NAME="598"></A>.</B> M&#228;&#228;rit&#228;
+F2 vastaavasti vaaka-akselille kirjoittamalla numero 2 kohtaan <I>Horizontal
+formant number<A NAME="599"></A></I> sek&#228; antamalla yl&#228;-
+ja alarajat. F1:n ja F2:n rajat kannattaa valita niin, ett&#228; ne juuri
+ja juuri kattavat kaikkien vokaalilaatujen alueen kyseisell&#228; puhujalla,
+jolloin eri vokaalien pit&#228;isi asettua erilleen ja helposti tulkittaviin
+kohtiin kartalla. Piirrett&#228;v&#228;n merkin muodon ja koon voi valita piirtolomakkeen
+alaosasta (<I>Mark&nbsp;size<A NAME="600"></A></I> ja <I>Mark&nbsp;string</I><A NAME="602"></A>).
+Piirtov&#228;ri&#228; voit vaihtaa viel&#228; ennen lomakkeen hyv&#228;ksymist&#228; Picture-ikkunan
+<B>Pen</B>-valikosta. Muista my&#246;s valita Picture-ikkunasta sopivan
+kokoinen ja muotoinen alue, johon formanttikartta skaalautuu haluamallasi
+tavalla (ks. <A HREF="node37.html#sec:Kuvien-luominen">8</A>).
+</LI>
+<LI>Paina <B>OK</B>. Tuloksena pit&#228;isi olla vokaalikartta, jossa kummankin
+formantin minimi on oikeassa yl&#228;nurkassa ts. kuvan pit&#228;isi suunnilleen
+vastata kirjallisuudessa n&#228;kyvi&#228; karttoja. Jos Formant-objekti on
+laskettu niin pitk&#228;st&#228; &#228;&#228;nin&#228;ytteest&#228;, ett&#228; siihen on mahtunut useita
+laskentaikkunoita, jokaisesta n&#228;ist&#228; piirtyy kuvaan yksi formanttipiste
+tai -pallero. T&#228;st&#228; on iloa, jos piirr&#228;t formanttikartan esim. diftongista,
+jolloin formanttien liike vokaalin aikana n&#228;kyy.
+</LI>
+<LI>Voit piirt&#228;&#228; samaan kuvaan p&#228;&#228;llekk&#228;in muitakin Formant-objekteja.
+Koska eri puhujien ''vokaaliavaruudet'' ovat hieman eri kokoisia
+jo fysiologisista eroista johtuen, on yleens&#228; j&#228;rkev&#228;&#228; piirt&#228;&#228; vain
+yhden puhujan formantteja samaan kuvaan.
+</LI>
+<LI>Formanttikartan voi tallentaa kuvatiedostoon (<A HREF="node39.html#sub:Kuvien-tallentaminen">8.2</A>).
+</LI>
+</OL>
+
+<P>
+
+<H2><A NAME="SECTION00858000000000000000">
+7.5.8 Formanttianalyysin virhel&#228;hteet </A>
+</H2>
+
+<P>
+Formanttianalyysi perustuu teoreettiseen <A NAME="l_E4hde-suodinteoria"></A>malliin,
+jonka mukaan akustinen puhesignaali muodostuu l&#228;hde&#228;&#228;nest&#228;<A NAME="610"></A>
+(esimerkiksi kurkunp&#228;&#228;n tuottama &#34;surina&#34;) ja &#228;&#228;nt&#246;v&#228;yl&#228;n
+suodinominaisuuksista (esimerkiksi formantit). Jos mitattavaan puhe&#228;&#228;neen
+on p&#228;&#228;ssyt vaikuttamaan jokin muu tekij&#228; (esim. huonetila, muut puhujat
+tai jokin &#228;&#228;nitystekninen h&#228;iri&#246;), saatat saada v&#228;&#228;ristyneit&#228; mittaustuloksia.
+
+<P>
+<A NAME="Formanttianalyysin-tulkinta"></A>Formanttianalyysi vaatii aina
+jonkin verran tulkintaa<A NAME="614"></A>: tutkija
+olettaa formanttien l&#246;ytyv&#228;n &#34;sielt&#228; mist&#228; niiden pit&#228;isi
+l&#246;yty&#228;&#34;. Tutkijoiden k&#228;ytt&#228;m&#228;t referenssiarvot perustuvat
+lukuisiin tutkimuksiin, joissa yleens&#228; selke&#228;sti &#228;&#228;nnettyjen vokaalien
+formantteja on mitattu tietyill&#228; parametreilla kontrolloiduista aineistoista,
+tai kaavamaiseen malliin &#34;keskim&#228;&#228;r&#228;isen&#34; &#228;&#228;nt&#246;v&#228;yl&#228;n
+rakenteesta. Formanttilaskennan tuloksia ei saa pit&#228;&#228; yksinomaan objektiivisina
+lukuina, vaan ne on suhteutettava kyseiseen puhujaan, &#228;&#228;nneymp&#228;rist&#246;&#246;n,
+analyysiparametreihin ja &#228;&#228;nitteen laatuun. Monet kontekstuaaliset
+tekij&#228;t saattavat muuttaa formanttien taajuuksia ja kaistanleveyksi&#228;,
+ja jotkut puheen piirteet (esim. nasaalisuus) saattavat vaikeuttaa
+formanttien tulkintaa. Puhujat ovat my&#246;s aina yksil&#246;it&#228;, eik&#228; formanttiarvojen
+pid&#228;k&#228;&#228;n osua kaikilla samoille taajuuksille.
+
+<P>
+Formantteja kannattaa luonnollisesti mitata vain kohdista, joissa
+ei ole usean puhujan p&#228;&#228;llekk&#228;ispuhuntaa. N&#228;in varmistat, ettei toisten
+puhujien &#228;&#228;ni sekoita analyysia, sill&#228; formanttianalyysi ei pysty
+erottamaan eri &#228;&#228;nil&#228;hteit&#228; toisistaan. My&#246;s muu taustah&#228;ly tai &#228;&#228;nitystilan
+voimakas j&#228;lkikaiku voivat periaatteessa aiheuttaa virheellisi&#228; tuloksia.
+
+<P>
+Tavanomaiset formanttianalyysin asetukset sopivat parhaiten soinnillisiin
+&#228;&#228;nteisiin, etenkin vokaaleihin. Formantteja sin&#228;ns&#228; on tietenkin
+kaikissa &#228;&#228;nteiss&#228;, mutta automaattisen formanttianalyysin parametrien
+antaminen ja tulosten tulkinta on soinnittomilla &#228;&#228;nteill&#228; vaikeampaa,
+joskus j&#228;rjet&#246;nt&#228;kin. Ei my&#246;sk&#228;&#228;n kannata k&#228;ytt&#228;&#228; <B>Track...</B>-komentoa
+kohdissa, joissa on esim. konsonantin ja vokaalin v&#228;linen siirtym&#228;,
+koska niiss&#228; l&#246;ydettyjen formanttien lukum&#228;&#228;r&#228; saattaa &#228;kisti muuttua,
+jolloin j&#228;rkevien &#34;formanttipolkujen&#34; l&#246;yt&#228;minen
+on mahdotonta.
+
+<P>
+Kun formantit esiintyv&#228;t l&#228;hekk&#228;in, kuten esim. F2 ja F3 [y]-vokaalissa
+tai F1 ja F2 [u]:ssa tai [o]:ssa, on vaarana, ett&#228; formanttianalyysi
+tulkitsee vierekk&#228;iset formantit samaksi yhten&#228;iseksi huipuksi. N&#228;in
+k&#228;y usein, jos tavanomaista viitt&#228; formanttia etsit&#228;&#228;n liian suurelta
+taajuuskaistalta, esimerkiksi jos olet antanut matala&#228;&#228;niselle miespuhujalle
+liian suuren yl&#228;raja-arvon kohdassa <I>Maximum formant</I>.
+
+<P>
+Laskennallisesti tavallinen syy <A NAME="formanttien-yhteensulautuminen"></A>formanttien<A NAME="630"></A>
+&#34;yhtymiselle&#34; tai &#34;heittelehtimiselle&#34;
+on, ettei LPC-analyysissa ole k&#228;ytetty riitt&#228;v&#228;&#228; m&#228;&#228;r&#228;&#228; spektrikertoimia
+(t&#228;m&#228; lukuhan on suhteessa etsitt&#228;vien formanttihuippujen m&#228;&#228;r&#228;&#228;n).
+Riitt&#228;v&#228; m&#228;&#228;r&#228; on v&#228;hint&#228;&#228;n signaalin n&#228;ytteenottotaajuus hertsein&#228;
+jaettuna tuhannella (esim. 16 kHz signaalille 16). Praatin Burg-formanttianalyysi
+n&#228;ytteist&#228;&#228; signaalin automaattisesti ensin n&#228;ytetaajuuteen, joka
+on kaksi kertaa <I>Maximum formant</I>, ja jos (2 * Max. number
+of formants) on t&#228;h&#228;n taajuuteen sopivassa suhteessa, kertoimia lasketaan
+automaattisesti riitt&#228;v&#228; m&#228;&#228;r&#228; ja analyysin pit&#228;isi onnistua kohtalaisesti.
+Sinun on kuitenkin otettava viel&#228; tarkemmin huomioon oikea kerrointen
+m&#228;&#228;r&#228;, mik&#228;li et k&#228;yt&#228; Praatin formanttianalyysia suoraan vaan teet
+erikseen LPC-analyysin Sound-objektista. Silloin sinun on joko itse
+n&#228;ytteistett&#228;v&#228; signaali uudestaan sopivaan n&#228;ytetaajuuteen ennen
+LPC-analyysia, tai annettava LPC:lle riitt&#228;v&#228; kertaluku (prediction
+order), esim. 16 kHz &#228;&#228;nin&#228;ytteelle 16. 
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html683"
+  HREF="node37.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html677"
+  HREF="node31.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html673"
+  HREF="node35.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html679"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html681"
+  HREF="node51.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> :</B> <A NAME="tex2html684"
+  HREF="node37.html">8. Kuvien luominen</A>
+<B> :</B> <A NAME="tex2html678"
+  HREF="node31.html">7. Akustinen analyysi</A>
+<B> :</B> <A NAME="tex2html674"
+  HREF="node35.html">7.4 Intensiteetti (äänekkyys)</A>
+ &nbsp <B>  <A NAME="tex2html680"
+  HREF="node1.html">Sis&auml;lt&ouml;</A></B> 
+ &nbsp <B>  <A NAME="tex2html682"
+  HREF="node51.html">Hakemisto</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Mietta Lennes
+2004-09-13
+</ADDRESS>
+</BODY>
+</HTML>
